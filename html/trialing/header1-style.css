@@ -1,0 +1,11 @@
+:root {
+    --main-color: #f8fafc;
+    --pane-padding: 5px 42px;
+}
+
+.text-light {
+    color: #f8fafc !important;
+    padding: 0 42px;
+    margin: auto;
+    vertical-align: center;
+}
