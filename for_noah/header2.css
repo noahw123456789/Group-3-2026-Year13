@@ -1,11 +1,6 @@
-
 .navbar {
-    padding: 10px;
-    background-color: #0f175b
-}
-
-.nav-item {
-    border: 2px solid white;
+    padding: 12px;
+    display: flex;
 }
 
 li.nav-item {
@@ -15,6 +10,14 @@ li.nav-item {
 .navbar-toggler {
     border: none;
     outline: none;
+    position: absolute;
+    left: 12px;
+    top: 13px;
+}
+
+.navbar-brand {
+    text-align: center;
+    margin: 0 auto;
 }
 
 
@@ -32,5 +35,6 @@ li.nav-item {
         border-bottom: none;
     }
     
+
 
 }
