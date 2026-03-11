@@ -1,6 +1,5 @@
 .navbar {
     padding: 12px;
-    display: flex;
 }
 
 li.nav-item {
@@ -10,14 +9,10 @@ li.nav-item {
 .navbar-toggler {
     border: none;
     outline: none;
-    position: absolute;
-    left: 12px;
-    top: 13px;
 }
 
 .navbar-brand {
     text-align: center;
-    margin: 0 auto;
 }
 
 
