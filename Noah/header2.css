@@ -1,0 +1,66 @@
+:root {
+    --font-color: #f8fafc;
+    --background-color: #0f172b;
+    --subtext-color: #94a3b8;
+    --accent-color: #125FA9;
+    --pane-margin: 0 14px;
+}
+
+.container-fluid {
+    justify-content: start !important;
+    align-items: center !important;
+}
+nav {
+    background-color: var(--background-color) !important;
+    padding: 12px 18px !important;
+}
+
+.navbar-brand {
+    color: var(--font-color) !important;
+    font-size: 25pt !important;
+    font-weight: 600;
+    margin: 0 0 5px 10px !important;
+}
+
+.navbar-brand:hover {
+    color: #d3d5d7 !important;
+    transition: color 0.3s;
+}
+
+.navbar-toggler {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+
+.navbar-nav .nav-link {
+    color: var(--subtext-color) !important;
+    font-size: 14pt;
+    justify-content: end !important;
+    cursor: pointer;
+    margin: var(--pane-margin);
+    border-bottom: 2px solid transparent;
+}
+
+.navbar-nav:first-child {
+    margin-left: 27px !important;
+}
+
+
+.navbar-nav .nav-link:hover {
+    color: var(--font-color) !important;
+    border-bottom: 2px solid var(--accent-color);
+    transition: color 0.3s, border-color 0.3s;
+}
+
+.navbar-nav .nav-link.active {
+    color: var(--font-color) !important;
+    font-weight: 600;
+}
+
+@media (max-width: 992px) {
+    .navbar-nav:first-child {
+        margin-left: 0px !important;
+        
+    }
+}

@@ -7,7 +7,7 @@
     --pane-margin: 0 10px;
 }
 
-nav {
+.navbar {
     background-color: var(--background-color) !important;
 }
 
@@ -15,6 +15,10 @@ nav {
     color: var(--font-color) !important;
     font-size: 25pt !important;
     margin-left: 10px;
+}
+
+.navbar-toggler {
+    border: none !important;
 }
 
 .navbar-nav .nav-link {
