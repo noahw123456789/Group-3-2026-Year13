@@ -1,0 +1,134 @@
+:root {
+    --font-color: #f8fafc;
+    --background-color: #0f172b;
+    --subtext-color: #94a3b8;
+    --accent-color: #125FA9;
+    --pane-padding: 20px 40px
+}
+
+/* ---------------- MOBILE HEADER ---------------- */
+
+.mobile-header {
+    display: block;
+    background-color: var(--background-color);
+    padding: 12px 18px;
+}
+
+.mobile-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mobile-brand {
+    color: var(--font-color) !important;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.navbar-toggler {
+    border: none !important;
+    box-shadow: none !important;
+    padding-right: 0;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.mobile-nav-links {
+    padding-top: 14px;
+}
+
+.mobile-nav-links .nav-link {
+    color: var(--subtext-color) !important;
+    font-size: 1.1rem;
+    padding: 10px 0;
+    width: fit-content;
+    border-bottom: 2px solid transparent;
+}
+
+.mobile-nav-links .nav-link:hover {
+    color: var(--font-color) !important;
+    border-bottom: 2px solid var(--accent-color);
+    transition: color 0.3s, border-color 0.3s;
+}
+
+.mobile-nav-links .nav-link.active {
+    color: var(--font-color) !important;
+    font-weight: 600;
+}
+
+/* ---------------- DESKTOP HEADER ---------------- */
+
+.desktop-header {
+    background-color: var(--background-color);
+    padding: var(--pane-padding);
+}
+
+.desktop-nav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0;
+    list-style-type: none;
+}
+
+.desktop-brand {
+    color: var(--font-color);
+    font-size: 25pt;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.deskop-nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.left-nav {
+    justify-content: flex-start;
+}
+
+.right-nav {
+    justify-content: flex-end;
+}
+
+.desktop-nav .nav-item a {
+    color: var(--subtext-color) !important;
+    font-size: 14pt;
+    list-style-type: none;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 4px;
+}
+
+.nav-item a:hover {
+    color: var(--font-color);
+    border-bottom: 2px solid var(--accent-color);
+    transition: color 0.3s, border-color 0.3s;
+}
+
+.desktop-nav a.active {
+    color: var(--font-color);
+    font-weight: 600;
+}
+
+/* ---------------- RESPONSIVE SWITCH ---------------- */
+
+@media (min-width: 992px) {
+    .mobile-header {
+        display: none !important;
+    }
+
+    .desktop-header {
+        display: block !important;
+    }
+}
