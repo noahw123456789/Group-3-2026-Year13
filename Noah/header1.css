@@ -1,7 +1,7 @@
 :root {
     --font-color: #f8fafc;
     --background-color: #0f172b;
-    --subtext-color: #4c595e;
+    --subtext-color: #94a3b8;
     --accent-color: #125FA9;
     --accent-color-hover: #005396;
     --pane-margin: 0 10px;
@@ -30,7 +30,7 @@
     box-shadow: none !important;
 }
 
-.nav-link {
+.nav-item .nav-link {
     color: var(--subtext-color);
     font-size: 14pt;
     cursor: pointer;
