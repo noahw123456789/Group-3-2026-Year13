@@ -38,6 +38,10 @@ li.nav-item {
 }
 
 
+.navbar-toggler-icon {
+    color: white;
+}
+
 @media only screen and (min-width: 600px) {
 
 
