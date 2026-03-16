@@ -27,7 +27,7 @@
     box-shadow: none;
 }
 
-/* Mobile styling */
+/* Mobile + Tablets (XS + SM + MD) */
 @media (max-width: 991px) {
     .nav-item {
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -48,7 +48,7 @@
     }
 }
 
-/* Desktop styling */
+/* Desktop (LG) */
 @media (min-width: 992px) {
     .navbar {
         padding: 25px 0;
