@@ -1,0 +1,30 @@
+/* Activity Cards: */
+
+.trial_1 .activity-card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.activity-card img {
+    height: 200px;
+}
+
+.trial_1 .activity-card .card-body {
+    padding: 20px;
+}
+
+/* .card-body {
+    border: 2px solid black;
+} */
+
+.trial_1 .activity-card .card-title {
+    color: #60a5fa;
+    font-weight: 600;
+}
+
+.trial_1 .badge {
+    font-size: 10px;
+    padding: 5px 10px;
+}
