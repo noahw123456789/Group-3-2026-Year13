@@ -1,0 +1,159 @@
+/* Navigation*/
+
+.bg_dark {
+    background-color: #0f172b;
+}
+
+.text_light {
+    color: #f8fafc;
+}
+
+.navbar {
+    padding: 15px 0;
+}
+
+.nav-link {
+    color: #f8fafc;
+}
+
+.link_active {
+    color: #60a5fa;
+}
+
+.navbar-toggler {
+    border: none;
+    outline: none;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+/* Mobile + Tablets (XS + SM + MD) */
+@media (max-width: 991px) {
+    .nav-item {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-item:last-child {
+        border-bottom: none;
+    }
+
+    .nav-link {
+        padding: 12px 15px;
+        flex: 1;
+    }
+
+    .nav-arrow {
+        color: #f8fafc;
+        padding-right: 15px;
+    }
+}
+
+/* Desktop (LG) */
+@media (min-width: 992px) {
+    .navbar {
+        padding: 25px 0;
+    }
+
+    .nav-item {
+        border-bottom: none;
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-link {
+        padding: 8px 15px;
+    }
+
+    .nav-arrow {
+        display: none;
+    }
+}
+
+
+
+/* Footer */
+
+.bg_dark{
+    background-color: #0f172b;
+    
+}
+
+.footer_border {
+    border-top: 2px solid #4c595e ;
+}
+
+.footer_header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 150px;
+    border: 2px solid black;
+    color: #f8fafc;
+    margin: 0 auto;
+    text-align: center;
+    gap: 10px;
+}
+
+.fa-instagram {
+    background: #125688;
+    color: #f8fafc;
+}
+
+.fa-google {
+    background: #dd4b39;
+    color: #f8fafc;
+}
+
+.fa-youtube {
+    background: #bb0000;
+    color: #f8fafc;
+}
+
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+.fa {
+    padding: 10px;
+    font-size: 25px;
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+/* Tablet (SM) - 3 per row */
+@media (min-width: 600px) and (max-width: 991px) {
+    .nav-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Desktop (LG) */
+@media (min-width: 992px) {
+    .nav-grid {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        gap: 0;
+        padding: 0;
+    }
+
+    .nav-link-grid {
+        padding: 8px 15px;
+    }
+
+    .nav-link-grid:hover {
+        background-color: transparent;
+    }
+}
