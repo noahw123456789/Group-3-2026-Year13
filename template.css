@@ -71,13 +71,10 @@
     }
 }
 
-
-
 /* Footer */
 
 .bg_dark{
     background-color: #0f172b;
-    
 }
 
 .footer_border {
@@ -89,8 +86,8 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 150px;
-    border: 2px solid black;
+    height: fit-content;
+    /* border: 2px solid black; */
     color: #f8fafc;
     margin: 0 auto;
     text-align: center;
@@ -119,9 +116,9 @@
 
 .fa {
     padding: 10px;
-    font-size: 25px;
-    width: 45px;
-    height: 45px;
+    font-size: 19px;
+    width: 37px;
+    height: 37px;
     text-align: center;
     text-decoration: none;
     margin: 5px 2px;
@@ -130,30 +127,4 @@
 
 .fa:hover {
     opacity: 0.7;
-}
-
-/* Tablet (SM) - 3 per row */
-@media (min-width: 600px) and (max-width: 991px) {
-    .nav-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-/* Desktop (LG) */
-@media (min-width: 992px) {
-    .nav-grid {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        gap: 0;
-        padding: 0;
-    }
-
-    .nav-link-grid {
-        padding: 8px 15px;
-    }
-
-    .nav-link-grid:hover {
-        background-color: transparent;
-    }
 }
