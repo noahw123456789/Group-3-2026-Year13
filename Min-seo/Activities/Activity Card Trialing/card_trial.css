@@ -1,3 +1,8 @@
+.activity-card img {
+    height: 200px;
+    object-fit: cover;
+}
+
 /* Trial Design 1: */
 
 .trial_1 .activity-card {
@@ -5,10 +10,6 @@
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
-}
-
-.activity-card img {
-    height: 200px;
 }
 
 .trial_1 .activity-card .card-body {
@@ -48,3 +49,23 @@
 }
 
 
+/* Trial Design 3 */
+
+.trial_3 .image-wrapper {
+    position: relative;
+    height: 200px;
+}
+
+.trial_3 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.trial_3 .badges-overlay {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    display: flex;
+    gap: 5px;
+}
