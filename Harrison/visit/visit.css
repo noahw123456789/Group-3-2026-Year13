@@ -1,0 +1,521 @@
+    /*=========================================================
+      GOOGLE FONT IMPORT
+      Swapping fonts is easy — go to https://fonts.google.com,
+      pick a font, copy the @import line and paste it here,
+      then update the font-family in body below.
+    ============================================================ */
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap');
+
+    /* ============================================================
+      CSS CUSTOM PROPERTIES (variables)
+      Change these to retheme the entire page in one place.
+      --accent: the main highlight colour (used on active filters, hover etc.)
+      --radius-card: how rounded the cards are (try 0px for sharp, 20px for rounder)
+    ============================================================ */
+    :root {
+      --accent: #125fa9;
+      --accent-light: #e1f5ee;
+      --text-primary: #1a1a1a;
+      --text-secondary: #5a6370;
+      --border: rgba(0,0,0,0.1);
+      --card-bg: #ffffff;
+      --page-bg: #f7f8f6;
+      --radius-card: 14px;
+      --radius-tag: 999px;
+      --font-color: #f8fafc;
+      --background-color: #0f172b;
+      --subtext-color: #94a3b8;
+      --accent-color: #125FA9;
+      --accent-color-hover: #005396;
+      --light-blue: #60a5fa;
+
+    }
+
+    /* ============================================================
+      BASE STYLES
+      font-family: change 'DM Sans' to any Google Font you imported.
+      background-color: changes the overall page background.
+      color: the default text colour for the whole page.
+    ============================================================ */
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background-color: var(--page-bg);
+      color: var(--text-primary);
+    }
+
+    /* ============================================================
+      PAGE HEADER
+      The dark banner at the top.
+      To change the background: update background-color below.
+      To add a background image instead:
+        background: url('your-image.jpg') center/cover no-repeat;
+    ============================================================ */
+    .page-header {
+      background-color: #0d2e20;
+      color: white;
+      padding: 3rem 0 2.5rem;
+    }
+
+    .page-header h1 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      /* clamp(min, preferred, max) — font scales with screen width.
+         Change the three values to adjust min/max size. */
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+
+    .page-header p {
+      color: rgba(255,255,255,0.65);
+      font-size: 1rem;
+      margin: 0;
+    }
+
+    /* ============================================================
+      FILTER BUTTONS
+      The row of category buttons (All, Adventure, Nature etc.)
+      .filter-btn is the default (unselected) state.
+      .filter-btn.active is the selected/highlighted state.
+      Change --accent in :root to change the active colour.
+    ============================================================ */
+    .filter-btn {
+      font-family: inherit;
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 6px 18px;
+      border-radius: var(--radius-tag);
+      border: 1px solid var(--border);
+      background: white;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all 0.18s ease;
+    }
+
+    .filter-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .filter-btn.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: white;
+    }
+
+    /* ============================================================
+      PLACE CARDS
+      Each destination is a .place-card inside a Bootstrap column.
+      border-radius: controls card roundness links to --radius-card.
+      box-shadow: adds depth. Remove if you want flat cards.
+      transition: makes the hover lift effect smooth.
+    ============================================================ */
+    .place-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-card);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .place-card:hover {
+      transform: translateY(-4px);
+      /* Lifts the card up 4px on hover. Change to 0px to disable. */
+      box-shadow: 0 8px 24px rgba(0,0,0,0.09);
+    }
+
+    /* ============================================================
+      CARD IMAGE AREA
+      The coloured block at the top of each card.
+      height: change this value to make the image area taller/shorter.
+      The background colour is set inline on each card (see HTML below).
+    ============================================================ */
+    .card-img-area {
+      height: 130px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      /* When you have real photos, replace the emoji + background with:
+         <img src="your-photo.jpg" alt="..." style="width:100%; height:130px; object-fit:cover;">
+         and remove this flex layout. */
+    }
+
+    .card-body-inner {
+      padding: 1rem 1.1rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      /* flex: 1 makes all cards the same height within a row */
+    }
+
+    /* ============================================================
+      CATEGORY TAG (badge on each card)
+      font-size, padding: control the tag size.
+      border-radius: var(--radius-tag) makes it a pill shape.
+      To make square tags: set border-radius to 4px.
+      Background/colour are set inline on each card.
+    ============================================================ */
+    .category-tag {
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 3px 12px;
+      border-radius: var(--radius-tag);
+      display: inline-block;
+      margin-right: 4px;
+      margin-bottom: 8px;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .card-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 0 0 5px;
+    }
+
+    .card-desc {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+      margin: 0 0 1rem;
+      flex: 1;
+      /* flex: 1 pushes the Learn More button to the bottom of every card */
+    }
+
+    /* ============================================================
+      LEARN MORE BUTTON (on each card)
+      width: 100% makes it full-width. Change to fit-content for a smaller button.
+      background/color/border: change these to restyle the button.
+    ============================================================ */
+    .learn-btn {
+      font-family: inherit;
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 7px 0;
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text-primary);
+      cursor: pointer;
+      transition: all 0.15s;
+      margin-top: auto;
+    }
+
+    .learn-btn:hover {
+      background: var(--accent-light);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* ============================================================
+      CARD FILTER TRANSITION
+      When a filter button is clicked, cards fade in/out.
+      transition: controls how quickly this happens.
+      .card-col.hidden: hides the card (opacity 0, scaled down slightly).
+      Change opacity: 0 to opacity: 0.2 for a "dimmed" effect instead of hidden.
+    ============================================================ */
+    .card-col {
+      transition: opacity 0.22s ease, transform 0.22s ease;
+    }
+
+    .card-col.hidden {
+      opacity: 0;
+      transform: scale(0.97);
+      pointer-events: none;
+      display: none;
+    }
+
+    /* ============================================================
+      EMPTY STATE
+      Shown when a filter category has no results.
+    ============================================================ */
+    #empty-state {
+      display: none;
+      text-align: center;
+      padding: 3rem;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      width: 100%;
+    }
+
+    /* ============================================================
+      MODAL (detail panel)
+      The overlay that appears when "Learn more" is clicked.
+      background on .modal-overlay: the dark backdrop.
+      .modal-box: the white panel itself.
+    ============================================================ */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.4);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .modal-overlay.open {
+      display: flex;
+    }
+
+    .modal-box {
+      background: white;
+      border-radius: var(--radius-card);
+      padding: 1.75rem;
+      max-width: 440px;
+      width: 100%;
+      border: 1px solid var(--border);
+      animation: modal-in 0.18s ease;
+    }
+
+    @keyframes modal-in {
+      from { opacity: 0; transform: scale(0.96) translateY(8px); }
+      to   { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    .modal-img {
+      height: 80px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .modal-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: 0 0 0.5rem;
+    }
+
+    .modal-body-text {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      margin: 0 0 1.25rem;
+    }
+
+    .modal-close {
+      font-family: inherit;
+      font-size: 0.82rem;
+      padding: 7px 20px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text-primary);
+      cursor: pointer;
+    }
+
+    .modal-close:hover {
+      background: #f2f2f2;
+    }
+
+    /* ============================================================
+      RESPONSIVE TWEAKS
+      At small screen sizes (phones), reduce header padding.
+    ============================================================ */
+    @media (max-width: 576px) {
+      .page-header {
+        padding: 2rem 0 1.75rem;
+      }
+    }
+
+    /*=================================
+        This is all the template stuff
+      ================================*/
+.navbar {
+    background-color: var(--background-color);
+}
+
+/* Header */
+
+.navbar-brand {
+    color: var(--font-color);
+    font-size:  25px;
+    margin-left: 10px;
+    font-weight: 500;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--font-color);
+    border-bottom: 2px solid var(--light-blue);
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+.nav-item .nav-link {
+    color: var(--subtext-color);
+    font-size: 12pt;
+    cursor: pointer;
+    margin: 0 10px;
+    border-bottom: 2px solid transparent;
+}
+
+.navbar-nav .nav-link.active {
+    font-weight: 600;
+}
+
+.navbar-toggler {
+    border: none;
+    outline: none;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+/* Mobile + Tablets (XS + SM + MD) */
+@media (max-width: 991px) {
+    .nav-item {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-item:last-child {
+        border-bottom: none;
+    }
+
+    .nav-link {
+        padding: 12px 15px;
+        flex: 1;
+    }
+
+    .nav-arrow {
+        color: var(--font-color);
+        padding-right: 15px;
+    }
+}
+
+/* Desktop (LG) */
+@media (min-width: 992px) {
+    .navbar {
+        padding: 25px 0;
+    }
+
+    .nav-item {
+        border-bottom: none;
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-link {
+        padding: 8px 15px;
+    }
+
+    .nav-arrow {
+        display: none;
+    }
+}
+
+/* Footer */
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+footer .row > div {
+    display: flex;
+    flex-direction: column;
+}
+
+/* For all sizes before desktop or XL */
+@media (max-width: 1199px) {
+    .footer_border {
+        border-bottom: 2px solid #4c595e;
+        padding-bottom: 5px;
+        margin-bottom: 5px;
+    }
+
+    .footer_border:last-child {
+        border-bottom: None;
+    }
+
+}
+
+/* This one will be for desktop (after XL)  */
+
+@media (min-width: 1200px) {
+    .footer_border {
+        border-bottom: none;
+    }
+
+    .footer_border:last-child {
+        border-right: none;
+    }
+
+    .logo_social {
+        margin-top: 40px;
+    }
+}
+
+
+footer .logo_social {
+    display: block;
+    align-items: center;
+    text-align: center;
+    width: 100;
+    /* border: 2px solid white; */
+    justify-content: center;
+}
+
+footer .social {
+    display: flex;
+    margin: 0 auto;
+    width: fit-content;
+    /* border: 2px solid white; */
+    gap: 6px;
+}
+
+.bg_dark{
+    background-color: var(--background-color);
+}
+
+.fa-instagram {
+    background: #125688;
+    color: var(--font-color);
+}
+
+.fa-google {
+    background: #dd4b39;
+    color: var(--font-color);
+}
+
+.fa-youtube {
+    background: #bb0000;
+    color: var(--font-color);
+}
+
+.fa-facebook {
+    background: #3B5998;
+    color: var(--font-color);
+}
+
+.fa {
+    padding: 9px;
+    font-size: 16px;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+footer .link {
+    text-decoration: none;
+    color: var(--font-color)
+}
+
+footer .link:hover {
+    text-decoration: underline;
+}

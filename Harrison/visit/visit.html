@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <!-- Makes the site responsive on phones/tablets -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Places to Visit — Queenstown</title>
+
+  <!-- ============================================================
+    BOOTSTRAP CDN LINK
+    This loads Bootstrap's CSS from the internet.
+    Bootstrap gives us the responsive grid system (col-md-4 etc.)
+    and utility classes like d-flex, gap-2, mb-3 etc.
+    If you want to use Bootstrap offline, download it from
+    https://getbootstrap.com and link it locally instead.
+  ============================================================ -->
+  <link rel="stylesheet" href="visit.css">
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+  />
+</head>
+
+<body>
+
+  <!-- ============================================================
+    PAGE HEADER
+    Change the h1 text and paragraph to update the heading section.
+    To add a background image to this section, update .page-header
+    in the CSS above.
+  ============================================================ -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+        <a href="#" class="navbar-brand">Discover Queenstown</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav mb-2 mb-lg-0">
+                <li class="nav-item d-flex align-items-center justify-content-between">
+                    <a href="#" class="nav-link active">Home</a>
+                    <span class="nav-arrow">></span>
+                </li>
+                <li class="nav-item d-flex align-items-center justify-content-between">
+                    <a href="#" class="nav-link">Activities</a>
+                    <span class="nav-arrow">></span>
+                </li>
+                <li class="nav-item d-flex align-items-center justify-content-between">
+                    <a href="#" class="nav-link">Visit</a>
+                    <span class="nav-arrow">></span>
+                </li>
+                <li class="nav-item d-flex align-items-center justify-content-between">
+                    <a href="#" class="nav-link">Eat</a>
+                    <span class="nav-arrow">></span>
+                </li>
+                <li class="nav-item d-flex align-items-center justify-content-between">
+                    <a href="#" class="nav-link">Flights and Accommodation</a>
+                    <span class="nav-arrow">></span>
+                </li>
+                <li class="nav-item d-flex align-items-center justify-content-between">
+                    <a href="#" class="nav-link">Travel Guide</a>
+                    <span class="nav-arrow">></span>
+                </li>                   
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+  <!-- ============================================================
+    MAIN CONTENT
+    container: Bootstrap class that centres and pads the content.
+    Change container to container-fluid for full-width.
+    Change container to container-lg for a narrower layout.
+  ============================================================ -->
+  <main class="container py-5">
+
+    <!-- ============================================================
+      FILTER BUTTONS
+      To ADD a new filter category:
+        1. Copy one <button> and change data-cat="yourcat" and the label.
+        2. In the card HTML below, set data-cat="yourcat" on the new card.
+      To REMOVE a category: delete the button and update the card's data-cat.
+    ============================================================ -->
+    <div class="d-flex flex-wrap gap-2 mb-4">
+      <button class="filter-btn active" data-cat="all">All</button>
+      <button class="filter-btn" data-cat="adventure">Adventure</button>
+      <button class="filter-btn" data-cat="nature">Nature</button>
+      <button class="filter-btn" data-cat="culture">Culture</button>
+      <button class="filter-btn" data-cat="food">Food & drink</button>
+    </div>
+
+    <!-- ============================================================
+      CARD GRID
+      Bootstrap responsive grid:
+        col-12          = full width on phones (1 card per row)
+        col-sm-6        = half width on small tablets (2 cards per row)
+        col-md-4        = one-third on medium screens (3 cards per row)
+        col-lg-3        = one-quarter on large screens (4 cards per row)
+
+      TO CHANGE THE LAYOUT:
+        2 columns always:   col-12 col-md-6
+        4 columns on large: col-12 col-sm-6 col-lg-3
+        List layout (1 col): just use col-12 on all cards
+
+      g-3 = gap between cards. g-4 for more space, g-2 for less.
+    ============================================================ -->
+    <div class="row g-3" id="card-grid">
+
+      <!-- ========================================================
+        CARD: Nevis Bungy
+        To edit a card:
+          data-cat       = filter category (must match a filter button)
+          card-img-area  = background colour + emoji icon
+          category-tag   = background/text colour + label
+          card-title     = place name
+          card-desc      = short description
+          openModal(...)  = title, body text, emoji, background colour
+        To use a real photo instead of the emoji block, replace the
+        .card-img-area div with:
+          <img src="images/nevis.jpg" alt="Nevis Bungy"
+               style="width:100%; height:130px; object-fit:cover;">
+      ======================================================== -->
+      <div class="col-12 col-sm-6 col-md-4 card-col" data-cat="adventure">
+        <div class="place-card">
+          <div class="card-img-area" style="background:#FAECE7;"></div>
+          <div class="card-body-inner">
+            <span class="category-tag" style="background:#FAECE7; color:#993C1D;">Adventure</span>
+            <p class="card-title">Nevis Bungy</p>
+            <p class="card-desc">NZ's highest bungee jump at 134m above the Nevis River gorge.</p>
+            <button class="learn-btn" onclick="openModal(
+              'Nevis Bungy',
+              'NZ\'s highest bungee jump at 134m, located in the Nevis Valley — a 45-minute drive from Queenstown. Runs year-round. Suitable for ages 13+. Price from NZD $275. Booking essential.',
+              '🪂', '#FAECE7'
+            )">Learn more</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD: The Remarkables -->
+      <div class="col-12 col-sm-6 col-md-4 card-col" data-cat="nature">
+        <div class="place-card">
+          <div class="card-img-area" style="background:#E1F5EE;"></div>
+          <div class="card-body-inner">
+            <span class="category-tag" style="background:#E1F5EE; color:#0F6E56;">Nature</span>
+            <p class="card-title">The Remarkables</p>
+            <p class="card-desc">Iconic mountain range — skiing in winter, hiking and climbing in summer.</p>
+            <button class="learn-btn" onclick="openModal(
+              'The Remarkables',
+              'A dramatic mountain range 20km from Queenstown. In winter it operates as a ski field with 220 hectares of terrain. In summer, it offers walking tracks and rock climbing. Free to visit outside the ski season.',
+              '🏔️', '#E1F5EE'
+            )">Learn more</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD: Lake Wakatipu -->
+      <div class="col-12 col-sm-6 col-md-4 card-col" data-cat="nature">
+        <div class="place-card">
+          <div class="card-img-area" style="background:#E6F1FB;"></div>
+          <div class="card-body-inner">
+            <span class="category-tag" style="background:#E6F1FB; color:#185FA5;">Nature</span>
+            <p class="card-title">Lake Wakatipu</p>
+            <p class="card-desc">Glacial lake with boat tours, paddleboarding and scenic lakeside walks.</p>
+            <button class="learn-btn" onclick="openModal(
+              'Lake Wakatipu',
+              'The third-largest lake in NZ, stretching 80km. The TSS Earnslaw steamship runs scenic cruises from Queenstown Bay. The Queenstown Trail follows the shoreline for cyclists and walkers. Access is free.',
+              '⛵', '#E6F1FB'
+            )">Learn more</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD: Queenstown Arts Centre -->
+      <div class="col-12 col-sm-6 col-md-4 card-col" data-cat="culture">
+        <div class="place-card">
+          <div class="card-img-area" style="background:#EEEDFE;"></div>
+          <div class="card-body-inner">
+            <span class="category-tag" style="background:#EEEDFE; color:#534AB7;">Culture</span>
+            <p class="card-title">Queenstown Arts Centre</p>
+            <p class="card-desc">Local galleries, rotating exhibitions and creative community workshops.</p>
+            <button class="learn-btn" onclick="openModal(
+              'Queenstown Arts Centre',
+              'Located in the town centre, this community arts hub features local and national artists. Regular evening events, life drawing classes, and a gallery shop. Entry is free for most exhibitions.',
+              '🏛️', '#EEEDFE'
+            )">Learn more</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD: Gibbston Valley Winery -->
+      <div class="col-12 col-sm-6 col-md-4 card-col" data-cat="food">
+        <div class="place-card">
+          <div class="card-img-area" style="background:#FAEEDA;"></div>
+          <div class="card-body-inner">
+            <span class="category-tag" style="background:#FAEEDA; color:#854F0B;">Food & drink</span>
+            <p class="card-title">Gibbston Valley Winery</p>
+            <p class="card-desc">World-class Central Otago pinot noir — cellar door tastings and cave tours.</p>
+            <button class="learn-btn" onclick="openModal(
+              'Gibbston Valley Winery',
+              'Located in the Gibbston Valley, 35 minutes from Queenstown. Famous for its wine cave carved into schist rock. Tasting sessions from NZD $20. Restaurant on site. Open daily 10am–5pm.',
+              '🍷', '#FAEEDA'
+            )">Learn more</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD: Skyline Bike Park -->
+      <div class="col-12 col-sm-6 col-md-4 card-col" data-cat="adventure">
+        <div class="place-card">
+          <div class="card-img-area" style="background:#EAF3DE;"></div>
+          <div class="card-body-inner">
+            <span class="category-tag" style="background:#EAF3DE; color:#3B6D11;">Adventure</span>
+            <p class="card-title">Skyline Bike Park</p>
+            <p class="card-desc">Gondola-accessed downhill trails from beginner to expert on Bob's Peak.</p>
+            <button class="learn-btn" onclick="openModal(
+              'Skyline Bike Park',
+              'Accessible via the Skyline Gondola, this bike park has over 30km of trails across all skill levels. Gondola and bike hire packages available. Open daily in summer. Price from NZD $75.',
+              '🚵', '#EAF3DE'
+            )">Learn more</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Empty state — shown automatically when no cards match the filter -->
+      <div id="empty-state">
+        <p>No places found in this category yet — check back soon.</p>
+      </div>
+
+    </div><!-- /row -->
+  </main><!-- /main -->
+
+
+  <!-- ============================================================
+    MODAL
+    This is the detail panel that appears when "Learn more" is clicked.
+    The content is filled in by the openModal() JavaScript function.
+    You do not need to edit this HTML directly — edit the openModal()
+    calls on each card button instead.
+  ============================================================ -->
+  <div class="modal-overlay" id="modal" onclick="handleOverlayClick(event)">
+    <div class="modal-box">
+      <div class="modal-img" id="modal-img"></div>
+      <p class="modal-title" id="modal-title"></p>
+      <p class="modal-body-text" id="modal-body"></p>
+      <button class="modal-close" onclick="document.getElementById('modal').classList.remove('open')">
+        Close
+      </button>
+    </div>
+  </div>
+  <footer class="text-muted bg_dark">
+
+        <!-- Section: Links  -->
+        <section>
+            <div class="container text-white pt-5">
+                <!-- Grid row -->
+                <div class="row">
+                    <!-- Logo and Social Media:  -->
+
+                    <div class="col-12 col-xl-3 footer_border pb-5">
+                        <div class="logo_social">
+                            <a href="#" class="navbar-brand">Discover Queenstown</a>
+                            <div class="social mt-4">
+                                <a href="#" class="fa fa-instagram"></a>
+                                <a href="#" class="fa fa-facebook"></a>
+                                <a href="#" class="fa fa-youtube"></a>
+                                <a href="#" class="fa fa-google"></a>
+                            </div>
+                        </div>
+
+                    </div>
+                
+                    <!-- Grid column 1-->
+                    <div class="col-12 col-xl-3 mb-4 footer_border p-3">
+                        <!-- Content -->
+                        <h6 class="text-uppercase fw-bold mb-4"><i class=""></i>More about our Website</h6>
+                        <p>Explore the best of Queenstown with our tourism platform—your guide to unforgettable adventures, stunning landscapes, and local experiences in one of New Zealand's most iconic destinations.</p>
+                    </div>
+
+                    <!-- Grid column 2 -->
+                    <div class="col-12 col-xl-3 mb-4 footer_border p-3">
+                    <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">Useful links</h6>
+                        <p><a href="#!" class="link">Activities</a></p>
+                        <p><a href="#!" class="link">Places to visit</a></p>
+                        <p><a href="#!" class="link">Accommodation and Flights</a></p>
+                        <p><a href="#!" class="link">Places to eat</a></p>
+                    </div>
+
+                    <!-- Grid column 3 -->
+                    <div class="col-12 col-xl-3 mb-4 footer_border p-3">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                        <p>Discover Queenstown</p>
+                        <p>discoverqueenstown@example.com</p>
+                        <p>+123 456 7890</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Copyright -->
+        <div class="text-center p-4 text-white " style="background-color: #125fa9">© 2026 Copyright: Queenstown Tourism </div>
+    </footer>
+
+
+  <!-- ============================================================
+    JAVASCRIPT
+    All interactivity lives here. Three sections:
+      1. Filter buttons — show/hide cards by category
+      2. openModal()   — populates and opens the detail panel
+      3. handleOverlayClick() — closes modal when backdrop is clicked
+  ============================================================ -->
+  <script>
+
+    /* ----------------------------------------------------------
+      1. FILTER BUTTONS
+      Loops through all .filter-btn elements.
+      When one is clicked, it becomes .active (highlighted),
+      and cards whose data-cat doesn't match get .hidden (faded out).
+    ---------------------------------------------------------- */
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cardCols   = document.querySelectorAll('.card-col');
+    const emptyState = document.getElementById('empty-state');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+
+        // Remove active from all buttons, add to clicked one
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const selectedCat = btn.dataset.cat;
+        let visibleCount = 0;
+
+        cardCols.forEach(col => {
+          const matches = selectedCat === 'all' || col.dataset.cat === selectedCat;
+          // Toggle the .hidden class — CSS handles the fade transition
+          col.classList.toggle('hidden', !matches);
+          if (matches) visibleCount++;
+        });
+
+        // Show empty state message if nothing matches
+        emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
+      });
+    });
+
+
+    /* ----------------------------------------------------------
+      2. openModal(title, body, icon, bgColour)
+      Called by each card's "Learn more" button.
+      Fills in the modal content and opens it.
+
+      Parameters:
+        title    — the place name (string)
+        body     — the detail text (string)
+        icon     — an emoji for the image area (string)
+        bgColour — hex colour for the modal image background (string)
+    ---------------------------------------------------------- */
+    function openModal(title, body, icon, bgColour) {
+      document.getElementById('modal-title').textContent = title;
+      document.getElementById('modal-body').textContent  = body;
+      document.getElementById('modal-img').textContent   = icon || '📍';
+      document.getElementById('modal-img').style.background = bgColour || '#f0f0f0';
+      document.getElementById('modal').classList.add('open');
+    }
+
+
+    /* ----------------------------------------------------------
+      3. handleOverlayClick(event)
+      Closes the modal only when the dark backdrop is clicked,
+      not when the white box itself is clicked.
+    ---------------------------------------------------------- */
+    function handleOverlayClick(event) {
+      if (event.target === document.getElementById('modal')) {
+        document.getElementById('modal').classList.remove('open');
+      }
+    }
+
+  </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
