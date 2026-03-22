@@ -69,3 +69,13 @@
     display: flex;
     gap: 5px;
 }
+
+/* Final Design */
+
+.final-design .title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}

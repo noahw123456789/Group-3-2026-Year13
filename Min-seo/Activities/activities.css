@@ -15,8 +15,12 @@
     text-align: center;
 }
 
-
 /* Activity Cards: */
+
+.activity-card img {
+    height: 200px;
+    object-fit: cover;
+}
 
 .activity-card {
     border: none;
@@ -25,17 +29,9 @@
     margin-bottom: 20px;
 }
 
-.activity-card img {
-    height: 200px;
-}
-
 .activity-card .card-body {
     padding: 20px;
 }
-
-/* .card-body {
-    border: 2px solid black;
-} */
 
 .activity-card .card-title {
     color: #60a5fa;
@@ -45,4 +41,12 @@
 .badge {
     font-size: 10px;
     padding: 5px 10px;
+}
+
+.activity-card .title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
 }
