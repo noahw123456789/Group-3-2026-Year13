@@ -135,7 +135,7 @@
 .hero-slogan {
     font-size: 1.25rem;
     font-weight: 700;
-    color: #111827;
+    color: var(--background-color) !important;
     margin-bottom: 5px;
 }
 
@@ -152,9 +152,28 @@
     line-height: 1.6;
     border-left: 3px solid var(--subtext-color) !important;
     color: var(--main-color);
-    padding: 20px;
+    padding: 10px 20px 4px 20px;
 } 
 
+.hero-image-box img{
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+p.hero-description {
+    margin-bottom: 0;
+}
+
+@media (max-width: 1200px) {
+    .hero-title {
+        font-size: 4.5rem;
+    }
+    .hero-paragraph-box {
+        max-width: 460px;
+    }
+    .hero-image {
+        margin-top: 30px;
+    }
+}
 
 @media (max-width: 991px) {
     .hero-section {
@@ -169,7 +188,6 @@
     .hero-title {
         font-size: 4rem;
     }
-
 }
 
 @media (max-width: 767px) {
@@ -181,7 +199,6 @@
         font-size: 3.1rem;
         line-height: 1;
     }
-
     .hero-paragraph-box {
         padding-left: 18px;
         max-width: 420px;
