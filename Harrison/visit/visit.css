@@ -133,7 +133,7 @@
       The background colour is set inline on each card (see HTML below).
     ============================================================ */
     .card-img-area {
-      height: 130px;
+      height: 200px;
       display: flex;
       align-items: center;
       justify-content: center;
