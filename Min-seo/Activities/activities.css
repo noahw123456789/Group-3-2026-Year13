@@ -93,11 +93,6 @@
 
 /* Footer */
 
-.row {
-    display: flex;
-    flex-wrap: wrap;
-}
-
 footer .row > div {
     display: flex;
     flex-direction: column;
@@ -138,7 +133,6 @@ footer .logo_social {
     display: block;
     align-items: center;
     text-align: center;
-    width: 100;
     /* border: 2px solid white; */
     justify-content: center;
 }
@@ -192,7 +186,7 @@ footer .social {
 
 footer .link {
     text-decoration: none;
-    color: var(--font-color)
+    color: var(--font-color);
 }
 
 footer .link:hover {
@@ -217,12 +211,16 @@ footer .link:hover {
 
 .header {
     text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 2rem;
 }
 
 /* Activity Cards: */
 
 .activity-card img {
-    height: 200px;
+    height: 250px;
     object-fit: cover;
 }
 
@@ -231,14 +229,24 @@ footer .link:hover {
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .activity-card .card-body {
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.activity-card .card-text {
+    flex: 1;
 }
 
 .activity-card .card-title {
-    color: #60a5fa;
+    color: var(--accent-color);
     font-weight: 600;
 }
 
@@ -247,10 +255,67 @@ footer .link:hover {
     padding: 5px 10px;
 }
 
+/* Custom Badge Colors */
+.badge-adrenaline {
+    background-color: #ef4444;
+    color: white;
+}
+
+.badge-heights {
+    background-color: #8b5cf6;
+    color: white;
+}
+
+.badge-water {
+    background-color: #3b82f6;
+    color: white;
+}
+
+.badge-winter {
+    background-color: #06b6d4;
+    color: white;
+}
+
+.badge-views {
+    background-color: #64748b;
+    color: white;
+}
+
+.badge-nature {
+    background-color: #22c55e;
+    color: white;
+}
+
+.badge-scenic {
+    background-color: #0ea5e9;
+    color: white;
+}
+
+.badge-wine {
+    background-color: #dc2626;
+    color: white;
+}
+
+.badge-food {
+    background-color: #f59e0b;
+    color: white;
+}
+
 .activity-card .title-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 10px;
     margin-bottom: 15px;
+}
+
+.activity-card .btn {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+.activity-card .btn:hover {
+    background-color: var(--accent-color-hover);
+    border-color: var(--accent-color-hover);
+    color: white;
 }
