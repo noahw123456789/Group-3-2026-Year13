@@ -122,9 +122,6 @@
 
 /* Hero banner trial */
 
-.hero-banner-section {
-    background-color: #e5e7eb;
-}
 
 .hero-banner {
     background-image: url('/images/potential-queenstown-hero-image.jpg');
@@ -133,11 +130,13 @@
     padding: 170px 80px;
 }
 
+
 .hero-overlay-box {
-    background-color: var(--font-color);
-    opacity: 0.9;
+    background-color: var(--font-color) !important;
+    opacity: 0.95;
     max-width: 650px;
     padding: 40px;
+    margin: 0 50px;
     box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.18);
 }
 
@@ -252,6 +251,7 @@
     .hero-overlay-box {
         max-height: 550px;
         padding: 16px;
+        min-width: 100px;
     }
 
     .hero-slogan {
@@ -265,6 +265,7 @@
 
     .hero-paragraph {
         font-size: 10pt;
+        overflow: scroll;
         max-height: 400px;
     }
 }
