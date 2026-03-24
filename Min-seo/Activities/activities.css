@@ -319,3 +319,30 @@ footer .link:hover {
     border-color: var(--accent-color-hover);
     color: white;
 }
+
+/* Discover Section */
+.discover {
+    background-color: var(--accent-color);
+    border: none;
+    border-radius: 15px;
+}
+
+.discover .card-title {
+    color: white;
+    font-weight: 700;
+}
+
+.discover .card-text {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.discover .btn {
+    background-color: var(--font-color);
+    color: var(--background-color);
+    border: none;
+}
+
+.discover .btn:hover {
+    background-color: var(--accent-color-hover);
+    color: white;
+}
