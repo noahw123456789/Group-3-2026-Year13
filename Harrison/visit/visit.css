@@ -41,6 +41,13 @@
       font-family: 'DM Sans', sans-serif;
       background-color: var(--page-bg);
       color: var(--text-primary);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    main{
+      flex: 1;
     }
 
     /* ============================================================
