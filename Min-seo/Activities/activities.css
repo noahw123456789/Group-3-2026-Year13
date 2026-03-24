@@ -232,6 +232,7 @@ footer .link:hover {
     height: 100%;
     display: flex;
     flex-direction: column;
+    
 }
 
 .activity-card .card-body {
