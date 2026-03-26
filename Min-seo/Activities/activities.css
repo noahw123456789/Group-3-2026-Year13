@@ -443,6 +443,21 @@ footer .link:hover {
 }
 
 /* Custom Badge Colors */
+.badge-history {
+    background-color: #441700;
+    color: white;
+}
+
+.badge-local {
+    background-color: #001659;
+    color: white;
+}
+
+.badge-free {
+    background-color: #478303;
+    color:white;
+}
+
 .badge-adrenaline {
     background-color: #ef4444;
     color: white;
