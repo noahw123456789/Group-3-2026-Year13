@@ -247,7 +247,7 @@
       background: white;
       border-radius: var(--radius-card);
       padding: 1.75rem;
-      max-width: 440px;
+      max-width: 600px;
       width: 100%;
       border: 1px solid var(--border);
       animation: modal-in 0.18s ease;
@@ -259,7 +259,7 @@
     }
 
     .modal-img {
-      height: 80px;
+      height: 200px;
       border-radius: 10px;
       display: flex;
       align-items: center;
@@ -269,15 +269,15 @@
     }
 
     .modal-title {
-      font-size: 1.1rem;
+      font-size: 1.4rem;
       font-weight: 600;
       margin: 0 0 0.5rem;
     }
 
     .modal-body-text {
-      font-size: 0.85rem;
+      font-size: 1.2rem;
       color: var(--text-secondary);
-      line-height: 1.65;
+      line-height: 1.4;
       margin: 0 0 1.25rem;
     }
 
