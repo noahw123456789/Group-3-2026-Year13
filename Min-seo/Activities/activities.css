@@ -116,6 +116,7 @@
     max-width: 650px;
     padding: 40px;
     box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
 }
 
 .hero-slogan {
