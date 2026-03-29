@@ -196,6 +196,7 @@
     }
 
     .hero-overlay-box {
+        margin-top: 50px;
         max-width: 520px;
         padding: 28px;
     }
@@ -216,10 +217,11 @@
 
 @media (max-width: 767px) {
     .hero-banner {
-        padding: 50px;
+        padding: 60px;
     }
 
     .hero-overlay-box {
+        margin-top: 50px;
         max-width: 420px;
         padding: 22px;
     }
