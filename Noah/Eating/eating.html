@@ -48,16 +48,51 @@
         </div>
     </nav>
 
-<main class="hero-banner-section">
-    <div class="hero-banner">
-        <div class="hero-overlay-box">
-            <p class="hero-slogan">Short slogan</p>
-            <h1 class="hero-title">Queenstown Tourism</h1>
-            <p class="hero-paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, distinctio non! Facere voluptatum exercitationem accusantium provident aliquid voluptate? Ipsa neque quidem odio cum repellendus rerum, nesciunt rem maiores libero voluptate recusandae illum quia exercitationem voluptatibus!</p>
-            <a href="#" class="hero-button">Explore Queenstown</a>
-        </div>
-    </div>
-</main>
+    <main>
+        <section class="hero-banner-section">
+            <div class="hero-banner">
+                <div class="hero-overlay-box">
+                    <p class="hero-slogan">Short slogan</p>
+                    <h1 class="hero-title">Queenstown Tourism</h1>
+                    <p class="hero-paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, distinctio non! Facere voluptatum exercitationem accusantium provident aliquid voluptate? Ipsa neque quidem odio cum repellendus rerum, nesciunt rem maiores libero voluptate recusandae illum quia exercitationem voluptatibus!</p>
+                    <a href="#" class="hero-button">Explore Queenstown</a>
+                </div>
+            </div>
+        </section>
+
+            <!-- Eating Cards... -->
+            <div class="text">
+                <h2>Places to visit page</h2>
+                <p>Below this text are a few highlights of Queenstown that majority of people say are must go places. A brief description of each place will be given however, further details will be given in the corresponding pages.</p>
+            </div>
+
+            <div class="d-flex flex-wrap gap-2 mb-4">
+                <button class="filter-btn active" data-cat="all">All</button>
+                <button class="filter-btn" data-cat="adventure">Adventure</button>
+                <button class="filter-btn" data-cat="nature">Nature</button>
+                <button class="filter-btn" data-cat="culture">Culture</button>
+                <button class="filter-btn" data-cat="food">Food & drink</button>
+            </div>
+            
+            <div class="row g-5" id="card-grid">
+
+                <div class="col-12 col-sm-6 col-md-4 card-col" data-cat="adventure">
+                    <div class="place-card">
+                        <div class="card-img-area" style="background:#FAECE7;"></div>
+                            <div class="card-body-inner">
+                                <span class="category-tag" style="background:#FAECE7; color:#993C1D;">Adventure</span>
+                                <p class="card-title">Nevis Bungy</p>
+                                <p class="card-desc">NZ's highest bungee jump at 134m above the Nevis River gorge.</p>
+                                <button class="learn-btn" onclick="openModal('Nevis Bungy','NZs highest bungee jump at 134m, located in the Nevis Valley — a 45-minute drive from Queenstown. Runs year-round. Suitable for ages 13+. Price from NZD $275. Booking essential', '#FAECE7')">Learn more</button>
+                            </div>
+                        </div>
+                </div>
+
+    </main>
+
+
+
+
 
     <footer class="text-muted bg_dark">
 
