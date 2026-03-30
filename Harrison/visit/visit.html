@@ -118,123 +118,109 @@
 
       g-3 = gap between cards. g-4 for more space, g-2 for less.
     ============================================================ -->
-    <div class="row g-5" id="card-grid">
+    
+    <div class="container mt-5 mb-5">
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-4 mb-5" data-cat="adventure">
+                <div class="card card-div">
+                    <img class="card-img-top" src="placeholder.png" alt="Image">
+                    <div class="card-body">
+                        <div class="title-row">
+                            <h5 class="card-title mb-0">Title</h5>
+                            <div class="d-flex gap-2">
+                                <span class="badge bg-primary">Badge 1</span>
+                            </div>
+                        </div>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <a href="#" target="_blank" class="btn btn-outline-primary w-100">View Details</a>
+                    </div>
+                </div>
+            </div>
 
-      <!-- ========================================================
-        CARD: Nevis Bungy
-        To edit a card:
-          data-cat       = filter category (must match a filter button)
-          card-img-area  = background colour + emoji icon
-          category-tag   = background/text colour + label
-          card-title     = place name
-          card-desc      = short description
-          openModal(...)  = title, body text, emoji, background colour
-        To use a real photo instead of the emoji block, replace the
-        .card-img-area div with:
-          <img src="images/nevis.jpg" alt="Nevis Bungy"
-               style="width:100%; height:130px; object-fit:cover;">
-      ======================================================== -->
-      <div class="col-12 col-sm-6 col-md-4 card-col" data-cat="adventure">
-        <div class="place-card">
-          <div class="card-img-area" style="background:#FAECE7;"></div>
-          <div class="card-body-inner">
-            <span class="category-tag" style="background:#FAECE7; color:#993C1D;">Adventure</span>
-            <p class="card-title">Nevis Bungy</p>
-            <p class="card-desc">NZ's highest bungee jump at 134m above the Nevis River gorge.</p>
-            <button class="learn-btn" onclick="openModal(
-              'Nevis Bungy',
-              'NZ\'s highest bungee jump at 134m, located in the Nevis Valley — a 45-minute drive from Queenstown. Runs year-round. Suitable for ages 13+. Price from NZD $275. Booking essential.',
-              '', '#FAECE7'
-            )">Learn more</button>
-          </div>
-        </div>
-      </div>
+            <div class="col-12 col-md-6 col-lg-4 mb-5" data-cat="culture">
+                <div class="card card-div">
+                    <img class="card-img-top" src="placeholder.png" alt="Image">
+                    <div class="card-body">
+                        <div class="title-row">
+                            <h5 class="card-title mb-0">Title</h5>
+                            <div class="d-flex gap-2">
+                                <span class="badge bg-primary">Badge 1</span>
+                                <span class="badge bg-secondary">Badge 2</span>
+                            </div>
+                        </div>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <a href="#" target="_blank" class="btn btn-outline-primary w-100">View Details</a>
+                    </div>
+                </div>
+            </div>
 
-      <!-- CARD: The Remarkables -->
-      <div class="col-12 col-sm-6 col-md-4 card-col" data-cat="nature">
-        <div class="place-card">
-          <div class="card-img-area" style="background:#E1F5EE;"></div>
-          <div class="card-body-inner">
-            <span class="category-tag" style="background:#E1F5EE; color:#0F6E56;">Nature</span>
-            <p class="card-title">The Remarkables</p>
-            <p class="card-desc">Iconic mountain range — skiing in winter, hiking and climbing in summer.</p>
-            <button class="learn-btn" onclick="openModal(
-              'The Remarkables',
-              'A dramatic mountain range 20km from Queenstown. In winter it operates as a ski field with 220 hectares of terrain. In summer, it offers walking tracks and rock climbing. Free to visit outside the ski season.',
-              '', '#E1F5EE'
-            )">Learn more</button>
-          </div>
-        </div>
-      </div>
+            <div class="col-12 col-md-6 col-lg-4 mb-5" data-cat="food">
+                <div class="card card-div">
+                    <img class="card-img-top" src="placeholder.png" alt="Image">
+                    <div class="card-body">
+                        <div class="title-row">
+                            <h5 class="card-title mb-0">Title</h5>
+                            <div class="d-flex gap-2">
+                                <span class="badge bg-primary">Badge 1</span>
+                                <span class="badge bg-secondary">Badge 2</span>
+                            </div>
+                        </div>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <a href="#" target="_blank" class="btn btn-outline-primary w-100">View Details</a>
+                    </div>
+                </div>
+            </div>
 
-      <!-- CARD: Lake Wakatipu -->
-      <div class="col-12 col-sm-6 col-md-4 card-col" data-cat="nature">
-        <div class="place-card">
-          <div class="card-img-area" style="background:#E6F1FB;"></div>
-          <div class="card-body-inner">
-            <span class="category-tag" style="background:#E6F1FB; color:#185FA5;">Nature</span>
-            <p class="card-title">Lake Wakatipu</p>
-            <p class="card-desc">Glacial lake with boat tours, paddleboarding and scenic lakeside walks.</p>
-            <button class="learn-btn" onclick="openModal(
-              'Lake Wakatipu',
-              'The third-largest lake in NZ, stretching 80km. The TSS Earnslaw steamship runs scenic cruises from Queenstown Bay. The Queenstown Trail follows the shoreline for cyclists and walkers. Access is free.',
-              '', '#E6F1FB'
-            )">Learn more</button>
-          </div>
-        </div>
-      </div>
+            <div class="col-12 col-md-6 col-lg-4 mb-5" data-cat="adventure">
+                <div class="card card-div">
+                    <img class="card-img-top" src="placeholder.png" alt="Image">
+                    <div class="card-body">
+                        <div class="title-row">
+                            <h5 class="card-title mb-0">Title</h5>
+                            <div class="d-flex gap-2">
+                                <span class="badge bg-primary">Badge 1</span>
+                                <span class="badge bg-secondary">Badge 2</span>
+                            </div>
+                        </div>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <a href="#" target="_blank" class="btn btn-outline-primary w-100">View Details</a>
+                    </div>
+                </div>
+            </div>
 
-      <!-- CARD: Queenstown Arts Centre -->
-      <div class="col-12 col-sm-6 col-md-4 card-col" data-cat="culture">
-        <div class="place-card">
-          <div class="card-img-area" style="background:#EEEDFE;"></div>
-          <div class="card-body-inner">
-            <span class="category-tag" style="background:#EEEDFE; color:#534AB7;">Culture</span>
-            <p class="card-title">Queenstown Arts Centre</p>
-            <p class="card-desc">Local galleries, rotating exhibitions and creative community workshops.</p>
-            <button class="learn-btn" onclick="openModal(
-              'Queenstown Arts Centre',
-              'Located in the town centre, this community arts hub features local and national artists. Regular evening events, life drawing classes, and a gallery shop. Entry is free for most exhibitions.',
-              '', '#EEEDFE'
-            )">Learn more</button>
-          </div>
-        </div>
-      </div>
+            <div class="col-12 col-md-6 col-lg-4 mb-5" data-cat="food">
+                <div class="card card-div">
+                    <img class="card-img-top" src="placeholder.png" alt="Image">
+                    <div class="card-body">
+                        <div class="title-row">
+                            <h5 class="card-title mb-0">Title</h5>
+                            <div class="d-flex gap-2">
+                                <span class="badge bg-primary">Badge 1</span>
+                                <span class="badge bg-secondary">Badge 2</span>
+                            </div>
+                        </div>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <a href="#" target="_blank" class="btn btn-outline-primary w-100">View Details</a>
+                    </div>
+                </div>
+            </div>
 
-      <!-- CARD: Gibbston Valley Winery -->
-      <div class="col-12 col-sm-6 col-md-4 card-col" data-cat="food">
-        <div class="place-card">
-          <div class="card-img-area" style="background:#FAEEDA;"></div>
-          <div class="card-body-inner">
-            <span class="category-tag" style="background:#FAEEDA; color:#854F0B;">Food & drink</span>
-            <p class="card-title">Gibbston Valley Winery</p>
-            <p class="card-desc">World-class Central Otago pinot noir — cellar door tastings and cave tours.</p>
-            <button class="learn-btn" onclick="openModal(
-              'Gibbston Valley Winery',
-              'Located in the Gibbston Valley, 35 minutes from Queenstown. Famous for its wine cave carved into schist rock. Tasting sessions from NZD $20. Restaurant on site. Open daily 10am–5pm.',
-              '', '#FAEEDA'
-            )">Learn more</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- CARD: Skyline Bike Park -->
-      <div class="col-12 col-sm-6 col-md-4 card-col" data-cat="adventure">
-        <div class="place-card">
-          <div class="card-img-area" style="background:#EAF3DE;"></div>
-          <div class="card-body-inner">
-            <span class="category-tag" style="background:#EAF3DE; color:#3B6D11;">Adventure</span>
-            <p class="card-title">Skyline Bike Park</p>
-            <p class="card-desc">Gondola-accessed downhill trails from beginner to expert on Bob's Peak.</p>
-            <button class="learn-btn" onclick="openModal(
-              'Skyline Bike Park',
-              'Accessible via the Skyline Gondola, this bike park has over 30km of trails across all skill levels. Gondola and bike hire packages available. Open daily in summer. Price from NZD $75.',
-              '', '#EAF3DE'
-            )">Learn more</button>
-          </div>
-        </div>
-      </div>
-
+            <div class="col-12 col-md-6 col-lg-4 mb-5" data-cat="nature">
+                <div class="card card-div">
+                    <img class="card-img-top" src="placeholder.png" alt="Image">
+                    <div class="card-body">
+                        <div class="title-row">
+                            <h5 class="card-title mb-0">Title</h5>
+                            <div class="d-flex gap-2">
+                                <span class="badge bg-primary">Nature</span>
+                                <span class="badge bg-secondary">Badge 2</span>
+                            </div>
+                        </div>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <a href="#" target="_blank" class="btn btn-outline-primary w-100">View Details</a>
+                    </div>
+                </div>
+            </div>
       <!-- Empty state — shown automatically when no cards match the filter -->
       <div id="empty-state">
         <p>No places found in this category yet — check back soon.</p>
@@ -357,38 +343,6 @@
         emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
       });
     });
-
-
-    /* ----------------------------------------------------------
-      2. openModal(title, body, icon, bgColour)
-      Called by each card's "Learn more" button.
-      Fills in the modal content and opens it.
-
-      Parameters:
-        title    — the place name (string)
-        body     — the detail text (string)
-        icon     — an emoji for the image area (string)
-        bgColour — hex colour for the modal image background (string)
-    ---------------------------------------------------------- */
-    function openModal(title, body, icon, bgColour) {
-      document.getElementById('modal-title').textContent = title;
-      document.getElementById('modal-body').textContent  = body;
-      document.getElementById('modal-img').textContent   = icon || '📍';
-      document.getElementById('modal-img').style.background = bgColour || '#f0f0f0';
-      document.getElementById('modal').classList.add('open');
-    }
-
-
-    /* ----------------------------------------------------------
-      3. handleOverlayClick(event)
-      Closes the modal only when the dark backdrop is clicked,
-      not when the white box itself is clicked.
-    ---------------------------------------------------------- */
-    function handleOverlayClick(event) {
-      if (event.target === document.getElementById('modal')) {
-        document.getElementById('modal').classList.remove('open');
-      }
-    }
 
   </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
