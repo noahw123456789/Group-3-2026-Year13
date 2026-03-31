@@ -44,7 +44,6 @@
                     </li>
                 </ul>
             </div>
-
         </div>
     </nav>
 
@@ -60,92 +59,74 @@
             </div>
         </section>
 
-            <!-- Eating Cards... -->
-            <div class="text">
+        <section class="container mt-5 mb-5">
+            <div class="text mb-4">
                 <h2>Places to visit page</h2>
                 <p>Below this text are a few highlights of Queenstown that majority of people say are must go places. A brief description of each place will be given however, further details will be given in the corresponding pages.</p>
             </div>
 
-            <div class="d-flex flex-wrap gap-2 mb-4">
+            <div class="d-flex flex-wrap gap-2 mb-4 justify-content-center">
                 <button class="filter-btn active" data-cat="all">All</button>
                 <button class="filter-btn" data-cat="adventure">Adventure</button>
                 <button class="filter-btn" data-cat="nature">Nature</button>
                 <button class="filter-btn" data-cat="culture">Culture</button>
                 <button class="filter-btn" data-cat="food">Food & drink</button>
             </div>
-            
-    <div class="container mt-5 mb-5">
-        <div class="header mb-4">Header</div>
-            <div class="row">
-                <div class="col-12 col-md-6 col-lg-4 mb-5">
+
+            <div class="header mb-4 text-center">Featured Places</div>
+
+            <div class="row" id="card-container">
+                <div class="col-12 col-md-6 col-lg-4 mb-5 card-col" data-cat="adventure">
                     <div class="card card-div">
                         <img class="card-img-top" src="placeholder.png" alt="Image">
                         <div class="card-body">
                             <div class="title-row">
-                                <h5 class="card-title mb-0">Title</h5>
+                                <h5 class="card-title mb-0">Lorem Place</h5>
                                 <div class="d-flex gap-2">
                                     <span class="badge bg-primary">Badge 1</span>
                                     <span class="badge bg-secondary">Badge 2</span>
                                 </div>
                             </div>
                             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            <a href="#" target="_blank" class="btn btn-outline-primary w-100">View Details</a>
+
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal">
+                            Launch demo modal
+                            </button>
+
+                            <div class="modal fade" id="modal" tabindex="-1" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-body">
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                                            <img id="modal-img" class="modal-image" src="/images/potential-queenstown-hero-image.jpg" alt="Modal image">
+                                            <h3 class="modal-title" id="modal-title">Title</h3>
+                                            <p class="modal-body-text" id="modal-body">Description goes here.</p>
+                                            <button type="button" class="modal-close" data-bs-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>       
+                            </div>     
                         </div>
                     </div>
                 </div>
-
-                <div class="col-12 col-md-6 col-lg-4 mb-5">
-                    <div class="card card-div">
-                        <img class="card-img-top" src="placeholder.png" alt="Image">
-                        <div class="card-body">
-                            <div class="title-row">
-                                <h5 class="card-title mb-0">Title</h5>
-                                <div class="d-flex gap-2">
-                                    <span class="badge bg-primary">Badge 1</span>
-                                    <span class="badge bg-secondary">Badge 2</span>
-                                </div>
-                            </div>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            <a href="#" target="_blank" class="btn btn-outline-primary w-100">View Details</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-md-6 col-lg-4 mb-5">
-                    <div class="card card-div">
-                        <img class="card-img-top" src="placeholder.png" alt="Image">
-                        <div class="card-body">
-                            <div class="title-row">
-                                <h5 class="card-title mb-0">Title</h5>
-                                <div class="d-flex gap-2">
-                                    <span class="badge bg-primary">Badge 1</span>
-                                    <span class="badge bg-secondary">Badge 2</span>
-                                </div>
-                            </div>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            <a href="#" target="_blank" class="btn btn-outline-primary w-100">View Details</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>        
-
+            </div>         
+        </section>
     </main>
 
-
-
-
+    <div class="modal-overlay" id="modal">
+        <div class="modal-box">
+            <img id="modal-img" class="modal-image" src="placeholder.png" alt="Modal image">
+            <h3 class="modal-title" id="modal-title">Title</h3>
+            <p class="modal-body-text" id="modal-body">Description goes here.</p>
+            <button class="modal-close" id="modal-close-btn">Close</button>
+        </div>
+    </div>
 
     <footer class="text-muted bg_dark">
-
-        <!-- Section: Links  -->
         <section>
             <div class="container text-white pt-5">
-                <!-- Grid row -->
                 <div class="row">
-                    <!-- Logo and Social Media:  -->
-
                     <div class="col-12 col-xl-3 footer_border pb-5">
                         <div class="logo_social">
                             <a href="#" class="navbar-brand">Discover Queenstown</a>
@@ -157,17 +138,13 @@
                             </div>
                         </div>
                     </div>
-                
-                    <!-- Grid column 1-->
+
                     <div class="col-12 col-xl-3 mb-4 footer_border p-3">
-                        <!-- Content -->
                         <h6 class="text-uppercase fw-bold mb-4"><i class=""></i>More about our Website</h6>
                         <p>Explore the best of Queenstown with our tourism platform—your guide to unforgettable adventures, stunning landscapes, and local experiences in one of New Zealand's most iconic destinations.</p>
                     </div>
 
-                    <!-- Grid column 2 -->
                     <div class="col-12 col-xl-3 mb-4 footer_border p-3">
-                    <!-- Links -->
                         <h6 class="text-uppercase fw-bold mb-4">Useful links</h6>
                         <p><a href="#!" class="link">Activities</a></p>
                         <p><a href="#!" class="link">Places to visit</a></p>
@@ -175,9 +152,7 @@
                         <p><a href="#!" class="link">Places to eat</a></p>
                     </div>
 
-                    <!-- Grid column 3 -->
                     <div class="col-12 col-xl-3 mb-4 footer_border p-3">
-                        <!-- Links -->
                         <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
                         <p>Discover Queenstown</p>
                         <p>discoverqueenstown@example.com</p>
@@ -187,10 +162,39 @@
             </div>
         </section>
 
-        <!-- Copyright -->
-        <div class="text-center p-4 text-white " style="background-color: #125fa9">© 2026 Copyright: Discover Queenstown </div>
+        <div class="text-center p-4 text-white" style="background-color: #125fa9">© 2026 Copyright: Discover Queenstown</div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+    <script>
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const cardCols = document.querySelectorAll('.card-col');
+        const emptyState = document.getElementById('empty-state');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const selectedCat = btn.dataset.cat;
+                let visibleCount = 0;
+
+                cardCols.forEach(col => {
+                    const matches = selectedCat === 'all' || col.dataset.cat === selectedCat;
+                    col.classList.toggle('hidden', !matches);
+
+                    if (matches) {
+                        visibleCount++;
+                    }
+                });
+
+                emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
+            });
+        });
+
+    </script>
+
+    
 </body>
 </html>
