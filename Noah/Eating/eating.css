@@ -1,16 +1,12 @@
 :root {
     --font-color: #f8fafc;
     --background-color: #0f172b;
-    --subtext-color: #94a3b8;
+    --subtext-color: #4c595e;
     --accent-color: #125fa9;
     --accent-color-hover: #005396;
-    --light-blue: #60a5fa;
     --text-primary: #1a1a1a;
-    --text-secondary: #5a6370;
     --border: rgba(0, 0, 0, 0.1);
     --page-bg: #f7f8f6;
-    --radius-card: 15px;
-    --radius-tag: 999px;
 }
 
 body {
@@ -291,6 +287,10 @@ main {
     }
 }
 
+
+
+
+
 /* =========================
    Intro Text
 ========================= */
@@ -327,7 +327,7 @@ main {
     font-weight: 500;
     padding: 6px 18px;
     border-radius: var(--radius-tag);
-    border: 1px solid var(--border);
+    border: 1px solid rgba(0, 0, 0, 0.2);
     background: white;
     color: var(--text-secondary);
     cursor: pointer;
@@ -470,12 +470,12 @@ main {
     font-size: 22px;
     font-weight: 600;
     margin: 0 0 10px;
-    color: var(--accent-color);
+    color: var(--bg-color);
 }
 
 .modal-body-text {
     font-size: 14px;
-    color: var(--text-secondary);
+    color: var(--background-color);
     line-height: 1.65;
     margin: 0 0 20px;
 }
@@ -499,3 +499,143 @@ main {
 
 /* =========================
    Footer
+   ========================= */
+
+   
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+footer .row > div {
+    display: flex;
+    flex-direction: column;
+}
+
+/* For all sizes before desktop or XL */
+@media (max-width: 1199px) {
+    .footer_border {
+        border-bottom: 2px solid #4c595e;
+        padding-bottom: 5px;
+        margin-bottom: 5px;
+    }
+
+    .footer_border:last-child {
+        border-bottom: None;
+    }
+
+}
+
+/* This one will be for desktop (after XL)  */
+
+@media (min-width: 1200px) {
+    .footer_border {
+        border-bottom: none;
+    }
+
+    .footer_border:last-child {
+        border-right: none;
+    }
+
+    .logo_social {
+        margin-top: 40px;
+    }
+}
+
+
+footer .logo_social {
+    display: block;
+    align-items: center;
+    text-align: center;
+    width: 100;
+    /* border: 2px solid white; */
+    justify-content: center;
+}
+
+footer .social {
+    display: flex;
+    margin: 0 auto;
+    width: fit-content;
+    /* border: 2px solid white; */
+    gap: 6px;
+}
+
+.bg_dark{
+    background-color: var(--background-color);
+}
+
+.fa-instagram {
+    background: #125688;
+    color: var(--font-color);
+}
+
+.fa-google {
+    background: #dd4b39;
+    color: var(--font-color);
+}
+
+.fa-youtube {
+    background: #bb0000;
+    color: var(--font-color);
+}
+
+.fa-facebook {
+    background: #3B5998;
+    color: var(--font-color);
+}
+
+.fa {
+    padding: 9px;
+    font-size: 16px;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+footer .link {
+    text-decoration: none;
+    color: var(--font-color)
+}
+
+footer .link:hover {
+    text-decoration: underline;
+}
+
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: var(--accent-color);
+    color: white;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s;
+}
+
+#myBtn:hover {
+    background-color: var(--accent-color-hover);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    transform: translateY(-2px); 
+    /* Adding a nice sort of levitating effect. Real cool. */
+}
+
+#myBtn i {
+    pointer-events: none;
+}
