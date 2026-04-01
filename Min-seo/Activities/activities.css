@@ -104,7 +104,7 @@
 }
 
 .hero-banner {
-    background-image: url('/images/potential-queenstown-hero-image.jpg');
+    background-image: url('./activities_media/activities_hero.jpg');
     background-size: cover;
     background-position: center;
     padding: 170px 80px;
