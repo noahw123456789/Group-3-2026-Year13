@@ -1,81 +1,81 @@
-.activity-card img {
-    height: 200px;
+:root {
+    --font-color: #f8fafc;
+    --background-color: #0f172b;
+    --subtext-color: #94a3b8;
+    --accent-color: #125FA9;
+    --accent-color-hover: #005396;
+    --light-blue: #60a5fa;
+}
+
+.card-div img {
+    height: 250px;
     object-fit: cover;
 }
 
-/* Trial Design 1: */
-
-.trial_1 .activity-card {
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-}
-
-.trial_1 .activity-card .card-body {
+.card-div .card-body {
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
-/* .card-body {
-    border: 2px solid black;
-} */
+.card-div .card-text {
+    flex: 1;
+}
 
-.trial_1 .activity-card .card-title {
-    color: #60a5fa;
+.card-div .card-title {
+    color: var(--accent-color);
     font-weight: 600;
 }
 
-.trial_1 .badge {
+.card-div .title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.card-div .btn {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+.card-div .btn:hover {
+    background-color: var(--accent-color-hover);
+    border-color: var(--accent-color-hover);
+    color: white;
+}
+
+.badge {
     font-size: 10px;
     padding: 5px 10px;
 }
 
-
-/* Trial Design 2: */
-
-.trial_2 .activity-card {
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
+.carousel-inner {
+    padding: 1em;
 }
 
-.trial_2 .title-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 15px;
+@media screen and (min-width: 601px){
+    .cards-wrapper {
+        display: flex;
+    }
+
+    .card-div {
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+        height: 100%;
+        width: calc(100%/3);
+        display: flex;
+        flex-direction: column;
+        margin: 0 .5em;
+    }
 }
 
-
-/* Trial Design 3 */
-
-.trial_3 .image-wrapper {
-    position: relative;
-    height: 200px;
-}
-
-.trial_3 img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.trial_3 .badges-overlay {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    display: flex;
-    gap: 5px;
-}
-
-/* Final Design */
-
-.final-design .title-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 15px;
+@media screen and (max-width: 600px) {
+    .card:not(:first-child){
+        display: none;  
+    }
 }

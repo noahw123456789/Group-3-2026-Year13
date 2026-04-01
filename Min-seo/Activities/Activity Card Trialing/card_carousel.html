@@ -3,85 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Card Design 1</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Card Carousel Testing</title>
     <link rel="stylesheet" href="card_carousel.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container mt-5 mb-5">
-            <div class="row">
-                
-                <div class="col-12 col-md-6 col-lg-3 mb-4">
-                    <div class="trial_1 card activity-card">
-                        <img class="card-img-top" src="placeholder.png" alt="Image">
-                        <div class="card-body">
-                            <h5 class="card-title">Activity 1</h5>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            <span class="badge bg-primary">Badge 1</span>
-                            <span class="badge bg-secondary">Badge 2</span>
-                        </div>
-                    </div>
-                </div> 
-                
-                <div class="col-12 col-md-6 col-lg-3 mb-4">
-                    <div class="trial_2 card activity-card">
+    <div id="carouselExampleControls" class="carousel slide carousel-dark" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="cards-wrapper">
+                    <div class="card card-div">
                         <img class="card-img-top" src="placeholder.png" alt="Image">
                         <div class="card-body">
                             <div class="title-row">
-                                <h5 class="card-title">Activity 2</h5>
+                                <h5 class="card-title mb-0">Title</h5>
                                 <div class="d-flex gap-2">
                                     <span class="badge bg-primary">Badge 1</span>
                                     <span class="badge bg-secondary">Badge 2</span>
                                 </div>
                             </div>
                             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            <a href="#" class="btn btn-primary w-100">View Details</a>
+                            <a href="#" target="_blank" class="btn btn-outline-primary w-100">View Details</a>
                         </div>
                     </div>
-                </div> 
-
-                <div class="col-12 col-md-6 col-lg-3 mb-4">
-                    <div class="trial_3 card activity-card">
-                        <div class="image-wrapper">
-                            <img src="placeholder.png" alt="Image">
-                            <div class="badges-overlay">
-                                <span class="badge bg-primary">Badge 1</span>
-                                <span class="badge bg-secondary">Badge 2</span>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Activity 3</h5>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            <a href="#" class="btn btn-outline-primary">Learn More &rarr;</a>
-                        </div>
-                    </div>
-                </div>
-
-
-                <h1>Final Card Design</h1>
-
-                <div class="col-12 col-md-6 col-lg-3 mb-4">
-                    <div class="final-design card activity-card">
+                    
+                    <div class="card card-div">
                         <img class="card-img-top" src="placeholder.png" alt="Image">
                         <div class="card-body">
                             <div class="title-row">
-                                <h5 class="card-title mb-0">Final Design</h5>
+                                <h5 class="card-title mb-0">Title</h5>
                                 <div class="d-flex gap-2">
                                     <span class="badge bg-primary">Badge 1</span>
                                     <span class="badge bg-secondary">Badge 2</span>
                                 </div>
                             </div>
                             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            <a href="#" class="btn btn-outline-primary w-100">View Details</a>
+                            <a href="#" target="_blank" class="btn btn-outline-primary w-100">View Details</a>
+                        </div>
+                    </div>
+            
+                    <div class="card card-div">
+                        <img class="card-img-top" src="placeholder.png" alt="Image">
+                        <div class="card-body">
+                            <div class="title-row">
+                                <h5 class="card-title mb-0">Title</h5>
+                                <div class="d-flex gap-2">
+                                    <span class="badge bg-primary">Badge 1</span>
+                                    <span class="badge bg-secondary">Badge 2</span>
+                                </div>
+                            </div>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <a href="#" target="_blank" class="btn btn-outline-primary w-100">View Details</a>
                         </div>
                     </div>
                 </div>
+            </div>
 
+            <div class="carousel-item">
+                <div class="cards-wrapper">
+                    <div class="card card-div">
+                        <img class="card-img-top" src="placeholder.png" alt="Image">
+                        <div class="card-body">
+                            <div class="title-row">
+                                <h5 class="card-title mb-0">Title</h5>
+                                <div class="d-flex gap-2">
+                                    <span class="badge bg-primary">Badge 1</span>
+                                    <span class="badge bg-secondary">Badge 2</span>
+                                </div>
+                            </div>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <a href="#" target="_blank" class="btn btn-outline-primary w-100">View Details</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card card-div">
+                        <img class="card-img-top" src="placeholder.png" alt="Image">
+                        <div class="card-body">
+                            <div class="title-row">
+                                <h5 class="card-title mb-0">Title</h5>
+                                <div class="d-flex gap-2">
+                                    <span class="badge bg-primary">Badge 1</span>
+                                    <span class="badge bg-secondary">Badge 2</span>
+                                </div>
+                            </div>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <a href="#" target="_blank" class="btn btn-outline-primary w-100">View Details</a>
+                        </div>
+                    </div>
+            
+                    <div class="card card-div">
+                        <img class="card-img-top" src="placeholder.png" alt="Image">
+                        <div class="card-body">
+                            <div class="title-row">
+                                <h5 class="card-title mb-0">Title</h5>
+                                <div class="d-flex gap-2">
+                                    <span class="badge bg-primary">Badge 1</span>
+                                    <span class="badge bg-secondary">Badge 2</span>
+                                </div>
+                            </div>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <a href="#" target="_blank" class="btn btn-outline-primary w-100">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+            <div class="carousel-item">
+                <div class="cards-wrapper">
+                    <div class="card card-div">
+                        <img class="card-img-top" src="placeholder.png" alt="Image">
+                        <div class="card-body">
+                            <div class="title-row">
+                                <h5 class="card-title mb-0">Title</h5>
+                                <div class="d-flex gap-2">
+                                    <span class="badge bg-primary">Badge 1</span>
+                                    <span class="badge bg-secondary">Badge 2</span>
+                                </div>
+                            </div>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <a href="#" target="_blank" class="btn btn-outline-primary w-100">View Details</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card card-div">
+                        <img class="card-img-top" src="placeholder.png" alt="Image">
+                        <div class="card-body">
+                            <div class="title-row">
+                                <h5 class="card-title mb-0">Title</h5>
+                                <div class="d-flex gap-2">
+                                    <span class="badge bg-primary">Badge 1</span>
+                                    <span class="badge bg-secondary">Badge 2</span>
+                                </div>
+                            </div>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <a href="#" target="_blank" class="btn btn-outline-primary w-100">View Details</a>
+                        </div>
+                    </div>
+            
+                    <div class="card card-div">
+                        <img class="card-img-top" src="placeholder.png" alt="Image">
+                        <div class="card-body">
+                            <div class="title-row">
+                                <h5 class="card-title mb-0">Title</h5>
+                                <div class="d-flex gap-2">
+                                    <span class="badge bg-primary">Badge 1</span>
+                                    <span class="badge bg-secondary">Badge 2</span>
+                                </div>
+                            </div>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <a href="#" target="_blank" class="btn btn-outline-primary w-100">View Details</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
+
 
