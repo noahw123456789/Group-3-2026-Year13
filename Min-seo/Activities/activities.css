@@ -477,6 +477,61 @@ footer .link:hover {
     object-fit: cover;
 }
 
+/* Activity Card Image Carousel */
+.activity-card .carousel {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    overflow: hidden;
+}
+
+.activity-card .carousel-item img {
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+.activity-card .carousel-indicators {
+    bottom: -10px;
+}
+
+.activity-card .carousel-indicators button {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin: 0 3px;
+}
+
+.activity-card .carousel-control-prev,
+.activity-card .carousel-control-next {
+    width: 32px;
+    height: 32px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.3;
+    transition: opacity 0.3s ease;
+}
+
+.activity-card .carousel-control-prev:hover,
+.activity-card .carousel-control-next:hover {
+    opacity: 1;
+}
+
+.activity-card .carousel-control-prev {
+    left: 10px;
+}
+
+.activity-card .carousel-control-next {
+    right: 10px;
+}
+
+.activity-card .carousel-control-prev-icon,
+.activity-card .carousel-control-next-icon {
+    width: 20px;
+    height: 20px;
+}
+
 .activity-card {
     border: none;
     border-radius: 15px;
