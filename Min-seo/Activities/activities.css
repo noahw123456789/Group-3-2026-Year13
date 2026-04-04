@@ -478,56 +478,57 @@ footer .link:hover {
 }
 
 /* Activity Card Image Carousel */
-.activity-card .carousel {
+.carousel.activity-card-carousel {
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     overflow: hidden;
 }
 
-.activity-card .carousel-item img {
+.carousel.activity-card-carousel .carousel-item img {
     height: 250px;
     object-fit: cover;
     display: block;
 }
 
-.activity-card .carousel-indicators {
+.carousel.activity-card-carousel .carousel-indicators {
     bottom: -10px;
 }
 
-.activity-card .carousel-indicators button {
+.carousel.activity-card-carousel .carousel-indicators button {
     width: 8px;
     height: 8px;
     border-radius: 50%;
     margin: 0 3px;
 }
 
-.activity-card .carousel-control-prev,
-.activity-card .carousel-control-next {
+/* Activity Card Carousel Arrows */
+.carousel.activity-card-carousel .carousel-control-prev,
+.carousel.activity-card-carousel .carousel-control-next {
     width: 32px;
     height: 32px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.656);
     border-radius: 50%;
     top: 50%;
     transform: translateY(-50%);
-    opacity: 0.3;
+    opacity: 0.7;
     transition: opacity 0.3s ease;
 }
 
-.activity-card .carousel-control-prev:hover,
-.activity-card .carousel-control-next:hover {
+.carousel.activity-card-carousel .carousel-control-prev:hover,
+.carousel.activity-card-carousel .carousel-control-next:hover {
     opacity: 1;
 }
 
-.activity-card .carousel-control-prev {
+.carousel.activity-card-carousel .carousel-control-prev {
     left: 10px;
 }
 
-.activity-card .carousel-control-next {
+.carousel.activity-card-carousel .carousel-control-next {
     right: 10px;
 }
 
-.activity-card .carousel-control-prev-icon,
-.activity-card .carousel-control-next-icon {
+.carousel.activity-card-carousel .carousel-control-prev-icon,
+.carousel.activity-card-carousel .carousel-control-next-icon {
     width: 20px;
     height: 20px;
 }
