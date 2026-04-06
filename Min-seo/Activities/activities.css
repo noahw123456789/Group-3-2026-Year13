@@ -162,7 +162,7 @@
     display: block;
     width: fit-content;
     margin: 24px 0 0 auto;
-    padding: 18px 33px;
+    padding: 15px 25px;
     font-size: 16pt;
     font-weight: 300;
     text-decoration: none;
@@ -244,7 +244,7 @@
 
     .hero-banner-button {
         margin-top: 24px;
-        padding: 10px 20px;
+        padding: 10px;
     }
 
     .hero-slogan {
@@ -263,7 +263,7 @@
 
 @media (max-width: 576px) {
     .hero-banner {
-        padding: 30px;
+        padding: 50px;
     }
 
     .hero-overlay-box {
@@ -286,10 +286,9 @@
     }
 
     .hero-button {
-        padding: 20px;
-        font-size: 12pt;
+        padding: 10px;
+        font-size: 10pt;
         justify-self: center;
-        margin-left: 0;
     }
 }
 

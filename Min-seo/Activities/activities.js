@@ -95,3 +95,10 @@ function updateSlides() {
 
 updateSlides();
 window.addEventListener('resize', updateSlides);
+
+ // Basically enables what data-bs-ride = "carousel" already does, but activates them all at once without enabling the automatic sliding we usually cannot remove.
+document.querySelectorAll('.carousel').forEach(function(carousel) {
+    new bootstrap.Carousel(carousel, {
+    interval: false
+    });
+});
