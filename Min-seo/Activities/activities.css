@@ -752,6 +752,12 @@ footer .row > div {
     }
 }
 
+.footer-brand {
+    color: var(--font-color);
+    font-size:  20px;
+    font-weight: 500;
+    text-decoration: none;
+}
 
 footer .logo_social {
     display: block;
