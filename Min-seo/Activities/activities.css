@@ -164,7 +164,7 @@
     margin: 24px 0 0 auto;
     padding: 15px 25px;
     font-size: 16pt;
-    font-weight: 300;
+    font-weight: 400;
     text-decoration: none;
     color: var(--accent-color) !important;
     border: 2px solid var(--accent-color);
@@ -259,6 +259,12 @@
         font-size: 10pt;
     }
 
+    .hero-button {
+        padding: 16px;
+        font-size: 12pt;
+        justify-self: center;
+    }
+
 }
 
 @media (max-width: 576px) {
@@ -289,6 +295,7 @@
         padding: 10px;
         font-size: 10pt;
         justify-self: center;
+        margin-left: 0px;
     }
 }
 
