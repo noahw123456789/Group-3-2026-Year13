@@ -17,15 +17,18 @@
     z-index: 1000;
     transition: transform 0.3s ease-in-out;
     background-color: var(--background-color);
+    padding: 0;
 }
-
-/* Header */
 
 .navbar-brand {
     color: var(--font-color);
     font-size:  20px;
-    margin-left: 10px;
+    padding-left: 80px;
     font-weight: 500;
+}
+
+.navbar-nav {
+    padding-right: 80px;
 }
 
 .navbar-nav .nav-link:hover {
@@ -139,6 +142,12 @@ footer .row > div {
     }
 }
 
+.footer-brand {
+    color: var(--font-color);
+    font-size:  20px;
+    font-weight: 500;
+    text-decoration: none;
+}
 
 footer .logo_social {
     display: block;
