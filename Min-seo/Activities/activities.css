@@ -339,11 +339,6 @@
     border-radius: 10px;
 }
 
-.activity-card img {
-    height: 250px;
-    object-fit: cover;
-}
-
 .carousel.activity-card-carousel {
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
@@ -351,13 +346,13 @@
 }
 
 .carousel.activity-card-carousel .carousel-item img {
-    height: 250px;
+    height: 270px;
     object-fit: cover;
     display: block;
 }
 
 .carousel.activity-card-carousel .carousel-indicators {
-    bottom: -10px;
+    bottom: 10px;
 }
 
 .carousel.activity-card-carousel .carousel-indicators button {
@@ -396,6 +391,42 @@
 .carousel.activity-card-carousel .carousel-control-next-icon {
     width: 20px;
     height: 20px;
+}
+
+.activity-card-carousel .carousel-item {
+    position: relative;
+}
+
+.activity-card-carousel .attribution-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    padding: 6px 12px;
+    background-color: rgba(15, 23, 43, 0.6);
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 1.4;
+    text-align: left;
+}
+
+.activity-card-carousel .attribution-text {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 10px;
+    line-height: 1.4;
+}
+
+.activity-card-carousel .attribution-text a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.activity-card-carousel .attribution-text a:hover {
+    color: white;
+    text-decoration: underline;
 }
 
 .activity-card {
@@ -618,7 +649,7 @@
 
 .card-div .card-text {
     flex: 1;
-    color: var(--subtext-color);
+    color: var(--background-color);
     margin-bottom: 1rem;
 }
 
@@ -685,7 +716,7 @@
     .swipe-hint {
         display: block;
         text-align: center;
-        color: var(--subtext-color);
+        color: var(--background-color);
         font-size: 0.875rem;
         margin-top: 15px;
         margin-bottom: 0;
