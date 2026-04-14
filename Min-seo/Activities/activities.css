@@ -1,7 +1,7 @@
 :root {
     --font-color: #f8fafc;
     --background-color: #0f172b;
-    --subtext-color: #94a3b8;
+    --subtext-color: #ebebeb;
     --accent-color: #125FA9;
     --accent-color-hover: #005396;
     --light-blue: #60a5fa;
@@ -39,7 +39,7 @@
 
 .nav-item .nav-link {
     color: var(--subtext-color);
-    font-size: 15px;
+    font-size: 16px;
     cursor: pointer;
     margin: 0 10px;
     border-bottom: 2px solid transparent;
@@ -47,6 +47,7 @@
 
 .navbar-nav .nav-link.active {
     font-weight: 600;
+    border-bottom: 2px solid var(--light-blue);
 }
 
 .navbar-toggler {
