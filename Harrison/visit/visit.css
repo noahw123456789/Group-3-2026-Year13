@@ -181,194 +181,243 @@
         This is all the template stuff
       ================================*/
     .navbar {
-        background-color: var(--background-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+    background-color: var(--background-color);
+    padding: 0;
+}
+
+.navbar-brand {
+    color: var(--font-color);
+    font-size:  20px;
+    padding-left: 80px;
+    font-weight: 500;
+}
+
+.navbar-nav {
+    padding-right: 80px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--font-color);
+    border-bottom: 2px solid var(--light-blue);
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+.nav-item .nav-link {
+    color: var(--subtext-color);
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 10px;
+    border-bottom: 2px solid transparent;
+}
+
+.navbar-nav .nav-link.active {
+    font-weight: 600;
+    border-bottom: 2px solid var(--light-blue);
+}
+
+.navbar-toggler {
+    border: none;
+    outline: none;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+/* Mobile + Tablets (XS + SM + MD) */
+@media (max-width: 991px) {
+    .nav-item {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    /* Header */
+    .nav-item:last-child {
+        border-bottom: none;
+    }
 
-    .navbar-brand {
+    .nav-link {
+        padding: 12px 15px;
+        flex: 1;
+    }
+
+    .nav-arrow {
         color: var(--font-color);
-        font-size:  25px;
-        margin-left: 10px;
-        font-weight: 500;
+        padding-right: 15px;
+    }
+}
+
+/* Desktop (LG) */
+@media (min-width: 992px) {
+    .navbar {
+        padding: 25px 0;
     }
 
-    .navbar-nav .nav-link:hover {
-        color: var(--font-color);
-        border-bottom: 2px solid var(--light-blue);
-        transition: color 0.3s, border-bottom 0.3s;
+    .nav-item {
+        border-bottom: none;
+        display: flex;
+        align-items: center;
     }
 
-    .nav-item .nav-link {
-        color: var(--subtext-color);
-        font-size: 12pt;
-        cursor: pointer;
-        margin: 0 10px;
-        border-bottom: 2px solid transparent;
+    .nav-link {
+        padding: 8px 15px;
     }
 
-    .navbar-nav .nav-link.active {
-        font-weight: 600;
+    .nav-arrow {
+        display: none;
     }
-
-    .navbar-toggler {
-        border: none;
-        outline: none;
-    }
-
-    .navbar-toggler:focus {
-        box-shadow: none;
-    }
-
-    /* Mobile + Tablets (XS + SM + MD) */
-    @media (max-width: 991px) {
-        .nav-item {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .nav-item:last-child {
-            border-bottom: none;
-        }
-
-        .nav-link {
-            padding: 12px 15px;
-            flex: 1;
-        }
-
-        .nav-arrow {
-            color: var(--font-color);
-            padding-right: 15px;
-        }
-    }
-
-    /* Desktop (LG) */
-    @media (min-width: 992px) {
-        .navbar {
-            padding: 25px 0;
-        }
-
-        .nav-item {
-            border-bottom: none;
-            display: flex;
-            align-items: center;
-        }
-
-        .nav-link {
-            padding: 8px 15px;
-        }
-
-        .nav-arrow {
-            display: none;
-        }
-    }
+}
 
     /* Footer */
 
     .row {
-        display: flex;
-        flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+footer .row > div {
+    display: flex;
+    flex-direction: column;
+}
+
+/* For all sizes before desktop or XL */
+@media (max-width: 1199px) {
+    .footer_border {
+        border-bottom: 2px solid #4c595e;
+        padding-bottom: 5px;
+        margin-bottom: 5px;
     }
 
-    footer .row > div {
-        display: flex;
-        flex-direction: column;
+    .footer_border:last-child {
+        border-bottom: None;
     }
 
-    /* For all sizes before desktop or XL */
-    @media (max-width: 1199px) {
-        .footer_border {
-            border-bottom: 2px solid #4c595e;
-            padding-bottom: 5px;
-            margin-bottom: 5px;
-        }
+}
 
-        .footer_border:last-child {
-            border-bottom: None;
-        }
+/* This one will be for desktop (after XL)  */
 
+@media (min-width: 1200px) {
+    .footer_border {
+        border-bottom: none;
     }
 
-    /* This one will be for desktop (after XL)  */
-
-    @media (min-width: 1200px) {
-        .footer_border {
-            border-bottom: none;
-        }
-
-        .footer_border:last-child {
-            border-right: none;
-        }
-
-        .logo_social {
-            margin-top: 40px;
-        }
+    .footer_border:last-child {
+        border-right: none;
     }
 
-
-    footer .logo_social {
-        display: block;
-        align-items: center;
-        text-align: center;
-        width: 100;
-        /* border: 2px solid white; */
-        justify-content: center;
+    .logo_social {
+        margin-top: 40px;
     }
+}
 
-    footer .social {
-        display: flex;
-        margin: 0 auto;
-        width: fit-content;
-        /* border: 2px solid white; */
-        gap: 6px;
-    }
+.footer-brand {
+    color: var(--font-color);
+    font-size:  20px;
+    font-weight: 500;
+    text-decoration: none;
+}
 
-    .bg_dark{
-        background-color: var(--background-color);
-    }
+footer .logo_social {
+    display: block;
+    align-items: center;
+    text-align: center;
+    width: 100;
+    /* border: 2px solid white; */
+    justify-content: center;
+}
 
-    .fa-instagram {
-        background: #125688;
-        color: var(--font-color);
-    }
+footer .social {
+    display: flex;
+    margin: 0 auto;
+    width: fit-content;
+    /* border: 2px solid white; */
+    gap: 6px;
+}
 
-    .fa-google {
-        background: #dd4b39;
-        color: var(--font-color);
-    }
+.bg_dark{
+    background-color: var(--background-color);
+}
 
-    .fa-youtube {
-        background: #bb0000;
-        color: var(--font-color);
-    }
+.fa-instagram {
+    background: #125688;
+    color: var(--font-color);
+}
 
-    .fa-facebook {
-        background: #3B5998;
-        color: var(--font-color);
-    }
+.fa-google {
+    background: #dd4b39;
+    color: var(--font-color);
+}
 
-    .fa {
-        padding: 9px;
-        font-size: 16px;
-        width: 35px;
-        height: 35px;
-        text-align: center;
-        text-decoration: none;
-        margin: 5px 2px;
-        border-radius: 50%;
-    }
+.fa-youtube {
+    background: #bb0000;
+    color: var(--font-color);
+}
 
-    .fa:hover {
-        opacity: 0.7;
-    }
+.fa-facebook {
+    background: #3B5998;
+    color: var(--font-color);
+}
 
-    footer .link {
-        text-decoration: none;
-        color: var(--font-color)
-    }
+.fa {
+    padding: 9px;
+    font-size: 16px;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 50%;
+}
 
-    footer .link:hover {
-        text-decoration: underline;
-    }
+.fa:hover {
+    opacity: 0.7;
+}
+
+footer .link {
+    text-decoration: none;
+    color: var(--font-color)
+}
+
+footer .link:hover {
+    text-decoration: underline;
+}
+
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: var(--accent-color);
+    color: white;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s;
+}
+
+#myBtn:hover {
+    background-color: var(--accent-color-hover);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    transform: translateY(-2px); 
+    /* Adding a nice sort of levitating effect. Real cool. */
+}
+
+#myBtn i {
+    pointer-events: none;
+}
+
 
     .hero-banner-section {
         background-color: #ffffff;
