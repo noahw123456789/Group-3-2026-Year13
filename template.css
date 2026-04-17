@@ -17,7 +17,7 @@
 
 .navbar-brand {
     color: var(--font-color);
-    font-size:  20px;
+    font-size:  1.25rem;
     margin-left: 10px;
     font-weight: 500;
 }
@@ -30,7 +30,7 @@
 
 .nav-item .nav-link {
     color: var(--subtext-color);
-    font-size: 15px;
+    font-size: 1rem;
     cursor: pointer;
     margin: 0 10px;
     border-bottom: 2px solid transparent;
