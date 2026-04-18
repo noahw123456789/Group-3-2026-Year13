@@ -1,0 +1,65 @@
+:root {
+    --font-color: #f8fafc;
+    --background-color: #0f172b;
+    --subtext-color: #94a3b8;
+    --accent-color: #125FA9;
+    --accent-color-hover: #005396;
+    --light-blue: #60a5fa;
+}
+
+.airport_info {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.second_row {
+    color: var(--accent-color);
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.third_row {
+    margin-bottom: 0px;
+}
+
+.info_icon {
+    background-color: var(--accent-color);
+    color: var(--font-color);
+    border-radius: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    width: 60px; 
+    height: 60px;
+}
+
+.bg-airnz {
+    background-color: black;
+}
+
+.bg-jetstar {
+    background-color: rgb(255, 81, 0);
+}
+
+.bg-qantas {
+    background-color: red;
+}
+
+.route {
+    color: var(--accent-color);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.special {
+    color: rgb(240, 67, 67)
+}
+
+.airline {
+    margin: 0;
+    font-size: 20px;
+}
