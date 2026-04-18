@@ -125,6 +125,8 @@
     background-position: center;
     padding: 170px 80px;
     position: relative;
+    display: flex;
+    align-items: center;
 }
 
 .hero-overlay-box {
@@ -357,12 +359,13 @@
 /* Page Cards */
 
 .page-card {
-    border: none;
+    border: 2px solid rgba(18, 95, 169, 0.3);
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
     height: 100%;
     display: flex;
+    color: var(--backgrund-color) !important;
     flex-direction: column;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -569,132 +572,218 @@
     color: white;
 }
 
-
-
-
-
-
-/* Winery Carousel */
-
 /* ========================================
    Popular Wineries Carousel
 ======================================== */
-
-#carouselWineries {
+ 
+#carouselBottom {
     padding: 0;
     position: relative;
 }
-
-/* Cards Layout */
-#carouselWineries .cards-wrapper {
+ 
+#carouselBottom .cards-wrapper {
     display: flex;
     gap: 1.5rem;
     padding: 10px;
+    width: 100%;
+    overflow: visible;
 }
-
-#carouselWineries .card-div {
+ 
+#carouselBottom .card-div {
     border: 3px solid rgba(18, 95, 169, 0.3);
     border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease, border-color 0.2s ease;
     overflow: hidden;
-    flex: 1;
+    flex: 0 0 100%;
     height: 470px;
 }
-
-#carouselWineries .card-div:hover {
+ 
+#carouselBottom .card-div:hover {
     transform: translateY(-3px);
     border-color: rgba(18, 95, 169, 0.5);
 }
-
-/* Image Styling */
-#carouselWineries .card-img-top {
+ 
+#carouselBottom .image-wrapper {
+    position: relative;
+}
+ 
+#carouselBottom .card-img-top {
     height: 200px;
     object-fit: cover;
     border-bottom: 3px solid rgba(18, 95, 169, 0.3);
+    display: block;
+    width: 100%;
 }
-
-/* Card Body */
-#carouselWineries .card-body {
+ 
+#carouselBottom .card-body {
     display: flex;
     flex-direction: column;
     padding: 20px;
 }
-
-#carouselWineries .card-title {
+ 
+#carouselBottom .card-title {
     color: var(--accent-color);
     font-weight: 600;
     font-size: 16px;
 }
-
-#carouselWineries .card-text {
+ 
+#carouselBottom .title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+ 
+#carouselBottom .event-date {
+    font-size: 0.875rem;
+    color: var(--accent-color);
+    font-weight: 600;
+    white-space: nowrap;
+}
+ 
+#carouselBottom .card-text {
     flex: 1;
     margin-bottom: 1rem;
 }
-
+ 
 /* Buttons */
-#carouselWineries .btn {
+#carouselBottom .btn {
     border-color: var(--accent-color);
     color: var(--accent-color);
 }
-
-#carouselWineries .btn:hover {
+ 
+#carouselBottom .btn:hover {
     background-color: var(--accent-color);
     border-color: var(--accent-color);
     color: white;
 }
-
-/* Controls */
-#carouselWineries .carousel-control-prev,
-#carouselWineries .carousel-control-next {
-    width: 35px;
-    height: 35px;
+ 
+#carouselBottom .carousel-control-prev,
+#carouselBottom .carousel-control-next {
+    width: 32px;
+    height: 32px;
     background-color: rgba(18, 95, 169, 0.8);
     border-radius: 50%;
     top: 50%;
     transform: translateY(-50%);
+    opacity: 1;
 }
-
-#carouselWineries .carousel-control-prev {
+ 
+#carouselBottom .carousel-control-prev {
     left: -3.5vw;
 }
-
-#carouselWineries .carousel-control-next {
+ 
+#carouselBottom .carousel-control-next {
     right: -3.5vw;
 }
-
-#carouselWineries .carousel-control-prev:hover,
-#carouselWineries .carousel-control-next:hover {
+ 
+#carouselBottom .carousel-control-prev:hover,
+#carouselBottom .carousel-control-next:hover {
     background-color: var(--accent-color);
 }
-
-/* Indicators */
-#carouselWineries .carousel-indicators {
-    bottom: -25px;
+ 
+#carouselBottom .carousel-control-prev-icon,
+#carouselBottom .carousel-control-next-icon {
+    width: 16px;
+    height: 16px;
 }
-
-#carouselWineries .carousel-indicators button {
+ 
+/* Indicators */
+#carouselBottom .carousel-indicators {
+    bottom: -30px;
+}
+ 
+#carouselBottom .carousel-indicators button {
     width: 10px;
     height: 10px;
     border-radius: 50%;
+    margin: 0 5px;
+    background-color: #999;
 }
-
-/* Responsive */
-@media (max-width: 992px) {
-    #carouselWineries .cards-wrapper {
-        flex-direction: column;
+ 
+#carouselBottom .carousel-indicators button.active {
+    background-color: var(--accent-color);
+}
+ 
+@media (min-width: 768px) {
+    #carouselBottom .card-div {
+        flex: 0 0 calc(50% - 0.75rem);
     }
-
-    #carouselWineries .carousel-control-prev,
-    #carouselWineries .carousel-control-next {
+}
+ 
+@media (min-width: 992px) {
+    #carouselBottom .card-div {
+        flex: 0 0 calc(33.333% - 1rem);
+    }
+}
+ 
+@media (min-width: 1200px) {
+    #carouselBottom .card-div {
+        flex: 0 0 calc(25% - 1.125rem);
+    }
+    #carouselBottom {
+        padding-bottom: 40px;
+    }
+    #carouselBottom .carousel-indicators {
+        bottom: -30px;
+    }
+}
+ 
+@media (max-width: 1199px) {
+    #carouselBottom .carousel-control-prev,
+    #carouselBottom .carousel-control-next {
         display: none;
     }
+    #carouselBottom {
+        padding-bottom: 30px;
+    }
+    #carouselBottom .carousel-indicators {
+        bottom: -20px;
+    }
 }
+ 
+/* Attribution overlays */
+#carouselBottom .attribution-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    padding: 6px 12px;
+    background-color: rgba(15, 23, 43, 0.6);
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 1.4;
+    text-align: left;
+}
+ 
+#carouselBottom .attribution-text {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 10px;
+    line-height: 1.4;
+}
+ 
+#carouselBottom .attribution-text a {
+    color: rgba(255, 255, 255, 0.95);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+ 
+#carouselBottom .attribution-text a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
 
 /* Discover Section */
 
 .discover-section {
     background-color: var(--accent-color);
     width: 100%;
+    margin-top: 50px;
 }
 
 .discover-title {
