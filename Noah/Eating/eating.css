@@ -7,50 +7,36 @@
     --light-blue: #60a5fa;
 }
 
-:root {
-    --accent: #125fa9;
-    --accent-light: #e1f5ee;
-    --text-primary: #1a1a1a;
-    --text-secondary: #5a6370;
-    --border: rgba(0,0,0,0.1);
-    --card-bg: #ffffff;
-    --page-bg: #f7f8f6;
-    --radius-card: 14px;
-    --radius-tag: 999px;
-    --font-color: #f8fafc;
-    --background-color: #0f172b;
-    --subtext-color: #94a3b8;
-    --accent-color: #125FA9;
-    --accent-color-hover: #005396;
-    --light-blue: #60a5fa;
-}
-
-body {
-  font-family: 'DM Sans', sans-serif;
-  background-color: var(--page-bg);
-  color: var(--text-primary);
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-main{
-  flex: 1;
-}
-
-
-/* Navigation*/
+/* Navigation */
 
 .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
     background-color: var(--background-color);
+    padding: 0;
 }
-
-/* Header */
 
 .navbar-brand {
     color: var(--font-color);
     font-size:  20px;
-    margin-left: 10px;
+    padding-left: 80px;
     font-weight: 500;
+}
+
+.navbar-nav {
+    padding-right: 80px;
+}
+
+.navbar-nav .nav-link {
+    color: var(--subtext-color);
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 10px;
+    border-bottom: 2px solid transparent;
 }
 
 .navbar-nav .nav-link:hover {
@@ -59,16 +45,9 @@ main{
     transition: color 0.3s, border-bottom 0.3s;
 }
 
-.nav-item .nav-link {
-    color: var(--subtext-color);
-    font-size: 15px;
-    cursor: pointer;
-    margin: 0 10px;
-    border-bottom: 2px solid transparent;
-}
-
 .navbar-nav .nav-link.active {
     font-weight: 600;
+    border-bottom: 2px solid var(--light-blue);
 }
 
 .navbar-toggler {
@@ -80,8 +59,24 @@ main{
     box-shadow: none;
 }
 
-/* Mobile + Tablets (XS + SM + MD) */
+.nav-arrow {
+    color: var(--font-color);
+    padding-right: 15px;
+}
+
 @media (max-width: 991px) {
+    .navbar {
+        padding: 15px 0;
+    }
+
+    .navbar-brand {
+        padding-left: 15px;
+    }
+
+    .navbar-nav {
+        padding-right: 0;
+    }
+
     .nav-item {
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
@@ -94,14 +89,8 @@ main{
         padding: 12px 15px;
         flex: 1;
     }
-
-    .nav-arrow {
-        color: var(--font-color);
-        padding-right: 15px;
-    }
 }
 
-/* Desktop (LG) */
 @media (min-width: 992px) {
     .navbar {
         padding: 25px 0;
@@ -122,17 +111,22 @@ main{
     }
 }
 
-/* Hero banner trial */
+/* =========================
+   Hero Banner
+========================= */
 
 .hero-banner-section {
     background-color: #e5e7eb;
 }
 
 .hero-banner {
-    background-image: url('/images/potential-queenstown-hero-image.jpg');
+    background-image: url('./eating-hero-image.png');
     background-size: cover;
     background-position: center;
     padding: 170px 80px;
+    position: relative;
+    display: flex;
+    align-items: center;
 }
 
 .hero-overlay-box {
@@ -140,8 +134,8 @@ main{
     opacity: 0.8;
     max-width: 650px;
     padding: 40px;
-    border-radius: 5px;
     box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
 }
 
 .hero-slogan {
@@ -167,14 +161,13 @@ main{
     margin-bottom: 0;
 }
 
-
 .hero-button {
     display: block;
     width: fit-content;
     margin: 24px 0 0 auto;
-    padding: 18px 33px;
+    padding: 15px 25px;
     font-size: 16pt;
-    font-weight: 300;
+    font-weight: 400;
     text-decoration: none;
     color: var(--accent-color) !important;
     border: 2px solid var(--accent-color);
@@ -190,6 +183,19 @@ main{
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.22);
     opacity: 0.95;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-caption {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background-color: rgba(15, 23, 43, 0.5);
+    color: rgba(255, 255, 255, 0.9);
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    backdrop-filter: blur(3px);
+    font-weight: 400;
 }
 
 @media (max-width: 1200px) {
@@ -209,6 +215,7 @@ main{
     .hero-title {
         font-size: 30pt;
     }
+
     .hero-paragraph {
         font-size: 12pt;
     }
@@ -222,6 +229,7 @@ main{
     }
 
     .hero-overlay-box {
+        margin-top: 50px;
         max-width: 520px;
         padding: 28px;
     }
@@ -237,22 +245,24 @@ main{
     .hero-paragraph {
         font-size: 11pt;
     }
-
 }
 
 @media (max-width: 767px) {
     .hero-banner {
-        padding: 50px;
+        padding: 60px;
     }
 
     .hero-overlay-box {
+        margin-top: 50px;
         max-width: 420px;
         padding: 22px;
     }
 
-    .hero-banner-button {
+    .hero-button {
         margin-top: 24px;
-        padding: 10px 20px;
+        padding: 16px;
+        font-size: 12pt;
+        justify-self: center;
     }
 
     .hero-slogan {
@@ -264,14 +274,14 @@ main{
     }
 
     .hero-paragraph {
-        font-size: 10pt;
+        font-size: 12pt;
+        font-weight: 400;
     }
-
 }
 
 @media (max-width: 576px) {
     .hero-banner {
-        padding: 30px;
+        padding: 50px;
     }
 
     .hero-overlay-box {
@@ -285,7 +295,7 @@ main{
 
     .hero-title {
         font-size: 14.4pt;
-        margin-bottom: 10px
+        margin-bottom: 10px;
     }
 
     .hero-paragraph {
@@ -294,239 +304,512 @@ main{
     }
 
     .hero-button {
-        padding: 20px;
-        font-size: 12pt;
+        padding: 10px;
+        font-size: 10pt;
         justify-self: center;
-        margin-left: 0;
+        margin-left: 0px;
+    }
+
+    .hero-caption {
+        bottom: 10px;
+        right: 10px;
+        font-size: 9px;
+        padding: 3px 8px;
     }
 }
 
+/* Section Headers */
 
-
-
-
-
-
-
-
-/* Eating Cards */
-
-.filter-btn {
-    font-size: 1rem;
-    font-weight: 500;
-    padding: 6px 18px;
-    border-radius: var(--radius-tag);
-    border: 1px solid var(--border);
-    background: white;
-    color: var(--text-secondary);
-    cursor: pointer;
-    transition: all 0.18s ease;
+.header {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
 }
 
-.filter-btn:hover {
-    border-color: var(--accent);
-    color: var(--accent);
+.section-intro {
+    text-align: left;
+    font-size: 18px;
+    color: var(--background-color);
+    margin-bottom: 40px;
 }
 
-.filter-btn.active {
-    background: var(--accent);
-    border-color: var(--accent);
-    color: white;
+.section-bars {
+    border-width: 3px;
+    width: 100%;
+    margin: 8px 0 16px 0;
+    border-radius: 10px;
 }
 
-.place-card {
-    background: var(--card-bg);
-    border-radius: var(--radius-card);
-    border: 1px solid var(--border);
-    overflow: hidden;
+@media (max-width: 767px) {
+    .section-intro {
+        font-size: 16px;
+        margin-bottom: 32px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .header {
+        padding-left: 5px;
+        padding-right: 10px;
+    }
+}
+
+/* Page Cards */
+
+.page-card {
+    border: 2px solid rgba(18, 95, 169, 0.3);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
     height: 100%;
     display: flex;
+    color: var(--backgrund-color) !important;
     flex-direction: column;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.place-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.09);
+.page-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-.card-img-area {
-    height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2.5rem;
-}
-
-.card-body-inner {
-    padding: 1rem 1.1rem;
+.page-card .card-body {
+    padding: 20px;
     display: flex;
     flex-direction: column;
     flex: 1;
 }
 
-.category-tag {
-    font-size: 0.7rem;
-    font-weight: 600;
-    padding: 3px 12px;
-    border-radius: var(--radius-tag);
-    display: inline-block;
-    margin-right: 250px;
-    margin-bottom: 8px;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
-}
-
-.card-title {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    margin: 0 0 5px;
-}
-
-.card-desc {
-    font-size: 1rem;
-    color: var(--text-secondary);
-    line-height: 1.55;
-    margin: 0 0 1rem;
+.page-card .card-text {
     flex: 1;
 }
 
-.learn-btn {
-    font-family: inherit;
-    font-size: 0.8rem;
-    font-weight: 500;
-    padding: 7px 0;
-    width: 100%;
-    border-radius: 8px;
-    border: 1px solid var(--border);
-    background: transparent;
-    color: var(--text-primary);
-    cursor: pointer;
-    transition: all 0.15s;
-    margin-top: auto;
+.page-card .card-title {
+    color: var(--accent-color);
+    font-weight: 600;
+    font-size: 20px;
 }
 
-.learn-btn:hover {
-    background: var(--accent-light);
-    border-color: var(--accent);
-    color: var(--accent);
-}
-
-.card-col {
-    transition: opacity 0.22s ease, transform 0.22s ease;
-}
-
-.card-col.hidden {
-    opacity: 0;
-    transform: scale(0.97);
-    pointer-events: none;
-    display: none;
-}
-
-.modal-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.4);
-    z-index: 1000;
+.page-card .title-row {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    padding: 1rem;
+    gap: 10px;
+    margin-bottom: 15px;
 }
 
-.modal-overlay.open {
+.page-card .btn {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+.page-card .btn:hover {
+    background-color: var(--accent-color-hover);
+    border-color: var(--accent-color-hover);
+    color: white;
+}
+
+/* Page Card Carousel */
+
+.carousel.page-card-carousel {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    overflow: hidden;
+}
+
+.carousel.page-card-carousel .carousel-item {
+    position: relative;
+}
+
+.carousel.page-card-carousel .carousel-item img {
+    height: 270px;
+    object-fit: cover;
+    display: block;
+}
+
+.carousel.page-card-carousel .carousel-indicators {
+    bottom: 10px;
+}
+
+.carousel.page-card-carousel .carousel-indicators button {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin: 0 3px;
+}
+
+.carousel.page-card-carousel .carousel-control-prev,
+.carousel.page-card-carousel .carousel-control-next {
+    width: 32px;
+    height: 32px;
+    background-color: rgba(0, 0, 0, 0.656);
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.carousel.page-card-carousel .carousel-control-prev:hover,
+.carousel.page-card-carousel .carousel-control-next:hover {
+    opacity: 1;
+}
+
+.carousel.page-card-carousel .carousel-control-prev {
+    left: 10px;
+}
+
+.carousel.page-card-carousel .carousel-control-next {
+    right: 10px;
+}
+
+.carousel.page-card-carousel .carousel-control-prev-icon,
+.carousel.page-card-carousel .carousel-control-next-icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* Attributions for Activity Card Images */
+
+.page-card-carousel .attribution-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    padding: 6px 12px;
+    background-color: rgba(15, 23, 43, 0.6);
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 1.4;
+    text-align: left;
+}
+
+.page-card-carousel .attribution-text {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 10px;
+    line-height: 1.4;
+}
+
+.page-card-carousel .attribution-text a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.page-card-carousel .attribution-text a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* Badges */
+
+.badge {
+    font-size: 10px;
+    padding: 5px 10px;
+}
+
+.badge-history {
+    background-color: #441700;
+    color: white;
+}
+
+.badge-local {
+    background-color: #01185a;
+    color: white;
+}
+
+.badge-free {
+    background-color: #519405;
+    color: white;
+}
+
+.badge-adrenaline {
+    background-color: #f54c4c;
+    color: white;
+}
+
+.badge-heights {
+    background-color: #8f5fff;
+    color: white;
+}
+
+.badge-water {
+    background-color: #3b82f6;
+    color: white;
+}
+
+.badge-winter {
+    background-color: #06c4e6;
+    color: white;
+}
+
+.badge-views {
+    background-color: #62738a;
+    color: white;
+}
+
+.badge-nature {
+    background-color: #26cf64;
+    color: white;
+}
+
+.badge-scenic {
+    background-color: #13a4e7;
+    color: white;
+}
+
+.badge-wine {
+    background-color: #d82b2b;
+    color: white;
+}
+
+.badge-food {
+    background-color: #f5a00e;
+    color: white;
+}
+
+/* ========================================
+   Popular Wineries Carousel
+======================================== */
+ 
+#carouselBottom {
+    padding: 0;
+    position: relative;
+}
+ 
+#carouselBottom .cards-wrapper {
     display: flex;
-}
-
-.modal-box {
-    background: white;
-    border-radius: var(--radius-card);
-    padding: 1.75rem;
-    max-width: 440px;
+    gap: 1.5rem;
+    padding: 10px;
     width: 100%;
-    border: 1px solid var(--border);
-    animation: modal-in 0.18s ease;
+    overflow: visible;
 }
-
-@keyframes modal-in {
-    from { opacity: 0; transform: scale(0.96) translateY(8px); }
-    to   { opacity: 1; transform: scale(1) translateY(0); }
+ 
+#carouselBottom .card-div {
+    border: 3px solid rgba(18, 95, 169, 0.3);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+    overflow: hidden;
+    flex: 0 0 100%;
+    height: 470px;
 }
-
-.modal-img {
-      height: 80px;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2.5rem;
-      margin-bottom: 1.1rem;
+ 
+#carouselBottom .card-div:hover {
+    transform: translateY(-3px);
+    border-color: rgba(18, 95, 169, 0.5);
 }
-
-.modal-title {
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin: 0 0 0.5rem;
+ 
+#carouselBottom .image-wrapper {
+    position: relative;
 }
-
-.modal-body-text {
-      font-size: 0.85rem;
-      color: var(--text-secondary);
-      line-height: 1.65;
-      margin: 0 0 1.25rem;
+ 
+#carouselBottom .card-img-top {
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 3px solid rgba(18, 95, 169, 0.3);
+    display: block;
+    width: 100%;
 }
-
-.modal-close {
-      font-family: inherit;
-      font-size: 0.82rem;
-      padding: 7px 20px;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      background: transparent;
-      color: var(--text-primary);
-      cursor: pointer;
-}
-
-.modal-close:hover {
-      background: #f2f2f2;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Footer */
-
-.row {
+ 
+#carouselBottom .card-body {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 20px;
 }
+ 
+#carouselBottom .card-title {
+    color: var(--accent-color);
+    font-weight: 600;
+    font-size: 16px;
+}
+ 
+#carouselBottom .title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+ 
+#carouselBottom .event-date {
+    font-size: 0.875rem;
+    color: var(--accent-color);
+    font-weight: 600;
+    white-space: nowrap;
+}
+ 
+#carouselBottom .card-text {
+    flex: 1;
+    margin-bottom: 1rem;
+}
+ 
+/* Buttons */
+#carouselBottom .btn {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+ 
+#carouselBottom .btn:hover {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: white;
+}
+ 
+#carouselBottom .carousel-control-prev,
+#carouselBottom .carousel-control-next {
+    width: 32px;
+    height: 32px;
+    background-color: rgba(18, 95, 169, 0.8);
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 1;
+}
+ 
+#carouselBottom .carousel-control-prev {
+    left: -3.5vw;
+}
+ 
+#carouselBottom .carousel-control-next {
+    right: -3.5vw;
+}
+ 
+#carouselBottom .carousel-control-prev:hover,
+#carouselBottom .carousel-control-next:hover {
+    background-color: var(--accent-color);
+}
+ 
+#carouselBottom .carousel-control-prev-icon,
+#carouselBottom .carousel-control-next-icon {
+    width: 16px;
+    height: 16px;
+}
+ 
+/* Indicators */
+#carouselBottom .carousel-indicators {
+    bottom: -30px;
+}
+ 
+#carouselBottom .carousel-indicators button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 0 5px;
+    background-color: #999;
+}
+ 
+#carouselBottom .carousel-indicators button.active {
+    background-color: var(--accent-color);
+}
+ 
+@media (min-width: 768px) {
+    #carouselBottom .card-div {
+        flex: 0 0 calc(50% - 0.75rem);
+    }
+}
+ 
+@media (min-width: 992px) {
+    #carouselBottom .card-div {
+        flex: 0 0 calc(33.333% - 1rem);
+    }
+}
+ 
+@media (min-width: 1200px) {
+    #carouselBottom .card-div {
+        flex: 0 0 calc(25% - 1.125rem);
+    }
+    #carouselBottom {
+        padding-bottom: 40px;
+    }
+    #carouselBottom .carousel-indicators {
+        bottom: -30px;
+    }
+}
+ 
+@media (max-width: 1199px) {
+    #carouselBottom .carousel-control-prev,
+    #carouselBottom .carousel-control-next {
+        display: none;
+    }
+    #carouselBottom {
+        padding-bottom: 30px;
+    }
+    #carouselBottom .carousel-indicators {
+        bottom: -20px;
+    }
+}
+ 
+/* Attribution overlays */
+#carouselBottom .attribution-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    padding: 6px 12px;
+    background-color: rgba(15, 23, 43, 0.6);
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 1.4;
+    text-align: left;
+}
+ 
+#carouselBottom .attribution-text {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 10px;
+    line-height: 1.4;
+}
+ 
+#carouselBottom .attribution-text a {
+    color: rgba(255, 255, 255, 0.95);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+ 
+#carouselBottom .attribution-text a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+
+/* Discover Section */
+
+.discover-section {
+    background-color: var(--accent-color);
+    width: 100%;
+    margin-top: 50px;
+}
+
+.discover-title {
+    color: white;
+    font-weight: 700;
+}
+
+.discover-text {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.discover-section .btn {
+    background-color: white;
+    color: var(--background-color);
+    border: none;
+}
+
+.discover-section .btn:hover {
+    background-color: var(--accent-color-hover);
+    color: white;
+}
+
+/* =========================
+   Footer
+   ========================= */
+
 
 footer .row > div {
     display: flex;
@@ -568,7 +851,7 @@ footer .logo_social {
     display: block;
     align-items: center;
     text-align: center;
-    width: 100;
+    width: 100%;
     /* border: 2px solid white; */
     justify-content: center;
 }
@@ -627,4 +910,35 @@ footer .link {
 
 footer .link:hover {
     text-decoration: underline;
+}
+
+
+/* Scroll to top button */
+
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: var(--accent-color);
+    color: white;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s;
+}
+
+#myBtn:hover {
+    background-color: var(--accent-color-hover);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    transform: translateY(-2px);
+}
+
+#myBtn i {
+    pointer-events: none;
 }
