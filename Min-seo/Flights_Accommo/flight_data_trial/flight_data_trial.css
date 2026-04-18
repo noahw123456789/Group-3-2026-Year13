@@ -7,6 +7,14 @@
     --light-blue: #60a5fa;
 }
 
+.colour-accent {
+    color: var(--accent-color)
+}
+
+.subtext {
+    color: var(--subtext-color)
+}
+
 .airport_info {
     border: none;
     border-radius: 15px;
@@ -55,11 +63,36 @@
     font-size: 1.2rem;
 }
 
+.route_cards {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
 .special {
-    color: rgb(240, 67, 67)
+    border: 2px solid #1260a96b
 }
 
 .airline {
     margin: 0;
-    font-size: 20px;
+    font-size: 17px;
+}
+
+.flight_times {
+    font-size: 15px;
+}
+
+.external-flights-data {
+    border: 2px solid #1260a96b;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.google-flights-btn {
+    background: var(--accent-color);
+    padding: 18px;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
 }
