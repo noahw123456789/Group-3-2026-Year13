@@ -569,221 +569,125 @@
     color: white;
 }
 
-/* Upcoming Events Carousel */
 
-.cards-wrapper {
+
+
+
+
+/* Winery Carousel */
+
+/* ========================================
+   Popular Wineries Carousel
+======================================== */
+
+#carouselWineries {
+    padding: 0;
+    position: relative;
+}
+
+/* Cards Layout */
+#carouselWineries .cards-wrapper {
     display: flex;
     gap: 1.5rem;
-    overflow: visible;
     padding: 10px;
-    width: 100%;
 }
 
-#carouselExample {
-    padding: 0;
-}
-
-.card-div {
+#carouselWineries .card-div {
     border: 3px solid rgba(18, 95, 169, 0.3);
     border-radius: 15px;
     transition: transform 0.2s ease, border-color 0.2s ease;
     overflow: hidden;
-    flex: 0 0 100%;
+    flex: 1;
     height: 470px;
 }
 
-.card-div:hover {
+#carouselWineries .card-div:hover {
     transform: translateY(-3px);
     border-color: rgba(18, 95, 169, 0.5);
 }
 
-.card-div .card-img-top {
+/* Image Styling */
+#carouselWineries .card-img-top {
     height: 200px;
     object-fit: cover;
     border-bottom: 3px solid rgba(18, 95, 169, 0.3);
 }
 
-.card-div .card-body {
+/* Card Body */
+#carouselWineries .card-body {
     display: flex;
     flex-direction: column;
-    flex: 1;
     padding: 20px;
 }
 
-.card-div .card-title {
+#carouselWineries .card-title {
     color: var(--accent-color);
     font-weight: 600;
     font-size: 16px;
 }
 
-.card-div .title-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 15px;
-}
-
-.card-div .event-date {
-    font-size: 0.875rem;
-    color: var(--accent-color);
-    font-weight: 600;
-    white-space: nowrap;
-}
-
-.card-div .card-text {
+#carouselWineries .card-text {
     flex: 1;
-    color: var(--background-color);
     margin-bottom: 1rem;
 }
 
-.card-div .btn {
+/* Buttons */
+#carouselWineries .btn {
     border-color: var(--accent-color);
     color: var(--accent-color);
 }
 
-.card-div .btn:hover {
+#carouselWineries .btn:hover {
     background-color: var(--accent-color);
     border-color: var(--accent-color);
     color: white;
 }
 
-#carouselExample .image-wrapper {
-    position: relative;
-}
-
-#carouselExample .carousel-control-prev,
-#carouselExample .carousel-control-next {
-    width: 32px;
-    height: 32px;
+/* Controls */
+#carouselWineries .carousel-control-prev,
+#carouselWineries .carousel-control-next {
+    width: 35px;
+    height: 35px;
     background-color: rgba(18, 95, 169, 0.8);
     border-radius: 50%;
-    opacity: 1;
     top: 50%;
     transform: translateY(-50%);
 }
 
-#carouselExample .carousel-control-prev:hover,
-#carouselExample .carousel-control-next:hover {
-    background-color: var(--accent-color);
-}
-
-#carouselExample .carousel-control-prev {
+#carouselWineries .carousel-control-prev {
     left: -3.5vw;
 }
 
-#carouselExample .carousel-control-next {
+#carouselWineries .carousel-control-next {
     right: -3.5vw;
 }
 
-#carouselExample .carousel-control-prev-icon,
-#carouselExample .carousel-control-next-icon {
-    width: 16px;
-    height: 16px;
-}
-
-#carouselExample .carousel-indicators {
-    bottom: -20px;
-}
-
-#carouselExample .carousel-indicators button {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    margin: 0 5px;
-    background-color: #999;
-}
-
-#carouselExample .carousel-indicators button.active {
+#carouselWineries .carousel-control-prev:hover,
+#carouselWineries .carousel-control-next:hover {
     background-color: var(--accent-color);
 }
 
-.swipe-hint {
-    display: none;
-    text-align: center;
-    color: var(--background-color);
-    font-size: 0.875rem;
-    margin-top: 15px;
-    margin-bottom: 0;
+/* Indicators */
+#carouselWineries .carousel-indicators {
+    bottom: -25px;
 }
 
-@media (min-width: 768px) {
-    .card-div {
-        flex: 0 0 calc(50% - 0.75rem);
-    }
+#carouselWineries .carousel-indicators button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
 }
 
-@media (min-width: 992px) {
-    .card-div {
-        flex: 0 0 calc(33.333% - 1rem);
-    }
-}
-
-@media (min-width: 1200px) {
-    .card-div {
-        flex: 0 0 calc(25% - 1.125rem);
+/* Responsive */
+@media (max-width: 992px) {
+    #carouselWineries .cards-wrapper {
+        flex-direction: column;
     }
 
-    #carouselExample {
-        padding-bottom: 40px;
-    }
-
-    #carouselExample .carousel-indicators {
-        bottom: -30px;
-    }
-}
-
-@media (max-width: 1199px) {
-    #carouselExample .carousel-control-prev,
-    #carouselExample .carousel-control-next {
+    #carouselWineries .carousel-control-prev,
+    #carouselWineries .carousel-control-next {
         display: none;
     }
-
-    #carouselExample {
-        padding-bottom: 30px;
-    }
-
-    #carouselExample .carousel-indicators {
-        bottom: -20px;
-    }
-
-    .swipe-hint {
-        display: block;
-    }
-}
-
-/* Attributions for Upcoming Events Card Images */
-
-#carouselExample .attribution-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 10;
-    padding: 6px 12px;
-    background-color: rgba(15, 23, 43, 0.6);
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 10px;
-    font-weight: 400;
-    line-height: 1.4;
-    text-align: left;
-}
-
-#carouselExample .attribution-text {
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 10px;
-    line-height: 1.4;
-}
-
-#carouselExample .attribution-text a {
-    color: rgba(255, 255, 255, 0.95);
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-#carouselExample .attribution-text a:hover {
-    color: white;
-    text-decoration: underline;
 }
 
 /* Discover Section */
@@ -858,7 +762,7 @@ footer .logo_social {
     display: block;
     align-items: center;
     text-align: center;
-    width: 100;
+    width: 100%;
     /* border: 2px solid white; */
     justify-content: center;
 }
