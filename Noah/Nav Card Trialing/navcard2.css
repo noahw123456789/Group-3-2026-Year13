@@ -247,3 +247,156 @@ footer .link:hover {
 #myBtn i {
     pointer-events: none;
 }
+
+.badge {
+    font-size: 10px;
+    padding: 5px 10px;
+}
+
+.badge-history {
+    background-color: #441700;
+    color: white;
+}
+
+.badge-local {
+    background-color: #01185a;
+    color: white;
+}
+
+.badge-free {
+    background-color: #519405;
+    color: white;
+}
+
+.badge-adrenaline {
+    background-color: #f54c4c;
+    color: white;
+}
+
+.badge-heights {
+    background-color: #8f5fff;
+    color: white;
+}
+
+.badge-water {
+    background-color: #3b82f6;
+    color: white;
+}
+
+.badge-winter {
+    background-color: #06c4e6;
+    color: white;
+}
+
+.badge-views {
+    background-color: #62738a;
+    color: white;
+}
+
+.badge-nature {
+    background-color: #26cf64;
+    color: white;
+}
+
+.badge-scenic {
+    background-color: #13a4e7;
+    color: white;
+}
+
+.badge-wine {
+    background-color: #d82b2b;
+    color: white;
+}
+
+.badge-food {
+    background-color: #f5a00e;
+    color: white;
+}
+
+
+/* Nav trialig card */
+
+.explore-section {
+    margin-bottom: 80px;
+}
+
+.nav-card {
+    display: block;
+    text-decoration: none;
+    border-radius: 15px;
+    overflow: hidden;
+    height: 320px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    border: 3px solid rgba(18, 95, 169, 0.3);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.nav-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+    border: 3px solid rgba(18, 95, 169, 0.9);
+}
+
+.nav-card-img {
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+}
+
+.nav-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(15, 23, 43, 0.1) 0%,
+        rgba(15, 23, 43, 0.82) 60%,
+        rgba(15, 23, 43, 0.98) 100%
+    );}
+
+.nav-card:hover .nav-card-overlay {
+    background: linear-gradient(
+        to bottom,
+        rgba(15, 23, 43, 0.1) 0%,
+        rgba(15, 23, 43, 0.82) 60%,
+        rgba(15, 23, 43, 0.98) 100%
+    );
+}
+
+.nav-card-body {
+    position: relative;
+    padding: 20px;
+}
+
+.nav-card-badges {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 8px;
+}
+
+.nav-card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--font-color);
+    margin-bottom: 6px;
+}
+
+.nav-card-text {
+    font-size: 0.8rem;
+    color: rgba(248, 250, 252, 0.8);
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.nav-card-cta {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--light-blue);
+    transition: color 0.2s ease;
+}
+
+.nav-card:hover .nav-card-cta {
+    color: white;
+}
