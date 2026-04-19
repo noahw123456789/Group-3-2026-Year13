@@ -180,7 +180,7 @@
     /*=================================
         This is all the template stuff
       ================================*/
-    .navbar {
+.navbar {
     position: fixed;
     top: 0;
     left: 0;
@@ -202,18 +202,18 @@
     padding-right: 80px;
 }
 
-.navbar-nav .nav-link:hover {
-    color: var(--font-color);
-    border-bottom: 2px solid var(--light-blue);
-    transition: color 0.3s, border-bottom 0.3s;
-}
-
-.nav-item .nav-link {
+.navbar-nav .nav-link {
     color: var(--subtext-color);
     font-size: 16px;
     cursor: pointer;
     margin: 0 10px;
     border-bottom: 2px solid transparent;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--font-color);
+    border-bottom: 2px solid var(--light-blue);
+    transition: color 0.3s, border-bottom 0.3s;
 }
 
 .navbar-nav .nav-link.active {
@@ -230,8 +230,24 @@
     box-shadow: none;
 }
 
-/* Mobile + Tablets (XS + SM + MD) */
+.nav-arrow {
+    color: var(--font-color);
+    padding-right: 15px;
+}
+
 @media (max-width: 991px) {
+    .navbar {
+        padding: 15px 0;
+    }
+
+    .navbar-brand {
+        padding-left: 15px;
+    }
+
+    .navbar-nav {
+        padding-right: 0;
+    }
+
     .nav-item {
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
@@ -244,14 +260,8 @@
         padding: 12px 15px;
         flex: 1;
     }
-
-    .nav-arrow {
-        color: var(--font-color);
-        padding-right: 15px;
-    }
 }
 
-/* Desktop (LG) */
 @media (min-width: 992px) {
     .navbar {
         padding: 25px 0;
