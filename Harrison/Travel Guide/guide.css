@@ -454,15 +454,15 @@ footer .link:hover {
       Small uppercase heading above each section.
     ============================================================ */
 .section-label {
-    font-size: 1rem;
+    font-size: 1.8rem;
     font-weight: 600;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--accent-color);
+    color: black;
     margin-bottom: 1.25rem;
     padding-bottom: 0.5rem;
     border-bottom: 2px solid var(--accent-color);
-    display: inline-block;
+    display: block;
 }
 
 /* ============================================================
@@ -491,32 +491,158 @@ footer .link:hover {
     TO ADD A CARD: copy one <div class="col-12 col-sm-6 col-lg-3">
     block and update the img src, href, and title text.
 ============================================================ */
-.link-card {
-    background: var(--card-bg);
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid var(--border);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+.explore-section {
+    margin-bottom: 80px;
+}
+
+.nav-card {
     display: block;
     text-decoration: none;
-    color: inherit;
+    border-radius: 15px;
+    overflow: hidden;
+    height: 320px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    border: 3px solid rgba(18, 95, 169, 0.3);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.nav-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+    border-color: 3px solid rgba(18, 95, 169, 0.9);
+}
+
+.nav-card-img {
     height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
 }
 
-.link-card-img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    display: block;
+.nav-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(15, 23, 43, 0.1) 0%,
+        rgba(15, 23, 43, 0.82) 60%,
+        rgba(15, 23, 43, 0.98) 100%
+    );}
+
+.nav-card:hover .nav-card-overlay {
+    background: linear-gradient(
+        to bottom,
+        rgba(15, 23, 43, 0.1) 0%,
+        rgba(15, 23, 43, 0.82) 60%,
+        rgba(15, 23, 43, 0.98) 100%
+    );
 }
 
-.link-card-body { padding: 1rem 1.1rem; }
+.nav-card-body {
+    position: relative;
+    padding: 20px;
+}
 
-.link-card-title {
-    font-size: 0.95rem;
+.nav-card-badges {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 8px;
+}
+
+.nav-card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--font-color);
+    margin-bottom: 6px;
+}
+
+.nav-card-text {
+    font-size: 0.8rem;
+    color: rgba(248, 250, 252, 0.8);
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.nav-card-cta {
+    font-size: 0.8rem;
     font-weight: 600;
-    color: var(--accent-color);
-    margin: 0;
+    color: var(--light-blue);
+    transition: color 0.2s ease;
+}
+
+.nav-card:hover .nav-card-cta {
+    color: white;
+}
+
+/* ========================
+   Badges (shared)
+======================== */
+
+.badge {
+    font-size: 10px;
+    padding: 5px 10px;
+}
+
+.badge-history {
+    background-color: #441700;
+    color: white;
+}
+
+.badge-local {
+    background-color: #01185a;
+    color: white;
+}
+
+.badge-free {
+    background-color: #519405;
+    color: white;
+}
+
+.badge-adrenaline {
+    background-color: #f54c4c;
+    color: white;
+}
+
+.badge-heights {
+    background-color: #8f5fff;
+    color: white;
+}
+
+.badge-water {
+    background-color: #3b82f6;
+    color: white;
+}
+
+.badge-winter {
+    background-color: #06c4e6;
+    color: white;
+}
+
+.badge-views {
+    background-color: #62738a;
+    color: white;
+}
+
+.badge-nature {
+    background-color: #26cf64;
+    color: white;
+}
+
+.badge-scenic {
+    background-color: #13a4e7;
+    color: white;
+}
+
+.badge-wine {
+    background-color: #d82b2b;
+    color: white;
+}
+
+.badge-food {
+    background-color: #f5a00e;
+    color: white;
 }
 
 /* ============================================================
@@ -540,8 +666,8 @@ footer .link:hover {
 }
 
 .getting-here-section .section-label {
-    color: rgba(255,255,255,0.6);
-    border-bottom-color: rgba(255,255,255,0.3);
+    color: rgb(255, 255, 255);
+    border-bottom-color: #0f172b;
 }
 
 .getting-here-section h2 {
@@ -612,6 +738,61 @@ footer .link:hover {
 
 .getting-here-section .more-link:hover {
     border-bottom-color: white;
+}
+
+/* ============================================================
+  TIAKI segement
+============================================================ */
+.tiaki-section {
+  background-color:var(--background-color);
+}
+
+.tiaki-heading {
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.tiaki-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  font-style: italic;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.tiaki-text {
+  font-size: 0.9rem;
+  color: #ffffff;
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
+}
+
+/* ============================================================
+  READ MORE BUTTON
+  Dark pill-shaped button matching the screenshot.
+  border-radius: 999px makes it fully rounded (pill shape).
+  Change background to restyle.
+============================================================ */
+.tiaki-btn {
+  display: inline-block;
+  background-color: #125FA9;
+  color: white;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 12px 28px;
+  border-radius: 999px;
+  transition: background 0.15s;
+}
+
+.tiaki-btn:hover {
+  background-color: white;
+  color: #125FA9;
 }
 
 /* ============================================================
