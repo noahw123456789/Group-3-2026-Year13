@@ -5,7 +5,15 @@
     --subtext-color: #94a3b8;
     --accent-color: #125FA9;
     --accent-color-hover: #005396;
+    --accent-light: #e1f5ee;
     --light-blue: #60a5fa;
+    --text-primary: #1a1a1a;
+    --text-secondary: #5a6370;
+    --border: rgba(0,0,0,0.1);
+    --card-bg: #ffffff;
+    --page-bg: #f7f8f6;
+    --radius-card: 14px;
+    --radius-tag: 999px;
 }
 
 /* Navigation */
@@ -132,6 +140,14 @@
 
 .hero-banner-activities {
     background-image: url('../images/activities_media/activities_hero.jpg');
+}
+
+.hero-banner-visit{
+    background-image: url('../images/visit_media/night.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 170px 80px;
+    position: relative;
 }
 
 .hero-overlay-box {
@@ -1135,12 +1151,57 @@ footer .link:hover {
 }
 
 .filter-btn:hover {
-    border-color: var(--accent);
-    color: var(--accent);
+    border-color: var(--accent-color);
+    color: var(--accent-color);
 }
 
 .filter-btn.active {
-    background: var(--accent);
-    border-color: var(--accent);
+    background: var(--accent-color);
+    border-color: var(--accent-color);
     color: white;
 }
+
+#empty-state {
+      display: none;
+      text-align: center;
+      padding: 3rem;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      width: 100%;
+}
+
+.card-col {
+    transition: opacity 0.22s ease, transform 0.22s ease;
+}
+
+.card-col.hidden {
+    opacity: 0;
+    transform: scale(0.97);
+    pointer-events: none;
+    display: none;
+}
+
+.card-img-top {
+    height: 250px;
+    object-fit: cover;
+}
+
+/* Blurb Section (Visit only)*/
+.intro-section {
+    margin-top: 1rem;
+    padding: 1rem 4rem;
+    max-width: 780px;
+}
+
+.intro-section p {
+    color: #000000;
+    text-align: left;
+}
+
+.intro-divider {
+    width: 90%;
+    border: 2px solid var(--accent-color);
+    margin: 1.5rem auto;
+    opacity: 1;
+}
+
