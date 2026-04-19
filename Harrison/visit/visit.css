@@ -1,0 +1,650 @@
+    /*=========================================================
+      GOOGLE FONT IMPORT
+      Swapping fonts is easy — go to https://fonts.google.com,
+      pick a font, copy the @import line and paste it here,
+      then update the font-family in body below.
+    ============================================================ */
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap');
+
+    /* ============================================================
+      CSS CUSTOM PROPERTIES (variables)
+      Change these to retheme the entire page in one place.
+      --accent: the main highlight colour (used on active filters, hover etc.)
+      --radius-card: how rounded the cards are (try 0px for sharp, 20px for rounder)
+    ============================================================ */
+    :root {
+      --accent: #125fa9;
+      --accent-light: #e1f5ee;
+      --text-primary: #1a1a1a;
+      --text-secondary: #5a6370;
+      --border: rgba(0,0,0,0.1);
+      --card-bg: #ffffff;
+      --page-bg: #f7f8f6;
+      --radius-card: 14px;
+      --radius-tag: 999px;
+      --font-color: #f8fafc;
+      --background-color: #0f172b;
+      --subtext-color: #94a3b8;
+      --accent-color: #125FA9;
+      --accent-color-hover: #005396;
+      --light-blue: #60a5fa;
+
+    }
+
+    /* ============================================================
+      BASE STYLES
+      font-family: change 'DM Sans' to any Google Font you imported.
+      background-color: changes the overall page background.
+      color: the default text colour for the whole page.
+    ============================================================ */
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background-color: var(--page-bg);
+      color: var(--text-primary);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    main{
+      flex: 1;
+    }
+
+    /* ============================================================
+      FILTER BUTTONS
+      The row of category buttons (All, Adventure, Nature etc.)
+      .filter-btn is the default (unselected) state.
+      .filter-btn.active is the selected/highlighted state.
+      Change --accent in :root to change the active colour.
+    ============================================================ */
+    .filter-btn {
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 500;
+      padding: 6px 18px;
+      border-radius: var(--radius-tag);
+      border: 1px solid var(--border);
+      background: white;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all 0.18s ease;
+    }
+
+    .filter-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .filter-btn.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: white;
+    }
+    /* ============================================================
+      Card Design
+       ==========================================================*/
+    
+    .card-div img {
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .card-div {
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+    
+    }
+
+    .card-body {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .card-div .card-text {
+      flex: 1;
+    }
+
+    .card-body .btn{
+      margin-top: auto;
+    }
+
+    .card-div .card-title {
+      color: var(--accent-color);
+      font-weight: 600;
+    }
+
+    .card-div .title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .card-div .btn {
+      border-color: var(--accent-color);
+      color: var(--accent-color);
+    }
+
+    .card-div .btn:hover {
+      background-color: var(--accent-color-hover);
+      border-color: var(--accent-color-hover);
+      color: white;
+    }
+
+    .badge {
+      font-size: 10px;
+      padding: 5px 10px;
+    }
+    .card-col {
+      transition: opacity 0.22s ease, transform 0.22s ease;
+    }
+
+    .card-col.hidden {
+      opacity: 0;
+      transform: scale(0.97);
+      pointer-events: none;
+      display: none;
+    }
+
+    /* ============================================================
+      EMPTY STATE
+      Shown when a filter category has no results.
+    ============================================================ */
+    #empty-state {
+      display: none;
+      text-align: center;
+      padding: 3rem;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      width: 100%;
+    }
+
+    
+    /* ============================================================
+      RESPONSIVE TWEAKS
+      At small screen sizes (phones), reduce header padding.
+    ============================================================ */
+    @media (max-width: 576px) {
+      .page-header {
+        padding: 2rem 0 1.75rem;
+      }
+    }
+
+    /*=================================
+        This is all the template stuff
+      ================================*/
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+    background-color: var(--background-color);
+    padding: 0;
+}
+
+.navbar-brand {
+    color: var(--font-color);
+    font-size:  20px;
+    padding-left: 80px;
+    font-weight: 500;
+}
+
+.navbar-nav {
+    padding-right: 80px;
+}
+
+.navbar-nav .nav-link {
+    color: var(--subtext-color);
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 10px;
+    border-bottom: 2px solid transparent;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--font-color);
+    border-bottom: 2px solid var(--light-blue);
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+.navbar-nav .nav-link.active {
+    font-weight: 600;
+    border-bottom: 2px solid var(--light-blue);
+}
+
+.navbar-toggler {
+    border: none;
+    outline: none;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.nav-arrow {
+    color: var(--font-color);
+    padding-right: 15px;
+}
+
+@media (max-width: 991px) {
+    .navbar {
+        padding: 15px 0;
+    }
+
+    .navbar-brand {
+        padding-left: 15px;
+    }
+
+    .navbar-nav {
+        padding-right: 0;
+    }
+
+    .nav-item {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-item:last-child {
+        border-bottom: none;
+    }
+
+    .nav-link {
+        padding: 12px 15px;
+        flex: 1;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar {
+        padding: 25px 0;
+    }
+
+    .nav-item {
+        border-bottom: none;
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-link {
+        padding: 8px 15px;
+    }
+
+    .nav-arrow {
+        display: none;
+    }
+}
+
+    /* Footer */
+
+    .row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+footer .row > div {
+    display: flex;
+    flex-direction: column;
+}
+
+/* For all sizes before desktop or XL */
+@media (max-width: 1199px) {
+    .footer_border {
+        border-bottom: 2px solid #4c595e;
+        padding-bottom: 5px;
+        margin-bottom: 5px;
+    }
+
+    .footer_border:last-child {
+        border-bottom: None;
+    }
+
+}
+
+/* This one will be for desktop (after XL)  */
+
+@media (min-width: 1200px) {
+    .footer_border {
+        border-bottom: none;
+    }
+
+    .footer_border:last-child {
+        border-right: none;
+    }
+
+    .logo_social {
+        margin-top: 40px;
+    }
+}
+
+.footer-brand {
+    color: var(--font-color);
+    font-size:  20px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+footer .logo_social {
+    display: block;
+    align-items: center;
+    text-align: center;
+    width: 100;
+    /* border: 2px solid white; */
+    justify-content: center;
+}
+
+footer .social {
+    display: flex;
+    margin: 0 auto;
+    width: fit-content;
+    /* border: 2px solid white; */
+    gap: 6px;
+}
+
+.bg_dark{
+    background-color: var(--background-color);
+}
+
+.fa-instagram {
+    background: #125688;
+    color: var(--font-color);
+}
+
+.fa-google {
+    background: #dd4b39;
+    color: var(--font-color);
+}
+
+.fa-youtube {
+    background: #bb0000;
+    color: var(--font-color);
+}
+
+.fa-facebook {
+    background: #3B5998;
+    color: var(--font-color);
+}
+
+.fa {
+    padding: 9px;
+    font-size: 16px;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+footer .link {
+    text-decoration: none;
+    color: var(--font-color)
+}
+
+footer .link:hover {
+    text-decoration: underline;
+}
+
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: var(--accent-color);
+    color: white;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s;
+}
+
+#myBtn:hover {
+    background-color: var(--accent-color-hover);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    transform: translateY(-2px); 
+    /* Adding a nice sort of levitating effect. Real cool. */
+}
+
+#myBtn i {
+    pointer-events: none;
+}
+
+/* Hero Image. */
+.hero-banner-section {
+    background-color: #e5e7eb;
+}
+
+.hero-banner {
+    background-image: url('./visit_images/night.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 170px 80px;
+    position: relative;
+}
+
+.hero-overlay-box {
+    background-color: var(--font-color);
+    opacity: 0.8;
+    max-width: 650px;
+    padding: 40px;
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
+}
+
+.hero-slogan {
+    font-size: 16pt;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.hero-title {
+    font-size: 48pt;
+    font-weight: 800;
+    color: var(--background-color);
+    margin-bottom: 20px;
+}
+
+.hero-paragraph {
+    font-size: 16pt;
+    line-height: 1.6;
+    font-weight: 300;
+    border-left: 3px solid var(--accent-color) !important;
+    color: var(--background-color);
+    padding: 5px 0 5px 20px;
+    margin-bottom: 0;
+}
+
+.hero-button {
+    display: block;
+    width: fit-content;
+    margin: 24px 0 0 auto;
+    padding: 15px 25px;
+    font-size: 16pt;
+    font-weight: 400;
+    text-decoration: none;
+    color: var(--accent-color) !important;
+    border: 2px solid var(--accent-color);
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-button:hover {
+    color: var(--accent-color-hover) !important;
+    border: 2px solid var(--accent-color-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.22);
+    opacity: 0.95;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-caption {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background-color: rgba(15, 23, 43, 0.5);
+    color: rgba(255, 255, 255, 0.9);
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    backdrop-filter: blur(3px);
+    font-weight: 400;
+}
+
+@media (max-width: 1200px) {
+    .hero-banner {
+        padding: 130px 60px;
+    }
+
+    .hero-overlay-box {
+        max-width: 560px;
+        padding: 32px;
+    }
+
+    .hero-slogan {
+        font-size: 15pt;
+    }
+
+    .hero-title {
+        font-size: 30pt;
+    }
+
+    .hero-paragraph {
+        font-size: 12pt;
+    }
+}
+
+@media (max-width: 991px) {
+    .hero-banner {
+        max-height: 620px;
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+
+    .hero-overlay-box {
+        margin-top: 50px;
+        max-width: 520px;
+        padding: 28px;
+    }
+
+    .hero-slogan {
+        font-size: 13pt;
+    }
+
+    .hero-title {
+        font-size: 30pt;
+    }
+
+    .hero-paragraph {
+        font-size: 11pt;
+    }
+}
+
+@media (max-width: 767px) {
+    .hero-banner {
+        padding: 60px;
+    }
+
+    .hero-overlay-box {
+        margin-top: 50px;
+        max-width: 420px;
+        padding: 22px;
+    }
+
+    .hero-button {
+        margin-top: 24px;
+        padding: 16px;
+        font-size: 12pt;
+        justify-self: center;
+    }
+
+    .hero-slogan {
+        font-size: 12pt;
+    }
+
+    .hero-title {
+        font-size: 22pt;
+    }
+
+    .hero-paragraph {
+        font-size: 10pt;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-banner {
+        padding: 50px;
+    }
+
+    .hero-overlay-box {
+        max-height: 550px;
+        padding: 16px;
+    }
+
+    .hero-slogan {
+        font-size: 11pt;
+    }
+
+    .hero-title {
+        font-size: 14.4pt;
+        margin-bottom: 10px;
+    }
+
+    .hero-paragraph {
+        font-size: 10pt;
+        max-height: 400px;
+    }
+
+    .hero-button {
+        padding: 10px;
+        font-size: 10pt;
+        justify-self: center;
+        margin-left: 0px;
+    }
+
+    .hero-caption {
+        bottom: 10px;
+        right: 10px;
+        font-size: 9px;
+        padding: 3px 8px;
+    }
+}
+
+/* Blurb css */
+.intro-section {
+    margin-top: 1rem;
+    padding: 1rem 4rem;
+    max-width: 780px;
+}
+
+.intro-section p {
+    color: #000000;
+    text-align: left;
+}
+
+.intro-divider {
+    width: 90%;
+    border: 2px solid var(--accent-color);
+    margin: 1.5rem auto;
+    opacity: 1;
+}
+
