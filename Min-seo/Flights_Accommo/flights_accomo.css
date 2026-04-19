@@ -467,4 +467,29 @@ footer .link:hover {
     color: white;
 }
 
+/* Deals & Packages Section */
 
+.deal-card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.deal-card .card-img-top {
+    height: 250px;
+    object-fit: cover;
+}
+
+.deal-card .card-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.deal-card .card-text {
+    flex: 1;
+}
