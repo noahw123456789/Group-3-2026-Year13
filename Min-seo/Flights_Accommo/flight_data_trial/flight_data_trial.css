@@ -7,6 +7,10 @@
     --light-blue: #60a5fa;
 }
 
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 .colour-accent {
     color: var(--accent-color)
 }
@@ -41,7 +45,7 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 20px;
-    width: 60px; 
+    width: 60px;
     height: 60px;
 }
 
@@ -97,8 +101,34 @@
     border-radius: 10px;
 }
 
+.google-flights-btn:hover {
+    background: var(--accent-color-hover);
+    color: white;
+    text-decoration: none;
+}
 
 .flight-data-static {
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Table stylign */
+.table thead th {
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.table tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.table tbody tr:hover {
+    background-color: rgba(18, 95, 169, 0.05);
+}
+
+/* Status Badges */
+.badge {
+    padding: 6px 12px;
+    font-size: 0.8rem;
 }
