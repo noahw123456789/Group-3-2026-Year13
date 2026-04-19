@@ -2,7 +2,7 @@
 :root {
     --font-color: #f8fafc;
     --background-color: #0f172b;
-    --subtext-color: #94a3b8;
+    --subtext-color: #97A3BA;
     --accent-color: #125FA9;
     --accent-color-hover: #005396;
     --light-blue: #60a5fa;
@@ -23,7 +23,7 @@
 
 .navbar-brand {
     color: var(--font-color);
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: 500;
 }
 
@@ -33,7 +33,7 @@
 
 .navbar-nav .nav-link {
     color: var(--subtext-color);
-    font-size: 16px;
+    font-size: 1rem;
     cursor: pointer;
     margin: 0 10px;
     border-bottom: 2px solid transparent;
@@ -144,20 +144,20 @@
 }
 
 .hero-slogan {
-    font-size: 16pt;
+    font-size: 1.4rem;
     font-weight: 600;
     margin-bottom: 5px;
 }
 
 .hero-title {
-    font-size: 48pt;
+    font-size: 3rem;
     font-weight: 800;
     color: var(--background-color);
     margin-bottom: 20px;
 }
 
 .hero-paragraph {
-    font-size: 16pt;
+    font-size: 1.4rem;
     line-height: 1.6;
     font-weight: 300;
     border-left: 3px solid var(--accent-color) !important;
@@ -171,7 +171,7 @@
     width: fit-content;
     margin: 24px 0 0 auto;
     padding: 15px 25px;
-    font-size: 16pt;
+    font-size: 1.4rem;
     font-weight: 400;
     text-decoration: none;
     color: var(--accent-color) !important;
@@ -197,7 +197,7 @@
     color: rgba(255, 255, 255, 0.9);
     padding: 4px 10px;
     border-radius: 12px;
-    font-size: 11px;
+    font-size: 0.688rem;
     backdrop-filter: blur(3px);
     font-weight: 400;
 }
@@ -213,15 +213,15 @@
     }
 
     .hero-slogan {
-        font-size: 15pt;
+        font-size: 1.25rem;
     }
 
     .hero-title {
-        font-size: 30pt;
+        font-size: 2.5rem;
     }
 
     .hero-paragraph {
-        font-size: 12pt;
+        font-size: 1rem;
     }
 }
 
@@ -245,15 +245,15 @@
     }
 
     .hero-slogan {
-        font-size: 13pt;
+        font-size: 1.083rem;
     }
 
     .hero-title {
-        font-size: 30pt;
+        font-size: 2.5rem;
     }
 
     .hero-paragraph {
-        font-size: 11pt;
+        font-size: 0.917rem;
     }
 }
 
@@ -274,15 +274,15 @@
     }
 
     .hero-slogan {
-        font-size: 12pt;
+        font-size: 1rem;
     }
 
     .hero-title {
-        font-size: 22pt;
+        font-size: 1.833rem;
     }
 
     .hero-paragraph {
-        font-size: 12pt;
+        font-size: 1rem;
         font-weight: 400;
     }
 }
@@ -302,21 +302,21 @@
     }
 
     .hero-title {
-        font-size: 14.4pt;
+        font-size: 1.2rem;
         margin-bottom: 10px;
     }
 
     .hero-slogan {
-        font-size: 10pt;
+        font-size: 0.833rem;
     }
 
     .hero-paragraph {
-        font-size: 10pt;
+        font-size: 0.833rem;
         max-height: 400px;
     }
 
     .hero-button {
-        font-size: 10pt;
+        font-size: 0.833rem;
         padding: 10px;
         margin-left: 0;
     }
@@ -324,7 +324,7 @@
     .hero-caption {
         bottom: 10px;
         right: 10px;
-        font-size: 9px;
+        font-size: 0.563rem;
         padding: 3px 8px;
     }
 }
