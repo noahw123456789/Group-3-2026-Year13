@@ -621,20 +621,18 @@ footer .link:hover {
 
 /* Blurb css */
 .intro-section {
-    margin-bottom: 0.5rem;
     margin-top: 1rem;
-    padding: 1rem;
+    padding: 1rem 4rem;
+    max-width: 780px;
 }
 
 .intro-section p {
     color: #000000;
-    max-width: 650px;
-    margin-left: auto;
-    margin-right: auto;
+    text-align: left;
 }
 
 .intro-divider {
-    width: 60px;
+    width: 90%;
     border: 2px solid var(--accent-color);
     margin: 1.5rem auto;
     opacity: 1;
