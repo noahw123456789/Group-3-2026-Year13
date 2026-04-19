@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="guide.css">
+    <link rel="stylesheet" href="CSS/style.css">
     <title>Travel Guide</title>
 </head>
 <body>
@@ -18,35 +18,35 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav mb-2 mb-lg-0">
                 <li class="nav-item d-flex align-items-center justify-content-between">
-                    <a href="#" class="nav-link">Home</a>
+                    <a href="index.html" class="nav-link">Home</a>
                     <span class="nav-arrow">></span>
                 </li>
                 <li class="nav-item d-flex align-items-center justify-content-between">
-                    <a href="#" class="nav-link">Activities</a>
+                    <a href="activities.html" class="nav-link">Activities</a>
                     <span class="nav-arrow">></span>
                 </li>
                 <li class="nav-item d-flex align-items-center justify-content-between">
-                    <a href="#" class="nav-link">Visit</a>
+                    <a href="visit.html" class="nav-link">Visit</a>
                     <span class="nav-arrow">></span>
                 </li>
                 <li class="nav-item d-flex align-items-center justify-content-between">
-                    <a href="#" class="nav-link">Eat</a>
+                    <a href="eating.html" class="nav-link">Eat</a>
                     <span class="nav-arrow">></span>
                 </li>
                 <li class="nav-item d-flex align-items-center justify-content-between">
-                    <a href="#" class="nav-link">Flights and Accommodation</a>
+                    <a href="flights.html" class="nav-link">Flights and Accommodation</a>
                     <span class="nav-arrow">></span>
                 </li>
                 <li class="nav-item d-flex align-items-center justify-content-between">
-                    <a href="#" class="nav-link active">Travel Guide</a>
+                    <a href="guide.html" class="nav-link active">Travel Guide</a>
                     <span class="nav-arrow">></span>
                 </li>
             </ul>
         </div>
     </nav>
 
-    <main class="hero-banner-section">
-        <div class="hero-banner">
+    <section class="hero-banner-section">
+        <div class="hero-banner-guide">
             <div class="hero-overlay-box">
                 <p class="hero-slogan">Adventure starts the moment you land</p>
                 <h1 class="hero-title">Travel Guide</h1>
@@ -57,7 +57,7 @@
                 <span>passports and planes tickets spread out</span>
             </div>
         </div>
-    </main>
+    </section>
 
     <section class="bg-white py-5">
         <div class="container">
@@ -163,7 +163,7 @@
 
             <div class="col-12 col-md-6 col-lg-4">
                 <a href="activities.html" class="nav-card">
-                    <div class="nav-card-img" style="background-image: url('/Min-seo/Activities/activities_media/activities_hero.jpg');">
+                    <div class="nav-card-img" style="background-image: url('images/activities_media/activities_hero.jpg');">
                         <div class="nav-card-overlay"></div>
                         <div class="nav-card-body">
                             <div class="nav-card-badges">
@@ -180,7 +180,7 @@
 
             <div class="col-12 col-md-6 col-lg-4">
                 <a href="eating.html" class="nav-card">
-                    <div class="nav-card-img" style="background-image: url('/Noah/Eating/eating-hero-image.png');">
+                    <div class="nav-card-img" style="background-image: url('images/eating_media/eating-hero-image.png');">
                         <div class="nav-card-overlay"></div>
                         <div class="nav-card-body">
                             <div class="nav-card-badges">
@@ -197,7 +197,7 @@
 
             <div class="col-12 col-md-6 col-lg-4">
                 <a href="visit.html" class="nav-card">
-                    <div class="nav-card-img" style="background-image: url('index_media/visit.jpg');">
+                    <div class="nav-card-img" style="background-image: url('images/visit_media/night.jpg');">
                         <div class="nav-card-overlay"></div>
                         <div class="nav-card-body">
                             <div class="nav-card-badges">
@@ -230,7 +230,7 @@
 
             <div class="col-12 col-md-6 col-lg-4">
                 <a href="travel_guide.html" class="nav-card">
-                    <div class="nav-card-img" style="background-image: url('index_media/guide.jpg');">
+                    <div class="nav-card-img" style="background-image: url('images/guide_media/guide.jpg');">
                         <div class="nav-card-overlay"></div>
                         <div class="nav-card-body">
                             <div class="nav-card-badges">
@@ -280,8 +280,8 @@
         <!-- Left column — image -->
         <div class="col-12 col-md-7">
             <img
-            src="guide_images/taiki.jpg"
-            alt="Group of cyclists watching the sunset over Lake Wakatipu"
+            src="images/guide_media/taiki.jpg"
+            alt="Lake Wakatipu, The remarkables behind it and ducks on the water"
             class="img-fluid rounded">
             <!-- img-fluid makes the image responsive (never overflows its column)
                 rounded adds the slightly rounded corners you can see in the screenshot

@@ -150,6 +150,14 @@
     position: relative;
 }
 
+.hero-banner-guide{
+    background-image: url('../images/guide_media/guide.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 170px 80px;
+    position: relative;
+}
+
 .hero-overlay-box {
     background-color: var(--font-color);
     opacity: 0.8;
@@ -525,6 +533,18 @@
     border-color: var(--accent-color);
     margin: 8px auto 24px auto;
     border-radius: 10px;
+}
+
+.section-label {
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: black;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent-color);
+    display: block;
 }
 
 @media (max-width: 767px) {
@@ -1191,6 +1211,7 @@ footer .link:hover {
     margin-top: 1rem;
     padding: 1rem 4rem;
     max-width: 780px;
+    max-width: 780px;
 }
 
 .intro-section p {
@@ -1198,10 +1219,177 @@ footer .link:hover {
     text-align: left;
 }
 
+.intro-section h2 {
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
 .intro-divider {
     width: 90%;
     border: 2px solid var(--accent-color);
     margin: 1.5rem auto;
     opacity: 1;
+    color: var(--text-muted);
+    line-height: 1.75;
+    font-size: 1rem;
 }
 
+/* Getting Here section (Guide only)*/
+.getting-here-section {
+    background-color: var(--background-color);
+    color: white;
+    padding: 3.5rem 0;
+}
+
+.getting-here-section .section-label {
+    color: rgb(255, 255, 255);
+    border-bottom-color: #0f172b;
+}
+
+.getting-here-section h2 {
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: white;
+}
+
+.getting-here-section .nav-tabs {
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    margin-bottom: 2rem;
+}
+
+.getting-here-section .nav-tabs .nav-link {
+    color: rgba(255,255,255,0.6);
+    border: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0.6rem 1.25rem;
+    border-radius: 0;
+    border-bottom: 2px solid transparent;
+    transition: all 0.15s;
+}
+
+.getting-here-section .nav-tabs .nav-link:hover {
+    color: white;
+    border-bottom-color: rgba(255,255,255,0.4);
+}
+
+.getting-here-section .nav-tabs .nav-link.active {
+    color: white;
+    background: transparent;
+    border-bottom: 2px solid white;
+}
+
+.getting-here-section .tab-map {
+    width: 100%;
+    border-radius: 12px;
+    max-height: 420px;
+    object-fit: contain;
+}
+
+.getting-here-section .tab-text p {
+    color: rgba(255,255,255,0.75);
+    line-height: 1.75;
+    font-size: 0.95rem;
+}
+
+.getting-here-section .tab-text h3 {
+    color: white;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.getting-here-section .more-link {
+    display: inline-block;
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255,255,255,0.4);
+    padding-bottom: 2px;
+    transition: border-color 0.15s;
+}
+
+.getting-here-section .more-link:hover {
+    border-bottom-color: white;
+}
+
+/* TIAKI segement (Guide Only)*/
+.tiaki-section {
+  background-color:var(--background-color);
+}
+
+.tiaki-heading {
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.tiaki-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  font-style: italic;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.tiaki-text {
+  font-size: 0.9rem;
+  color: #ffffff;
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
+}
+
+/* Read more (Guide only)*/
+.tiaki-btn {
+  display: inline-block;
+  background-color: #125FA9;
+  color: white;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 12px 28px;
+  border-radius: 999px;
+  transition: background 0.15s;
+}
+
+.tiaki-btn:hover {
+  background-color: white;
+  color: #125FA9;
+}
+
+/* Accordion (guide only)*/
+.accordion-button {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    background: var(--card-bg);
+}
+
+.accordion-button:not(.collapsed) {
+    color: var(--accent-color);
+    background-color: var(--accent-light);
+    box-shadow: none;
+}
+
+.accordion-button:focus { box-shadow: none; }
+
+.accordion-body {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.75;
+}
+
+.accordion-item {
+    border: 1px solid var(--border);
+    margin-bottom: 0.5rem;
+    border-radius: 10px !important;
+    overflow: hidden;
+}
