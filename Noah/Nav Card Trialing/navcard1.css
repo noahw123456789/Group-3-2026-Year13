@@ -1,0 +1,340 @@
+:root {
+    --font-color: #f8fafc;
+    --background-color: #0f172b;
+    --subtext-color: #ebebeb;
+    --accent-color: #125FA9;
+    --accent-color-hover: #005396;
+    --light-blue: #60a5fa;
+}
+
+
+/* Navigation*/
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+    background-color: var(--background-color);
+    padding: 0;
+}
+
+.navbar-brand {
+    color: var(--font-color);
+    font-size:  20px;
+    padding-left: 80px;
+    font-weight: 500;
+}
+
+.navbar-nav {
+    padding-right: 80px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--font-color);
+    border-bottom: 2px solid var(--light-blue);
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+.nav-item .nav-link {
+    color: var(--subtext-color);
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 10px;
+    border-bottom: 2px solid transparent;
+}
+
+.navbar-nav .nav-link.active {
+    font-weight: 600;
+    border-bottom: 2px solid var(--light-blue);
+}
+
+.navbar-toggler {
+    border: none;
+    outline: none;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+/* Mobile + Tablets (XS + SM + MD) */
+@media (max-width: 991px) {
+    .nav-item {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-item:last-child {
+        border-bottom: none;
+    }
+
+    .nav-link {
+        padding: 12px 15px;
+        flex: 1;
+    }
+
+    .nav-arrow {
+        color: var(--font-color);
+        padding-right: 15px;
+    }
+}
+
+/* Desktop (LG) */
+@media (min-width: 992px) {
+    .navbar {
+        padding: 25px 0;
+    }
+
+    .nav-item {
+        border-bottom: none;
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-link {
+        padding: 8px 15px;
+    }
+
+    .nav-arrow {
+        display: none;
+    }
+}
+
+/* Footer */
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+footer .row > div {
+    display: flex;
+    flex-direction: column;
+}
+
+/* For all sizes before desktop or XL */
+@media (max-width: 1199px) {
+    .footer_border {
+        border-bottom: 2px solid #4c595e;
+        padding-bottom: 5px;
+        margin-bottom: 5px;
+    }
+
+    .footer_border:last-child {
+        border-bottom: None;
+    }
+
+}
+
+/* This one will be for desktop (after XL)  */
+
+@media (min-width: 1200px) {
+    .footer_border {
+        border-bottom: none;
+    }
+
+    .footer_border:last-child {
+        border-right: none;
+    }
+
+    .logo_social {
+        margin-top: 40px;
+    }
+}
+
+.footer-brand {
+    color: var(--font-color);
+    font-size:  20px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+footer .logo_social {
+    display: block;
+    align-items: center;
+    text-align: center;
+    width: 100;
+    /* border: 2px solid white; */
+    justify-content: center;
+}
+
+footer .social {
+    display: flex;
+    margin: 0 auto;
+    width: fit-content;
+    /* border: 2px solid white; */
+    gap: 6px;
+}
+
+.bg_dark{
+    background-color: var(--background-color);
+}
+
+.fa-instagram {
+    background: #125688;
+    color: var(--font-color);
+}
+
+.fa-google {
+    background: #dd4b39;
+    color: var(--font-color);
+}
+
+.fa-youtube {
+    background: #bb0000;
+    color: var(--font-color);
+}
+
+.fa-facebook {
+    background: #3B5998;
+    color: var(--font-color);
+}
+
+.fa {
+    padding: 9px;
+    font-size: 16px;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+footer .link {
+    text-decoration: none;
+    color: var(--font-color)
+}
+
+footer .link:hover {
+    text-decoration: underline;
+}
+
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: var(--accent-color);
+    color: white;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s;
+}
+
+#myBtn:hover {
+    background-color: var(--accent-color-hover);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    transform: translateY(-2px); 
+    /* Adding a nice sort of levitating effect. Real cool. */
+}
+
+#myBtn i {
+    pointer-events: none;
+}
+
+
+
+/* Nav Cards */
+
+.explore-1-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+ 
+.explore-1-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background-color: #ffffff;
+    border: 1.5px solid rgba(18, 95, 169, 0.15);
+    border-radius: 12px;
+    padding: 18px 20px;
+    text-decoration: none;
+    color: var(--background-color);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+ 
+.explore-1-card:hover {
+    border-color: rgba(18, 95, 169, 0.5);
+    box-shadow: 0 6px 18px rgba(18, 95, 169, 0.1);
+    transform: translateY(-2px);
+    color: inherit;
+    text-decoration: none;
+}
+ 
+.explore-1-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+}
+ 
+.explore-1-content {
+    flex: 1;
+    min-width: 0;
+}
+ 
+.explore-1-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--accent-color);
+    margin: 0 0 4px;
+}
+ 
+.explore-1-text {
+    font-size: 13px;
+    color: #374151;
+    line-height: 1.5;
+    margin: 0 0 8px;
+}
+ 
+.explore-1-badges {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+ 
+.explore-1-cta {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--accent-color);
+    flex-shrink: 0;
+    opacity: 0.5;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+ 
+.explore-1-card:hover .explore-b-cta {
+    opacity: 1;
+    transform: translateX(3px);
+}
+ 
+@media (max-width: 767px) {
+    .explore-1-grid {
+        grid-template-columns: 1fr;
+    }
+}
+ 
+
+
+
