@@ -118,7 +118,7 @@
 }
 
 .hero-banner {
-    background-image: url('./activities_media/activities_hero.jpg');
+    background-image: url('./guide_images/guide.jpg');
     background-size: cover;
     background-position: center;
     padding: 170px 80px;
@@ -423,7 +423,6 @@ footer .link:hover {
 /* Scroll to top button */
 
 #myBtn {
-    display: none;
     position: fixed;
     bottom: 20px;
     right: 30px;
@@ -455,7 +454,7 @@ footer .link:hover {
       Small uppercase heading above each section.
     ============================================================ */
 .section-label {
-    font-size: 0.75rem;
+    font-size: 1rem;
     font-weight: 600;
     letter-spacing: 0.1em;
     text-transform: uppercase;
