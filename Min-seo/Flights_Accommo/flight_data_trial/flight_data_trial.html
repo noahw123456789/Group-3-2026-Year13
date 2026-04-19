@@ -110,6 +110,7 @@
                 </div>
             </div>
 
+            <!-- External Link -->
             <div class="external-flights-data text-center py-5 mb-5">
                 <h4 class="mb-3">Search & Book Flights to Queenstown</h4>
                 <p class="subtext mb-5">For flights from other locations or to compare prices, search on Google Flights</p>
@@ -119,18 +120,166 @@
                 </a>
                 <p class="subtext mt-5 mb-0"></p>Opens in a new tab</p>
             </div>
-            
-        
         </div>
 
 
         <div class="method2 text-start">
             <h2 class="mb-5">Method 2:</h2>
+            <div class="table-responsive">
+                <table class="table table-hover table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Flight</th>
+                            <th>Airline</th>
+                            <th>From</th>
+                            <th>Scheduled</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>NZ123</strong></td>
+                            <td><img src="https://via.placeholder.com/20" alt="" class="me-2"> Air New Zealand</td>
+                            <td>Auckland (AKL)</td>
+                            <td>2:30 PM</td>
+                            <td><span class="badge bg-success">On Time</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>JQ287</strong></td>
+                            <td><img src="https://via.placeholder.com/20" alt="" class="me-2"> Jetstar</td>
+                            <td>Wellington (WLG)</td>
+                            <td>3:45 PM</td>
+                            <td><span class="badge bg-success">On Time</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>QF121</strong></td>
+                            <td><img src="https://via.placeholder.com/20" alt="" class="me-2"> Qantas</td>
+                            <td>Sydney (SYD)</td>
+                            <td>5:15 PM</td>
+                            <td><span class="badge bg-warning">Delayed</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>NZ456</strong></td>
+                            <td><img src="https://via.placeholder.com/20" alt="" class="me-2"> Air New Zealand</td>
+                            <td>Christchurch (CHC)</td>
+                            <td>6:00 PM</td>
+                            <td><span class="badge bg-info">Landed</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>JQ289</strong></td>
+                            <td><img src="https://via.placeholder.com/20" alt="" class="me-2"> Jetstar</td>
+                            <td>Auckland (AKL)</td>
+                            <td>7:30 PM</td>
+                            <td><span class="badge bg-primary">Scheduled</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-muted text-end mt-3"><small><i class="fa fa-clock"></i> Last updated: Just now</small></p>
+
+         
+
+            <!-- Airport Info Cards -->
+             <h4 class="mb-4 text-start ">Queenstown Airport</h4>
+            <div class="row g-4 mb-5">
+                <div class="col-md-4">
+                    <div class="card text-center h-100 airport_info">
+                        <div class="card-body">
+                            <div class="info_icon">
+                                <i class="fa fa-plane fa-2x"></i>
+                            </div>
+                            <h5 class="card-title">Airport Code</h5>
+                            <h4 class="second_row">ZQN</h4>
+                            <p class="third_row">Queenstown Airport</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card text-center airport_info">
+                        <div class="card-body">
+                            <div class="info_icon">
+                                <i class="fa fa-building fa-2x"></i>
+                            </div>
+                            <div class="d-flex justify-content-center gap-2 flex-wrap mb-4 mt-4">
+                                <span class="badge bg-airnz">Air NZ</span>
+                                <span class="badge bg-jetstar">Jetstar</span>
+                                <span class="badge bg-qantas">Qantas</span>
+                            </div>
+                            <p class="third_row">Direct flights from major NZ & Australian cities</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card text-center airport_info">
+                        <div class="card-body">
+                            <div class="info_icon">
+                                <i class="fa fa-calendar fa-2x"></i>
+                            </div>
+                            <h5 class="card-title mb-3">Peak Seasons</h5>
+                            <p class="mb-1"><strong>Summer:</strong> Dec - Feb</p>
+                            <p class="mb-0"><strong>Ski Season:</strong> Jun - Aug</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Flight Route Cards -->
+            <h4 class="mb-4 text-start ">Popular Routes to Queenstown</h4>
+            <div class="row g-4 mb-5">
+                <div class="col-6 col-md-3">
+                    <div class="card h-100 route_cards">
+                        <div class="card-body text-center">
+                            <div class="route mb-2">AKL → ZQN</div>
+                            <h6 class="card-title">Auckland</h6>
+                            <p class="subtext flight_times">~2 hours<br>Multiple daily</p>
+                            <hr>
+                            <p class="airline">Air NZ, Jetstar</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="card h-100 route_cards">
+                        <div class="card-body text-center">
+                            <div class="route mb-2">WLG → ZQN</div>
+                            <h6 class="card-title">Wellington</h6>
+                            <p class="subtext flight_times">~1.5 hours<br>Daily</p>
+                            <hr>
+                            <p class="airline">Air NZ</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="card h-100 route_cards">
+                        <div class="card-body text-center">
+                            <div class="route mb-2">CHC → ZQN</div>
+                            <h6 class="card-title">Christchurch</h6>
+                            <p class="subtext flight_times">~1 hour<br>Multiple daily</p>
+                            <hr>
+                            <p class="airline">Air NZ, Jetstar</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6 col-md-3">
+                    <div class="special card h-100 route_cards">
+                        <div class="card-body text-center">
+                            <div class="route mb-2">SYD → ZQN</div>
+                            <h6 class="card-title">Sydney</h6>
+                            <p class="subtext flight_times">~3 hours<br>Seasonal</p>
+                            <hr>
+                            <p class="airline colour-accent">Seasonal service</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 
         </div>
 
         <div class="method3 text-start">
-            <h2 class="mb-5">Method 3:</h2>
+            <h2 class="mb-5 mt-5">Method 3:</h2>
 
         </div>
 
