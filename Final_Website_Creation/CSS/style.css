@@ -1119,3 +1119,28 @@ footer .link:hover {
 #myBtn i {
     pointer-events: none;
 }
+
+/* Filter buttons (Visit Only)*/
+.filter-btn {
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 6px 18px;
+    border-radius: var(--radius-tag);
+    border: 1px solid var(--border);
+    background: white;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.18s ease;
+}
+
+.filter-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.filter-btn.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: white;
+}
