@@ -21,12 +21,10 @@
 }
 
 .navbar-brand {
-    padding-left: 15px;
-}
-
-.navbar-logo {
-    height: 50px;
-    width: auto;
+    color: var(--font-color);
+    font-size:  20px;
+    padding-left: 80px;
+    font-weight: 500;
 }
 
 .navbar-nav {
@@ -41,7 +39,7 @@
 
 .nav-item .nav-link {
     color: var(--subtext-color);
-    font-size: 16px;
+    font-size: 1rem;
     cursor: pointer;
     margin: 0 10px;
     border-bottom: 2px solid transparent;
