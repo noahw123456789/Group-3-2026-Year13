@@ -16,20 +16,21 @@
     left: 0;
     right: 0;
     z-index: 1000;
-    transition: transform 0.3s ease-in-out;
     background-color: var(--background-color);
-    padding: 0;
+    transition: transform 0.3s ease-in-out;
 }
 
 .navbar-brand {
-    color: var(--font-color);
-    font-size:  20px;
-    padding-left: 80px;
-    font-weight: 500;
+    padding-left: 15px;
+}
+
+.navbar-logo {
+    height: 50px;
+    width: auto;
 }
 
 .navbar-nav {
-    padding-right: 80px;
+    width: 100%;
 }
 
 .navbar-nav .nav-link:hover {
@@ -54,15 +55,35 @@
 .navbar-toggler {
     border: none;
     outline: none;
+    padding: 12px 16px;
+    margin-right: 16px;
 }
 
 .navbar-toggler:focus {
     box-shadow: none;
 }
 
+.navbar-toggler-icon {
+    width: 30px;
+    height: 30px;
+}
+
 /* Mobile + Tablets (XS + SM + MD) */
 @media (max-width: 991px) {
+    .navbar-toggler {
+        padding: 10px 14px;
+        margin-right: 14px;
+    }
+
+    .navbar-toggler-icon {
+        width: 28px;
+        height: 28px;
+    }
+
     .nav-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
@@ -81,10 +102,39 @@
     }
 }
 
+@media (max-width: 576px) {
+    .navbar-toggler {
+        padding: 8px 12px;
+        margin-right: 12px;
+    }
+
+    .navbar-toggler-icon {
+        width: 26px;
+        height: 26px;
+    }
+}
+
 /* Desktop (LG) */
 @media (min-width: 992px) {
     .navbar {
-        padding: 25px 0;
+        padding: 20px 0;
+    }
+
+    .navbar-brand {
+        padding-left: 80px;
+    }
+
+    .navbar-logo {
+        height: 65px;
+    }
+
+    .navbar-collapse {
+        flex-grow: 1;
+    }
+
+    .navbar-nav {
+        width: auto;
+        margin-right: 80px;
     }
 
     .nav-item {
@@ -102,6 +152,7 @@
     }
 }
 
+
 /* Footer */
 
 .row {
@@ -114,21 +165,15 @@ footer .row > div {
     flex-direction: column;
 }
 
-/* For all sizes before desktop or XL */
-@media (max-width: 1199px) {
-    .footer_border {
-        border-bottom: 2px solid #4c595e;
-        padding-bottom: 5px;
-        margin-bottom: 5px;
-    }
-
-    .footer_border:last-child {
-        border-bottom: None;
-    }
-
+.footer_border {
+    border-bottom: 2px solid #4c595e;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
 }
 
-/* This one will be for desktop (after XL)  */
+.footer_border:last-child {
+    border-bottom: none;
+}
 
 @media (min-width: 1200px) {
     .footer_border {
@@ -138,35 +183,39 @@ footer .row > div {
     .footer_border:last-child {
         border-right: none;
     }
-
-    .logo_social {
-        margin-top: 40px;
-    }
 }
 
-.footer-brand {
-    color: var(--font-color);
-    font-size:  20px;
-    font-weight: 500;
+/* Footer Logo Styles */
+.footer-brand-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-decoration: none;
+    width: 100%;
+}
+
+.footer-logo {
+    height: 150px;
+    width: auto;
 }
 
 footer .logo_social {
-    display: block;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     text-align: center;
-    width: 100;
-    /* border: 2px solid white; */
-    justify-content: center;
+    width: 100%;
+    height: 100%;
+    justify-content: flex-start;
 }
 
 footer .social {
     display: flex;
     margin: 0 auto;
     width: fit-content;
-    /* border: 2px solid white; */
     gap: 6px;
 }
+
 
 .bg_dark{
     background-color: var(--background-color);
@@ -240,7 +289,7 @@ footer .link:hover {
 #myBtn:hover {
     background-color: var(--accent-color-hover);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-    transform: translateY(-2px); 
+    transform: translateY(-2px);
     /* Adding a nice sort of levitating effect. Real cool. */
 }
 
