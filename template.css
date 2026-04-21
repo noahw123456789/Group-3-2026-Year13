@@ -21,10 +21,12 @@
 }
 
 .navbar-brand {
-    color: var(--font-color);
-    font-size:  20px;
-    padding-left: 80px;
-    font-weight: 500;
+    padding-left: 15px;
+}
+
+.navbar-logo {
+    height: 50px;
+    width: auto;
 }
 
 .navbar-nav {
@@ -39,7 +41,7 @@
 
 .nav-item .nav-link {
     color: var(--subtext-color);
-    font-size: 1rem;
+    font-size: 16px;
     cursor: pointer;
     margin: 0 10px;
     border-bottom: 2px solid transparent;
@@ -66,7 +68,7 @@
     height: 30px;
 }
 
-/* Mobile + Tablets (XS + SM + MD) */
+/* Mobile + Tablets */
 @media (max-width: 991px) {
     .navbar-toggler {
         padding: 10px 14px;
@@ -112,7 +114,7 @@
     }
 }
 
-/* Desktop (LG) */
+/* Desktop */
 @media (min-width: 992px) {
     .navbar {
         padding: 20px 0;
@@ -214,6 +216,11 @@ footer .social {
     gap: 6px;
 }
 
+footer h2 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
 
 .bg_dark{
     background-color: var(--background-color);
@@ -288,7 +295,6 @@ footer .link:hover {
     background-color: var(--accent-color-hover);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
     transform: translateY(-2px);
-    /* Adding a nice sort of levitating effect. Real cool. */
 }
 
 #myBtn i {
