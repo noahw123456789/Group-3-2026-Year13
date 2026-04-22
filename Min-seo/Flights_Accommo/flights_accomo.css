@@ -251,9 +251,8 @@ footer .link:hover {
 
 .section-bars {
     border-width: 3px;
-    width: 90%;
-    margin-left: 0;
-    margin-right: auto;
+    width: 100%;
+    margin: 0;
     border-radius: 10px;
 }
 
@@ -262,7 +261,6 @@ footer .link:hover {
     font-size: 18px;
     color: var(--background-color);
     margin-bottom: 40px;
-    
 }
 
 @media (max-width: 767px) {
@@ -281,7 +279,7 @@ footer .link:hover {
 }
 
 .hero-banner {
-    background-image: url('');
+    background-image: url('flights_accommo_media/hero.jpg');
     background-size: cover;
     background-position: center;
     padding: 170px 80px;
@@ -520,6 +518,12 @@ footer .link:hover {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     padding-top: 20px;
     padding-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.airport_info:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .second_row {
@@ -533,15 +537,39 @@ footer .link:hover {
 }
 
 .info_icon {
-    background-color: var(--accent-color);
+    background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-color-hover) 100%);
     color: var(--font-color);
-    border-radius: 30px;
+    border-radius: 50%;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 20px;
-    width: 60px;
-    height: 60px;
+    margin: 0 auto 20px auto;
+    width: 70px;
+    height: 70px;
+    box-shadow: 0 4px 12px rgba(18, 95, 169, 0.3);
+}
+
+.info_icon i {
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.info_icon i:hover {
+    opacity: 1;
+}
+
+.airport_badge {
+    font-size: 13px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 4px;
+    padding-top: 4px;
+    color: white;
+    border-radius: 10px;
 }
 
 .bg-airnz {
@@ -566,10 +594,64 @@ footer .link:hover {
     border: none;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.route_cards:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .special {
     border: 2px solid #1260a96b
+}
+
+.route-link {
+    text-decoration: none;
+    font-size: 0.85rem;
+    padding: 6px 12px;
+    transition: all 0.3s ease;
+    border-width: 2px;
+}
+
+.route-link:hover {
+    transform: translateY(-1px);
+}
+
+.route-link-airnz {
+    background-color: black;
+    border-color: black;
+    color: white;
+}
+
+.route-link-airnz:hover {
+    background-color: white;
+    border-color: black;
+    color: black;
+}
+
+.route-link-jetstar {
+    background-color: rgb(255, 81, 0);
+    border-color: rgb(255, 81, 0);
+    color: white;
+}
+
+.route-link-jetstar:hover {
+    background-color: white;
+    border-color: rgb(255, 81, 0);
+    color: rgb(255, 81, 0);
+}
+
+.route-link-qantas {
+    background-color: red;
+    border-color: red;
+    color: white;
+}
+
+.route-link-qantas:hover {
+    background-color: white;
+    border-color: red;
+    color: red;
 }
 
 .airline {
