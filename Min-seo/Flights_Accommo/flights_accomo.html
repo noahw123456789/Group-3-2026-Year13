@@ -51,8 +51,8 @@
                 <p class="hero-slogan">Flights sorted. Bed booked. Queenstown ready.</p>
                 <h1 class="hero-title">Flights & Accommodation</h1>
                 <p class="hero-paragraph">Plan your perfect Queenstown getaway with our comprehensive guide to flights and accommodation options. From luxury lakeside resorts to cozy budget-friendly stays, find everything you need to make your Queenstown adventure unforgettable.</p>
-                <a href="#" class="hero-button">Explore Flights</a>
-                <a href="#" class="hero-button">Browse Accommodations</a>
+                <a href="#flight-section" class="hero-button">Explore Flights</a>
+                <a href="#accommodation-section" class="hero-button">Browse Accommodations</a>
             </div>
             <div class="hero-caption">
                 <span>Christchurch International Airport</span>
@@ -61,9 +61,8 @@
     </main>
 
 
-    <div class="container">
-        <div class="method3 text-start">
-            <h2 class="mb-5 mt-5">Method 3:</h2>
+    <div class="container" id="flight-section">
+        <div class="method3 text-start mt-5">
 
             <!-- API Warning -->
             <div id="api-warning" class="alert alert-warning d-none">
@@ -133,7 +132,7 @@
                 </div>
 
                 <div class="col-md-4">
-                    <div class="card text-center airport_info">
+                    <div class="card text-center airport_info h-100">
                         <div class="card-body">
                             <div class="info_icon">
                                 <i class="fa fa-building fa-2x"></i>
@@ -149,7 +148,7 @@
                 </div>
 
                 <div class="col-md-4">
-                    <div class="card text-center airport_info">
+                    <div class="card text-center airport_info h-100">
                         <div class="card-body">
                             <div class="info_icon">
                                 <i class="fa fa-calendar fa-2x"></i>
@@ -217,22 +216,14 @@
 
         <!-- Accommodation Section -->
         <!-- Card Filter taken from Harrison's Visit Page -->
-        <div class="container mt-5 mb-5">
+        <div class="container mt-5 mb-5" id="accommodation-section">
             <div class="header mb-4">Featured Accommodations</div>
-            
-                <div class="container mb-4">
-                    <!-- Price Range Filter -->
-                    <div class="row">
-                        <div class="col-12 mb-3">
-                            <h6 class="text-white mb-2">Price Range</h6>
-                            <div class="d-flex gap-2 flex-wrap mb-4">
-                                <button class="btn btn-outline-primary filter-btn active" data-cat="all">All</button>
-                                <button class="btn btn-outline-primary filter-btn" data-cat="budget">Budget</button>
-                                <button class="btn btn-outline-primary filter-btn" data-cat="midrange">Mid-range</button>
-                                <button class="btn btn-outline-primary filter-btn" data-cat="luxury">Luxury</button>
-                            </div>
-                        </div>
-                    </div>
+
+                <div class="d-flex justify-content-left flex-wrap gap-2 mb-4">
+                    <button class="filter-btn active" data-cat="all">All</button>
+                    <button class="filter-btn" data-cat="budget">Budget</button>
+                    <button class="filter-btn" data-cat="midrange">Mid-range</button>
+                    <button class="filter-btn" data-cat="luxury">Luxury</button>
                 </div>
 
                 <div class="row g-4" id="card-grid">
@@ -242,17 +233,17 @@
                             <img src="https://via.placeholder.com/500x350/125FA9/ffffff?text=Luxury+Accommodation+1" class="card-img-top" alt="Luxury accommodation placeholder">
                             <div class="card-body">
                                 <div class="title-row">
-                                    <h5 class="card-title mb-0">[Luxury Accommodation Name]</h5>
+                                    <h5 class="card-title mb-0">Eichardt's Private Hotel</h5>
                                     <div class="d-flex gap-2">
                                         <span class="badge badge-luxury">Luxury</span>
                                         <span class="badge badge-lakeside">Lakeside</span>
                                     </div>
                                 </div>
-                                <p class="card-text">[Description of the luxury accommodation - location, amenities, and features for guests.]</p>
+                                <p class="card-text">A Queenstown icon dating back to 1861, right on the lakefront in the heart of town. Eight suites, The Penthouse, and a waterside bar that's been welcoming guests since the gold rush era.</p>
                                 <div class="price-row">
-                                    <span class="price">From $[Price]/night</span>
+                                    <span class="price">From $988/night</span>
                                 </div>
-                                <a href="#" target="_blank" class="btn btn-outline-primary w-100">View Details</a>
+                                <a href="https://eichardts.com/accommodation" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary w-100">View Details</a>
                             </div>
                         </div>
                     </div>
@@ -263,17 +254,17 @@
                             <img src="https://via.placeholder.com/500x350/125FA9/ffffff?text=Luxury+Accommodation+2" class="card-img-top" alt="Luxury accommodation placeholder">
                             <div class="card-body">
                                 <div class="title-row">
-                                    <h5 class="card-title mb-0">[Luxury Accommodation Name]</h5>
+                                    <h5 class="card-title mb-0">The Rees Hotel</h5>
                                     <div class="d-flex gap-2">
                                         <span class="badge badge-luxury">Luxury</span>
                                         <span class="badge badge-central">Central</span>
                                     </div>
                                 </div>
-                                <p class="card-text">[Description of the luxury accommodation - location, amenities, and features for guests.]</p>
+                                <p class="card-text">Queenstown's largest lakefront property with 152 rooms, serviced apartments and private villas. Award-winning True South Dining Room, stunning lake and mountain views, and 100% NZ owned.</p>
                                 <div class="price-row">
-                                    <span class="price">From $[Price]/night</span>
+                                    <span class="price">From $450/night</span>
                                 </div>
-                                <a href="#" target="_blank" class="btn btn-outline-primary w-100">View Details</a>
+                                <a href="https://therees.co.nz/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary w-100">View Details</a>
                             </div>
                         </div>
                     </div>
@@ -284,17 +275,17 @@
                             <img src="https://via.placeholder.com/500x350/125FA9/ffffff?text=Luxury+Accommodation+3" class="card-img-top" alt="Luxury accommodation placeholder">
                             <div class="card-body">
                                 <div class="title-row">
-                                    <h5 class="card-title mb-0">[Luxury Accommodation Name]</h5>
+                                    <h5 class="card-title mb-0">Rosewood Matakauri</h5>
                                     <div class="d-flex gap-2">
                                         <span class="badge badge-luxury">Luxury</span>
                                         <span class="badge badge-mountain">Mountain View</span>
                                     </div>
                                 </div>
-                                <p class="card-text">[Description of the luxury accommodation - location, amenities, and features for guests.]</p>
+                                <p class="card-text">Set on native gardens with unobstructed views of The Remarkables, 10 minutes from town. Just 16 suites, a full spa, outdoor pool, and a lakeside jetty — consistently rated one of NZ's finest retreats.</p>
                                 <div class="price-row">
-                                    <span class="price">From $[Price]/night</span>
+                                    <span class="price">From $3,000/night</span>
                                 </div>
-                                <a href="#" target="_blank" class="btn btn-outline-primary w-100">View Details</a>
+                                <a href="https://www.rosewoodhotels.com/en/matakauri" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary w-100">View Details</a>
                             </div>
                         </div>
                     </div>
@@ -305,17 +296,17 @@
                             <img src="https://via.placeholder.com/500x350/125FA9/ffffff?text=Luxury+Accommodation+4" class="card-img-top" alt="Luxury accommodation placeholder">
                             <div class="card-body">
                                 <div class="title-row">
-                                    <h5 class="card-title mb-0">[Luxury Accommodation Name]</h5>
+                                    <h5 class="card-title mb-0">The Carlin Boutique Hotel</h5>
                                     <div class="d-flex gap-2">
                                         <span class="badge badge-luxury">Luxury</span>
                                         <span class="badge badge-central">Central</span>
                                     </div>
                                 </div>
-                                <p class="card-text">[Description of the luxury accommodation - location, amenities, and features for guests.]</p>
+                                <p class="card-text">One of the few hotels in NZ to claim six-star status, perched on Hallenstein Street with elevated lake views. Private butlers, a private chef, and cocktails on arrival.</p>
                                 <div class="price-row">
-                                    <span class="price">From $[Price]/night</span>
+                                    <span class="price">From $1,200/night</span>
                                 </div>
-                                <a href="#" target="_blank" class="btn btn-outline-primary w-100">View Details</a>
+                                <a href="https://www.thecarlinhotel.com/?gad_source=1&gad_campaignid=18241719082&gbraid=0AAAAAolpSj8Mz3Mjbrcz46-nLJvwC5ltp&gclid=CjwKCAjw46HPBhAMEiwASZpLRNPG9-8a1XckT7MXnxeDJ0sn_mEQclhCaHcJaDRF-Md2jyoYypV8GhoCcBEQAvD_BwE" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary w-100">View Details</a>
                             </div>
                         </div>
                     </div>
@@ -326,17 +317,17 @@
                             <img src="https://via.placeholder.com/500x350/198754/ffffff?text=Mid-range+Accommodation+1" class="card-img-top" alt="Mid-range accommodation placeholder">
                             <div class="card-body">
                                 <div class="title-row">
-                                    <h5 class="card-title mb-0">[Mid-range Accommodation Name]</h5>
+                                    <h5 class="card-title mb-0">Novotel Queenstown Lakeside</h5>
                                     <div class="d-flex gap-2">
                                         <span class="badge badge-midrange">Mid-range</span>
                                         <span class="badge badge-lakeside">Lakeside</span>
                                     </div>
                                 </div>
-                                <p class="card-text">[Description of the mid-range accommodation - location, amenities, and features for guests.]</p>
+                                <p class="card-text">273 rooms right on the shores of Lake Wakatipu, a 1-minute walk from the town centre. Private balconies, Elements Restaurant with local cuisine, spa pool, and ski storage.</p>
                                 <div class="price-row">
-                                    <span class="price">From $[Price]/night</span>
+                                    <span class="price">From $262/night</span>
                                 </div>
-                                <a href="#" target="_blank" class="btn btn-outline-primary w-100">View Details</a>
+                                <a href="https://all.accor.com/hotel/5308/index.en.shtml" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary w-100">View Details</a>
                             </div>
                         </div>
                     </div>
@@ -347,17 +338,17 @@
                             <img src="https://via.placeholder.com/500x350/198754/ffffff?text=Mid-range+Accommodation+2" class="card-img-top" alt="Mid-range accommodation placeholder">
                             <div class="card-body">
                                 <div class="title-row">
-                                    <h5 class="card-title mb-0">[Mid-range Accommodation Name]</h5>
+                                    <h5 class="card-title mb-0">Queenstown Park Boutique Hotel</h5>
                                     <div class="d-flex gap-2">
                                         <span class="badge badge-midrange">Mid-range</span>
-                                        <span class="badge badge-holiday">Holiday Home</span>
+                                        <span class="badge badge-central">Central</span>
                                     </div>
                                 </div>
-                                <p class="card-text">[Description of the mid-range accommodation - location, amenities, and features for guests.]</p>
+                                <p class="card-text">Surrounded by parkland two minutes from the gondola and five from the town centre. Pre-dinner drinks and canapés included, plus a restaurant serving gourmet breakfasts and picnic packs.</p>
                                 <div class="price-row">
-                                    <span class="price">From $[Price]/night</span>
+                                    <span class="price">From $280/night</span>
                                 </div>
-                                <a href="#" target="_blank" class="btn btn-outline-primary w-100">View Details</a>
+                                <a href="https://www.queenstownparkhotel.co.nz/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary w-100">View Details</a>
                             </div>
                         </div>
                     </div>
@@ -368,17 +359,17 @@
                             <img src="https://via.placeholder.com/500x350/198754/ffffff?text=Mid-range+Accommodation+3" class="card-img-top" alt="Mid-range accommodation placeholder">
                             <div class="card-body">
                                 <div class="title-row">
-                                    <h5 class="card-title mb-0">[Mid-range Accommodation Name]</h5>
+                                    <h5 class="card-title mb-0">Sherwood Queenstown</h5>
                                     <div class="d-flex gap-2">
                                         <span class="badge badge-midrange">Mid-range</span>
-                                        <span class="badge badge-central">Central</span>
+                                        <span class="badge badge-mountain">Mountain View</span>
                                     </div>
                                 </div>
-                                <p class="card-text">[Description of the mid-range accommodation - location, amenities, and features for guests.]</p>
+                                <p class="card-text">Set on three acres of alpine hillside overlooking Lake Wakatipu and the Remarkables — slightly removed from town but still a short drive in. Relaxed, eco-conscious, and genuinely unique.</p>
                                 <div class="price-row">
-                                    <span class="price">From $[Price]/night</span>
+                                    <span class="price">From $220/night</span>
                                 </div>
-                                <a href="#" target="_blank" class="btn btn-outline-primary w-100">View Details</a>
+                                <a href="https://www.sherwoodqueenstown.nz/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary w-100">View Details</a>
                             </div>
                         </div>
                     </div>
@@ -389,17 +380,17 @@
                             <img src="https://via.placeholder.com/500x350/22c55e/ffffff?text=Budget+Accommodation+1" class="card-img-top" alt="Budget accommodation placeholder">
                             <div class="card-body">
                                 <div class="title-row">
-                                    <h5 class="card-title mb-0">[Budget Accommodation Name]</h5>
+                                    <h5 class="card-title mb-0">Absoloot Hostel QT</h5>
                                     <div class="d-flex gap-2">
                                         <span class="badge badge-budget">Budget</span>
-                                        <span class="badge badge-central">Central</span>
+                                        <span class="badge badge-lakeside">Lakeside</span>
                                     </div>
                                 </div>
-                                <p class="card-text">[Description of the budget accommodation - location, amenities, and features for guests.]</p>
+                                <p class="card-text">Right on the lakefront in central Queenstown with arguably the best views in the budget category. Clean, recently refurbished, with private rooms, dorms with privacy curtains, and a social kitchen.</p>
                                 <div class="price-row">
-                                    <span class="price">From $[Price]/night</span>
+                                    <span class="price">From $50/night</span>
                                 </div>
-                                <a href="#" target="_blank" class="btn btn-outline-primary w-100">View Details</a>
+                                <a href="https://absoloot.co.nz/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary w-100">View Details</a>
                             </div>
                         </div>
                     </div>
@@ -410,26 +401,26 @@
                             <img src="https://via.placeholder.com/500x350/22c55e/ffffff?text=Budget+Accommodation+2" class="card-img-top" alt="Budget accommodation placeholder">
                             <div class="card-body">
                                 <div class="title-row">
-                                    <h5 class="card-title mb-0">[Budget Accommodation Name]</h5>
+                                    <h5 class="card-title mb-0">Adventure Queenstown Hostel</h5>
                                     <div class="d-flex gap-2">
                                         <span class="badge badge-budget">Budget</span>
-                                        <span class="badge badge-bnb">B&B</span>
+                                        <span class="badge badge-central">Central</span>
                                     </div>
                                 </div>
-                                <p class="card-text">[Description of the budget accommodation - location, amenities, and features for guests.]</p>
+                                <p class="card-text">Rated 9.6/10 on Hostelworld — the highest-rated hostel in Queenstown. Friendly crew, organised social events, bike hire, and individual reading lamps and curtains for every bunk.</p>
                                 <div class="price-row">
-                                    <span class="price">From $[Price]/night</span>
+                                    <span class="price">From $44/night</span>
                                 </div>
-                                <a href="#" target="_blank" class="btn btn-outline-primary w-100">View Details</a>
+                                <a href="https://adventurehostels.co.nz/#/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary w-100">View Details</a>
                             </div>
                         </div>
                     </div>
 
+                    <!-- Empty state — shown automatically when no cards match the filter -->
+                    <div id="empty-state">
+                        <p>No accommodations found in this category yet — check back soon.</p>
+                    </div>
                 </div>
-
-            <div id="noResults" style="display: none; text-align: center; padding: 40px;">
-                <p class="text-muted">No accommodations found in this category — check back soon.</p>
-            </div>
         </div>
     </div>
 

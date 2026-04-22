@@ -1,10 +1,55 @@
+// https://www.w3schools.com/howto/howto_js_navbar_hide_scroll.asp
+
+var prevScrollpos = window.pageYOffset;
+
+window.onscroll = function() {
+    var currentScrollPos = window.pageYOffset;
+
+    // Navbar hide/show functionality
+    var navbar = document.querySelector('.navbar');
+    if (navbar) {
+        if (prevScrollpos > currentScrollPos) {
+            // Scrolling UP - show navbar
+            navbar.style.transform = "translateY(0)";
+        } else {
+            // Scrolling DOWN - hide navbar
+            navbar.style.transform = "translateY(-100%)";
+        }
+    }
+
+    prevScrollpos = currentScrollPos;
+
+    // Scroll to top button functionality
+    scrollFunction();
+};
+
+// Get the button
+let mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+function scrollFunction() {
+    if (!mybutton) return;
+
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "flex";
+    } else {
+        mybutton.style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+
 // Flight Data Trial - JavaScript
 // Aviationstack API Configuration
 const API_KEY = '34f281d79e77f64b899e6d43183a8046';
 const AIRPORT_CODE = 'ZQN';
 const filterBtns = document.querySelectorAll('.filter-btn');
 const cardCols = document.querySelectorAll('.card-col');
-const emptyState = document.getElementById('noResults');
+const emptyState = document.getElementById('empty-state');
 
 
 // API KEY
@@ -41,6 +86,12 @@ if (checkApiKey()) {
 }
 
 // Harrison's Filter Code
+// Same structure as the Visit page:
+// 1. remove active class from all buttons
+// 2. add active to the clicked button
+// 3. compare selected category with each card's data-cat
+// 4. toggle .hidden class
+// 5. show empty state if nothing matches
 
 filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {

@@ -5,6 +5,8 @@
     --accent-color: #125FA9;
     --accent-color-hover: #005396;
     --light-blue: #60a5fa;
+    --text-secondary: #5a6370;
+    --border: rgba(0,0,0,0.1);
 }
 
 /* Navigation*/
@@ -44,6 +46,7 @@
 
 .navbar-nav .nav-link.active {
     font-weight: 600;
+    border-bottom: 2px solid var(--light-blue);
 }
 
 .navbar-toggler {
@@ -118,7 +121,7 @@ footer .row > div {
     }
 
     .footer_border:last-child {
-        border-bottom: None;
+        border-bottom: none;
     }
 
 }
@@ -219,7 +222,6 @@ footer .link:hover {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -467,6 +469,83 @@ footer .link:hover {
     color: white;
 }
 
+/* Airport and Route Information */
+
+.colour-accent {
+    color: var(--accent-color)
+}
+
+.subtext {
+    color: var(--subtext-color)
+}
+
+.airport_info {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.second_row {
+    color: var(--accent-color);
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.third_row {
+    margin-bottom: 0px;
+}
+
+.info_icon {
+    background-color: var(--accent-color);
+    color: var(--font-color);
+    border-radius: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    width: 60px;
+    height: 60px;
+}
+
+.bg-airnz {
+    background-color: black;
+}
+
+.bg-jetstar {
+    background-color: rgb(255, 81, 0);
+}
+
+.bg-qantas {
+    background-color: red;
+}
+
+.route {
+    color: var(--accent-color);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.route_cards {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.special {
+    border: 2px solid #1260a96b
+}
+
+.airline {
+    margin: 0;
+    font-size: 17px;
+}
+
+.flight_times {
+    font-size: 15px;
+}
+
 /* Accommodation Cards */
 .card-div {
     border: none;
@@ -521,6 +600,7 @@ footer .link:hover {
     border-color: var(--accent-color);
     color: var(--accent-color);
     text-decoration: none;
+    margin-top: auto;
 }
 
 .card-div .btn:hover {
@@ -571,32 +651,55 @@ footer .link:hover {
     background-color: #eab308; 
 }
 
-.badge-bnb { 
-    background-color: #ec4899;
-}
 
 .badge-holiday { 
     background-color: #14b8a6;
 }
 
-/* Filter buttons - reused from filter_example.css */
 .filter-btn {
-    font-size: 0.9rem;
-    padding: 5px 15px;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 6px 18px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: white;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.18s ease;
+}
+
+.filter-btn:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
 }
 
 .filter-btn.active {
-    background-color: var(--accent-color) !important;
-    border-color: var(--accent-color) !important;
-    color: white !important;
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+    color: white;
 }
 
-/* Hide cards when filtering - reused from filter_example.css */
+.card-col {
+    transition: opacity 0.22s ease, transform 0.22s ease;
+}
+
 .card-col.hidden {
-    display: none !important;
+    opacity: 0;
+    transform: scale(0.97);
+    pointer-events: none;
+    display: none;
 }
 
 
+#empty-state {
+    display: none;
+    text-align: center;
+    padding: 3rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    width: 100%;
+}
 
 /* Deals & Packages Section */
 
@@ -624,6 +727,3 @@ footer .link:hover {
 .deal-card .card-text {
     flex: 1;
 }
-
-
-
