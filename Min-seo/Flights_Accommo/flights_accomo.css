@@ -467,6 +467,137 @@ footer .link:hover {
     color: white;
 }
 
+/* Accommodation Cards */
+.card-div {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-div img {
+    height: 250px;
+    object-fit: cover;
+}
+
+.card-div .card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.card-div .card-title {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.card-div .card-text {
+    flex: 1;
+}
+
+.card-div .title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.card-div .price-row {
+    margin-bottom: 15px;
+}
+
+.card-div .price {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--accent-color);
+}
+
+.card-div .btn {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.card-div .btn:hover {
+    background-color: var(--accent-color-hover);
+    border-color: var(--accent-color-hover);
+    color: white;
+}
+
+.badge {
+    font-size: 10px;
+    padding: 5px 10px;
+    color: white; 
+}
+
+.badge-budget {
+    background-color: #22c55e; 
+}
+
+.badge-midrange { 
+    background-color: #3b82f6; 
+}
+
+.badge-luxury { 
+    background-color: #8b5cf6; 
+}
+
+.badge-central { 
+    background-color: #f59e0b;
+}
+
+.badge-lakeside { 
+    background-color: #06b6d4; 
+}
+
+.badge-mountain { 
+    background-color: #64748b; 
+}
+
+.badge-hotel { 
+    background-color: #ef4444;
+}
+
+.badge-lodge { 
+    background-color: #dc2626;
+}
+
+.badge-apartment { 
+    background-color: #eab308; 
+}
+
+.badge-bnb { 
+    background-color: #ec4899;
+}
+
+.badge-holiday { 
+    background-color: #14b8a6;
+}
+
+/* Filter buttons - reused from filter_example.css */
+.filter-btn {
+    font-size: 0.9rem;
+    padding: 5px 15px;
+}
+
+.filter-btn.active {
+    background-color: var(--accent-color) !important;
+    border-color: var(--accent-color) !important;
+    color: white !important;
+}
+
+/* Hide cards when filtering - reused from filter_example.css */
+.card-col.hidden {
+    display: none !important;
+}
+
+
+
 /* Deals & Packages Section */
 
 .deal-card {
@@ -493,3 +624,6 @@ footer .link:hover {
 .deal-card .card-text {
     flex: 1;
 }
+
+
+

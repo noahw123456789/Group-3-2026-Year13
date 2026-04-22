@@ -2,6 +2,10 @@
 // Aviationstack API Configuration
 const API_KEY = '34f281d79e77f64b899e6d43183a8046';
 const AIRPORT_CODE = 'ZQN';
+const filterBtns = document.querySelectorAll('.filter-btn');
+const cardCols = document.querySelectorAll('.card-col');
+const emptyState = document.getElementById('noResults');
+
 
 // API KEY
 function checkApiKey() {
@@ -25,7 +29,6 @@ function updateLastUpdated() {
 }
 
 // Refresh button integration. 
-
 document.getElementById('refresh-btn')?.addEventListener('click', function() {
     document.getElementById('api-content').classList.add('d-none');
     document.getElementById('api-loading').classList.remove('d-none');
@@ -37,6 +40,29 @@ if (checkApiKey()) {
     fetchLiveFlights();
 }
 
+// Harrison's Filter Code
+
+filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+
+        // Remove active from all buttons, add to clicked one
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const selectedCat = btn.dataset.cat;
+        let visibleCount = 0;
+
+        cardCols.forEach(col => {
+            const matches = selectedCat === 'all' || col.dataset.cat === selectedCat;
+            // Toggle the .hidden class — CSS handles the fade transition
+            col.classList.toggle('hidden', !matches);
+            if (matches) visibleCount++;
+        });
+
+        // Show empty state message if nothing matches
+        emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
+    });
+});
 
 
 // ============================================

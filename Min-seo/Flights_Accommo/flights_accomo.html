@@ -215,16 +215,222 @@
 
 
 
+        <!-- Accommodation Section -->
+        <!-- Card Filter taken from Harrison's Visit Page -->
+        <div class="container mt-5 mb-5">
+            <div class="header mb-4">Featured Accommodations</div>
+            
+                <div class="container mb-4">
+                    <!-- Price Range Filter -->
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <h6 class="text-white mb-2">Price Range</h6>
+                            <div class="d-flex gap-2 flex-wrap mb-4">
+                                <button class="btn btn-outline-primary filter-btn active" data-cat="all">All</button>
+                                <button class="btn btn-outline-primary filter-btn" data-cat="budget">Budget</button>
+                                <button class="btn btn-outline-primary filter-btn" data-cat="midrange">Mid-range</button>
+                                <button class="btn btn-outline-primary filter-btn" data-cat="luxury">Luxury</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="row g-4" id="card-grid">
+                    <!-- Luxury Accommodation 1 -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-5 card-col" data-cat="luxury">
+                        <div class="card card-div h-100">
+                            <img src="https://via.placeholder.com/500x350/125FA9/ffffff?text=Luxury+Accommodation+1" class="card-img-top" alt="Luxury accommodation placeholder">
+                            <div class="card-body">
+                                <div class="title-row">
+                                    <h5 class="card-title mb-0">[Luxury Accommodation Name]</h5>
+                                    <div class="d-flex gap-2">
+                                        <span class="badge badge-luxury">Luxury</span>
+                                        <span class="badge badge-lakeside">Lakeside</span>
+                                    </div>
+                                </div>
+                                <p class="card-text">[Description of the luxury accommodation - location, amenities, and features for guests.]</p>
+                                <div class="price-row">
+                                    <span class="price">From $[Price]/night</span>
+                                </div>
+                                <a href="#" target="_blank" class="btn btn-outline-primary w-100">View Details</a>
+                            </div>
+                        </div>
+                    </div>
 
+                    <!-- Luxury Accommodation 2 -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-5 card-col" data-cat="luxury">
+                        <div class="card card-div h-100">
+                            <img src="https://via.placeholder.com/500x350/125FA9/ffffff?text=Luxury+Accommodation+2" class="card-img-top" alt="Luxury accommodation placeholder">
+                            <div class="card-body">
+                                <div class="title-row">
+                                    <h5 class="card-title mb-0">[Luxury Accommodation Name]</h5>
+                                    <div class="d-flex gap-2">
+                                        <span class="badge badge-luxury">Luxury</span>
+                                        <span class="badge badge-central">Central</span>
+                                    </div>
+                                </div>
+                                <p class="card-text">[Description of the luxury accommodation - location, amenities, and features for guests.]</p>
+                                <div class="price-row">
+                                    <span class="price">From $[Price]/night</span>
+                                </div>
+                                <a href="#" target="_blank" class="btn btn-outline-primary w-100">View Details</a>
+                            </div>
+                        </div>
+                    </div>
 
+                    <!-- Luxury Accommodation 3 -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-5 card-col" data-cat="luxury">
+                        <div class="card card-div h-100">
+                            <img src="https://via.placeholder.com/500x350/125FA9/ffffff?text=Luxury+Accommodation+3" class="card-img-top" alt="Luxury accommodation placeholder">
+                            <div class="card-body">
+                                <div class="title-row">
+                                    <h5 class="card-title mb-0">[Luxury Accommodation Name]</h5>
+                                    <div class="d-flex gap-2">
+                                        <span class="badge badge-luxury">Luxury</span>
+                                        <span class="badge badge-mountain">Mountain View</span>
+                                    </div>
+                                </div>
+                                <p class="card-text">[Description of the luxury accommodation - location, amenities, and features for guests.]</p>
+                                <div class="price-row">
+                                    <span class="price">From $[Price]/night</span>
+                                </div>
+                                <a href="#" target="_blank" class="btn btn-outline-primary w-100">View Details</a>
+                            </div>
+                        </div>
+                    </div>
 
+                    <!-- Luxury Accommodation 4 -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-5 card-col" data-cat="luxury">
+                        <div class="card card-div h-100">
+                            <img src="https://via.placeholder.com/500x350/125FA9/ffffff?text=Luxury+Accommodation+4" class="card-img-top" alt="Luxury accommodation placeholder">
+                            <div class="card-body">
+                                <div class="title-row">
+                                    <h5 class="card-title mb-0">[Luxury Accommodation Name]</h5>
+                                    <div class="d-flex gap-2">
+                                        <span class="badge badge-luxury">Luxury</span>
+                                        <span class="badge badge-central">Central</span>
+                                    </div>
+                                </div>
+                                <p class="card-text">[Description of the luxury accommodation - location, amenities, and features for guests.]</p>
+                                <div class="price-row">
+                                    <span class="price">From $[Price]/night</span>
+                                </div>
+                                <a href="#" target="_blank" class="btn btn-outline-primary w-100">View Details</a>
+                            </div>
+                        </div>
+                    </div>
 
+                    <!-- Mid-range Accommodation 1 -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-5 card-col" data-cat="midrange">
+                        <div class="card card-div h-100">
+                            <img src="https://via.placeholder.com/500x350/198754/ffffff?text=Mid-range+Accommodation+1" class="card-img-top" alt="Mid-range accommodation placeholder">
+                            <div class="card-body">
+                                <div class="title-row">
+                                    <h5 class="card-title mb-0">[Mid-range Accommodation Name]</h5>
+                                    <div class="d-flex gap-2">
+                                        <span class="badge badge-midrange">Mid-range</span>
+                                        <span class="badge badge-lakeside">Lakeside</span>
+                                    </div>
+                                </div>
+                                <p class="card-text">[Description of the mid-range accommodation - location, amenities, and features for guests.]</p>
+                                <div class="price-row">
+                                    <span class="price">From $[Price]/night</span>
+                                </div>
+                                <a href="#" target="_blank" class="btn btn-outline-primary w-100">View Details</a>
+                            </div>
+                        </div>
+                    </div>
 
+                    <!-- Mid-range Accommodation 2 -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-5 card-col" data-cat="midrange">
+                        <div class="card card-div h-100">
+                            <img src="https://via.placeholder.com/500x350/198754/ffffff?text=Mid-range+Accommodation+2" class="card-img-top" alt="Mid-range accommodation placeholder">
+                            <div class="card-body">
+                                <div class="title-row">
+                                    <h5 class="card-title mb-0">[Mid-range Accommodation Name]</h5>
+                                    <div class="d-flex gap-2">
+                                        <span class="badge badge-midrange">Mid-range</span>
+                                        <span class="badge badge-holiday">Holiday Home</span>
+                                    </div>
+                                </div>
+                                <p class="card-text">[Description of the mid-range accommodation - location, amenities, and features for guests.]</p>
+                                <div class="price-row">
+                                    <span class="price">From $[Price]/night</span>
+                                </div>
+                                <a href="#" target="_blank" class="btn btn-outline-primary w-100">View Details</a>
+                            </div>
+                        </div>
+                    </div>
 
+                    <!-- Mid-range Accommodation 3 -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-5 card-col" data-cat="midrange">
+                        <div class="card card-div h-100">
+                            <img src="https://via.placeholder.com/500x350/198754/ffffff?text=Mid-range+Accommodation+3" class="card-img-top" alt="Mid-range accommodation placeholder">
+                            <div class="card-body">
+                                <div class="title-row">
+                                    <h5 class="card-title mb-0">[Mid-range Accommodation Name]</h5>
+                                    <div class="d-flex gap-2">
+                                        <span class="badge badge-midrange">Mid-range</span>
+                                        <span class="badge badge-central">Central</span>
+                                    </div>
+                                </div>
+                                <p class="card-text">[Description of the mid-range accommodation - location, amenities, and features for guests.]</p>
+                                <div class="price-row">
+                                    <span class="price">From $[Price]/night</span>
+                                </div>
+                                <a href="#" target="_blank" class="btn btn-outline-primary w-100">View Details</a>
+                            </div>
+                        </div>
+                    </div>
 
-   
+                    <!-- Budget Accommodation 1 -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-5 card-col" data-cat="budget">
+                        <div class="card card-div h-100">
+                            <img src="https://via.placeholder.com/500x350/22c55e/ffffff?text=Budget+Accommodation+1" class="card-img-top" alt="Budget accommodation placeholder">
+                            <div class="card-body">
+                                <div class="title-row">
+                                    <h5 class="card-title mb-0">[Budget Accommodation Name]</h5>
+                                    <div class="d-flex gap-2">
+                                        <span class="badge badge-budget">Budget</span>
+                                        <span class="badge badge-central">Central</span>
+                                    </div>
+                                </div>
+                                <p class="card-text">[Description of the budget accommodation - location, amenities, and features for guests.]</p>
+                                <div class="price-row">
+                                    <span class="price">From $[Price]/night</span>
+                                </div>
+                                <a href="#" target="_blank" class="btn btn-outline-primary w-100">View Details</a>
+                            </div>
+                        </div>
+                    </div>
 
+                    <!-- Budget Accommodation 2 -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-5 card-col" data-cat="budget">
+                        <div class="card card-div h-100">
+                            <img src="https://via.placeholder.com/500x350/22c55e/ffffff?text=Budget+Accommodation+2" class="card-img-top" alt="Budget accommodation placeholder">
+                            <div class="card-body">
+                                <div class="title-row">
+                                    <h5 class="card-title mb-0">[Budget Accommodation Name]</h5>
+                                    <div class="d-flex gap-2">
+                                        <span class="badge badge-budget">Budget</span>
+                                        <span class="badge badge-bnb">B&B</span>
+                                    </div>
+                                </div>
+                                <p class="card-text">[Description of the budget accommodation - location, amenities, and features for guests.]</p>
+                                <div class="price-row">
+                                    <span class="price">From $[Price]/night</span>
+                                </div>
+                                <a href="#" target="_blank" class="btn btn-outline-primary w-100">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            <div id="noResults" style="display: none; text-align: center; padding: 40px;">
+                <p class="text-muted">No accommodations found in this category — check back soon.</p>
+            </div>
+        </div>
     </div>
 
 
