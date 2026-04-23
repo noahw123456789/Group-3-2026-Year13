@@ -849,7 +849,7 @@ footer .link:hover {
     color: white;
     padding: 8px 12px;
     font-weight: 600;
-    border-radius: 4px;
+    border-radius: 10px;
 }
 
 .deals-section-title {
@@ -881,15 +881,6 @@ footer .link:hover {
     border: 2px solid var(--accent-color);
 }
 
-
-.deal-featured-badge {
-    background-color: var(--accent-color);
-    color: white;
-    padding: 8px 12px;
-    font-weight: 600;
-    border-radius: 4px;
-}
-
 .deal-card .card-body {
     padding: 20px;
 }
@@ -911,8 +902,7 @@ footer .link:hover {
     margin-bottom: 12px;
 }
 
-
-
+/* Consistent Section Spacing */
 #flight-section {
     padding-top: 40px;
 }
@@ -928,4 +918,45 @@ footer .link:hover {
 #deals-section-wrapper {
     background-color: #f8f9fa;
     width: 100%;
+}
+
+/* Attribution Overlay */
+.image-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.image-wrapper img {
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.attribution-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    padding: 6px 12px;
+    background-color: rgba(15, 23, 43, 0.6);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.attribution-text {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 10px;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.attribution-text a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.attribution-text a:hover {
+    color: white;
+    text-decoration: underline;
 }
