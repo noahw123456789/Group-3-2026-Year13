@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="styles.css">
     <title>Places to Visit in Queenstown</title>
 </head>
 
@@ -18,7 +18,9 @@
     in the CSS above.
   ============================================================ -->
 <nav id="navbar" class="navbar navbar-expand-lg navbar-dark">
-    <a href="#" class="navbar-brand">Discover Queenstown</a>
+    <a href="index.html" class="navbar-brand">
+            <img src="images/logos/navigation_logo_final.png" alt="Discover Queenstown" class="navbar-logo">
+        </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -42,7 +44,7 @@
                 <span class="nav-arrow">></span>
             </li>
             <li class="nav-item d-flex align-items-center justify-content-between">
-                <a href="flights.html" class="nav-link">Flights and Accommodation</a>
+                <a href="flights_accomo.html" class="nav-link">Flights and Accommodation</a>
                 <span class="nav-arrow">></span>
             </li>
             <li class="nav-item d-flex align-items-center justify-content-between">
@@ -59,7 +61,7 @@
     Change container to container-fluid for full-width.
     Change container to container-lg for a narrower layout.
   ============================================================ -->
-    <section class="hero-banner-section">
+    <main class="hero-banner-section">
         <div class="hero-banner-visit">
             <div class="hero-overlay-box">
                 <p class="hero-slogan">You cannot miss out on anything!</p>
@@ -69,153 +71,131 @@
                 <a href="#Visit" class="hero-button">Explore Highlights</a>
             </div>
             <div class="hero-caption">
-                <span>Queenstown city at night</span>
+                <span>Queenstown skyline at night, Lake Wakatipu, New Zealand</span>
             </div>
         </div>
-    </section>
+    </main>
     
-    <div class="intro-section">
-        <h1>Places to visit page</h1>
-        <p>Below this text are a few highlights of Queenstown that majority of people say are must go places. A brief description of each place will be given however, further details will be given in the corresponding pages.</p>
-        
-    </div>
-    <hr class="intro-divider">
-    <!-- ============================================================
-      FILTER BUTTONS
-      To ADD a new filter category:
-        1. Copy one <button> and change data-cat="yourcat" and the label.
-        2. In the card HTML below, set data-cat="yourcat" on the new card.
-      To REMOVE a category: delete the button and update the card's data-cat.
-    ============================================================ -->
-    <div class="d-flex justify-content-center flex-wrap gap-2 mb-4">
-      <button class="filter-btn active" data-cat="all">All</button>
-      <button class="filter-btn" data-cat="adventure">Adrenaline</button>
-      <button class="filter-btn" data-cat="nature">Nature</button>
-      <button class="filter-btn" data-cat="historic">Historic</button>
-      <button class="filter-btn" data-cat="food">Food & drink</button>
-    </div>
-
-    <!-- ============================================================
-      CARD GRID
-      Bootstrap responsive grid:
-        col-12          = full width on phones (1 card per row)
-        col-sm-6        = half width on small tablets (2 cards per row)
-        col-md-4        = one-third on medium screens (3 cards per row)
-        col-lg-3        = one-quarter on large screens (4 cards per row)
-
-      TO CHANGE THE LAYOUT:
-        2 columns always:   col-12 col-md-6
-        4 columns on large: col-12 col-sm-6 col-lg-3
-        List layout (1 col): just use col-12 on all cards
-
-      g-3 = gap between cards. g-4 for more space, g-2 for less.
-    ============================================================ -->
     <div class="container px-4 px-md-5">
+        <!-- Section Header -->
+        <div class="row mb-4 pt-5">
+            <div class="col-12">
+                <h2 class="header mb-4 text-start">Places to Visit</h2>
+                <hr class="section-bars mb-4">
+                <p class="section-intro">Below are highlights of Queenstown that the majority of people say are must-go places. A brief description of each place will be given, however, further details will be provided in the corresponding pages.</p>
+            </div>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="d-flex justify-content-start flex-wrap gap-2 mb-4">
+            <button class="filter-btn active" data-cat="all">All</button>
+            <button class="filter-btn" data-cat="adventure">Adrenaline</button>
+            <button class="filter-btn" data-cat="nature">Nature</button>
+            <button class="filter-btn" data-cat="historic">Historic</button>
+            <button class="filter-btn" data-cat="food">Food & drink</button>
+        </div>
     <div class="row g-4" id="card-grid">
-        <div class="col-12 col-md-6 col-lg-4 mb-5 card-col" data-cat="adventure">
-            <div class="card page-card">
-                <img class="card-img-top" src="images/visit_media/remarkables.jpg" alt="A range of snow capped mountains with the base of the mountain covered in fog">
-                <div class="card-body">
-                    <div class="title-row">
-                        <h3 class="card-title mb-0">The Remarkables</h3>
-                        <div class="d-flex gap-2">
-                            <span class="badge bg-primary">Adrenaline</span>
-                            <span class="badge bg-secondary">Heights</span>
+            <div class="col-12 col-md-6 col-lg-4 mb-5 card-col" data-cat="adventure">
+                <div class="card card-div h-100">
+                    <img class="card-img-top" src="images/visit/remarkables.jpg" alt="A range of snow capped mountains with the base of the mountain covered in fog">
+                    <div class="card-body">
+                        <div class="title-row">
+                            <h5 class="card-title mb-0">The Remarkables</h5>
+                            <div class="d-flex gap-2">
+                                <span class="badge bg-primary">Adrenaline</span>
+                                <span class="badge bg-secondary">Heights</span>
+                            </div>
                         </div>
+                        <p class="card-text">A dramatic mountain range 20km from Queenstown. In winter it operates as a ski field with 220 hectares of terrain. In summer, it offers walking tracks and rock climbing. Free to visit outside the ski season.</p>
+                        <a href="https://www.theremarkables.co.nz/" class="btn btn-outline-primary w-100">View Details</a>
                     </div>
-                    <p class="card-text">A dramatic mountain range 20km from Queenstown. In winter it operates as a ski field with 220 hectares of terrain. In summer, it offers walking tracks and rock climbing. Free to visit outside the ski season.</p>
-                    <a href="https://www.theremarkables.co.nz/" class="btn btn-outline-primary w-100">View Details</a>
                 </div>
             </div>
-        </div>
 
-        <div class="col-12 col-md-6 col-lg-4 mb-5 card-col" data-cat="historic">
-            <div class="card page-card">
-                <img class="card-img-top" src="images/visit_media/art.jpg" alt="a concrete floor white walled room with sparse paintings on the wall, a spattering of people observe the art within the room.">
-                <div class="card-body">
-                    <div class="title-row">
-                        <h3 class="card-title mb-0">Queenstown Arts Centre</h3>
-                        <div class="d-flex gap-2">
-                            <span class="badge bg-primary">Historic</span>
+            <div class="col-12 col-md-6 col-lg-4 mb-5 card-col" data-cat="historic">
+                <div class="card card-div h-100">
+                    <img class="card-img-top" src="images/visit/art.jpg" alt="a concrete floor white walled room with sparse paintings on the wall, a spattering of people observe the art within the room.">
+                    <div class="card-body">
+                        <div class="title-row">
+                            <h5 class="card-title mb-0">Queenstown Arts Centre</h5>
+                            <div class="d-flex gap-2">
+                                <span class="badge bg-primary">Historic</span>
+                            </div>
                         </div>
+                        <p class="card-text">Located in the town centre, this community arts hub features local and national artists. Regular evening events, life drawing classes, and a gallery shop. Entry is free for most exhibitions.</p>
+                        <a href="https://www.queenstownartscentre.co.nz/" class="btn btn-outline-primary w-100">View Details</a>
                     </div>
-                    <p class="card-text">Located in the town centre, this community arts hub features local and national artists. Regular evening events, life drawing classes, and a gallery shop. Entry is free for most exhibitions.</p>
-                    <a href="https://www.queenstownartscentre.co.nz/" class="btn btn-outline-primary w-100">View Details</a>
                 </div>
             </div>
-        </div>
 
-        <div class="col-12 col-md-6 col-lg-4 mb-5 card-col" data-cat="food">
-            <div class="card page-card">
-                <img class="card-img-top" src="images/visit_media/bluekanu.jpg" alt="marble countertop with blue accents greenery hangs overhead in the room with an expresso machine at the very end of the table.">
-                <div class="card-body">
-                    <div class="title-row">
-                        <h3 class="card-title mb-0">Blue Kanu</h3>
-                        <div class="d-flex gap-2">
-                            <span class="badge bg-primary">Food & Drink</span>
+            <div class="col-12 col-md-6 col-lg-4 mb-5 card-col" data-cat="food">
+                <div class="card card-div h-100">
+                    <img class="card-img-top" src="images/visit/bluekanu.jpg" alt="marble countertop with blue accents greenery hangs overhead in the room with an expresso machine at the very end of the table.">
+                    <div class="card-body">
+                        <div class="title-row">
+                            <h5 class="card-title mb-0">Blue Kanu</h5>
+                            <div class="d-flex gap-2">
+                                <span class="badge bg-primary">Food & Drink</span>
+                            </div>
                         </div>
+                        <p class="card-text">Healthy, fresh and exotic Asian cuisine with a Pacific influence.
+                        Reservations are needed and the restaurant is opened from  4pm-10pm. The restaurant is Vegetarian friendly, Vegan options. 
+                        </p>
+                        <a href="https://bluekanu.co.nz/" class="btn btn-outline-primary w-100">View Details</a>
                     </div>
-                    <p class="card-text">Healthy, fresh and exotic Asian cuisine with a Pacific influence.
-                    Reservations are needed and the restaurant is opened from 4pm-10pm. The restaurant is Vegetarian friendly, Vegan options.
-                    </p>
-                    <a href="https://bluekanu.co.nz/" class="btn btn-outline-primary w-100">View Details</a>
                 </div>
             </div>
-        </div>
 
-        <div class="col-12 col-md-6 col-lg-4 mb-5 card-col" data-cat="adventure">
-            <div class="card page-card">
-                <img class="card-img-top" src="images/visit_media/bike.jpg" alt="A black and red bicycle learning on a tree with a forest in the background.">
-                <div class="card-body">
-                    <div class="title-row">
-                        <h3 class="card-title mb-0">Skyline Bike Park</h3>
-                        <div class="d-flex gap-2">
-                            <span class="badge bg-primary">Adrenaline</span>
-                            <span class="badge bg-secondary">Nature</span>
+            <div class="col-12 col-md-6 col-lg-4 mb-5 card-col" data-cat="adventure">
+                <div class="card card-div h-100">
+                    <img class="card-img-top" src="images/visit/bike.jpg" alt="A black and red bicycle learning on a tree with a forest in the background.">
+                    <div class="card-body">
+                        <div class="title-row">
+                            <h5 class="card-title mb-0">Skyline Bike Park</h5>
+                            <div class="d-flex gap-2">
+                                <span class="badge bg-primary">Adrenaline</span>
+                                <span class="badge bg-secondary">Nature</span>
+                            </div>
                         </div>
+                        <p class="card-text">Accessible via the Skyline Gondola, this bike park has over 30km of trails across all skill levels. Gondola and bike hire packages available. Open daily in summer. Price from NZD $75.</p>
+                        <a href="https://rotorua.skyline.co.nz/things-to-do/mountain-bike-park-rotorua/" class="btn btn-outline-primary w-100">View Details</a>
                     </div>
-                    <p class="card-text">Accessible via the Skyline Gondola, this bike park has over 30km of trails across all skill levels. Gondola and bike hire packages available. Open daily in summer. Price from NZD $75.</p>
-                    <a href="https://rotorua.skyline.co.nz/things-to-do/mountain-bike-park-rotorua/" class="btn btn-outline-primary w-100">View Details</a>
                 </div>
             </div>
-        </div>
 
-        <div class="col-12 col-md-6 col-lg-4 mb-5 card-col" data-cat="food">
-            <div class="card page-card">
-                <img class="card-img-top" src="images/visit_media/wine.jpg" alt="A cave basked in warm light with all the walls being covered by barrels of distilling wine.">
-                <div class="card-body">
-                    <div class="title-row">
-                        <h3 class="card-title mb-0">Gibbston Valley Winery</h3>
-                        <div class="d-flex gap-2">
-                            <span class="badge bg-primary">Food & Drink</span>
-                            <span class="badge bg-secondary">Wine</span>
+            <div class="col-12 col-md-6 col-lg-4 mb-5 card-col" data-cat="food">
+                <div class="card card-div h-100">
+                    <img class="card-img-top" src="images/visit/wine.jpg" alt="A cave basked in warm light with all the walls being covered by barrels of distilling wine.">
+                    <div class="card-body">
+                        <div class="title-row">
+                            <h5 class="card-title mb-0">Gibbston Valley Winery</h5>
+                            <div class="d-flex gap-2">
+                                <span class="badge bg-primary">Food & Drink</span>
+                                <span class="badge bg-secondary">Wine</span>
+                            </div>
                         </div>
+                        <p class="card-text">Located in the Gibbston Valley, 35 minutes from Queenstown. Famous for its wine cave carved into schist rock. Tasting sessions from NZD $20. Restaurant on site. Open daily 10am–5pm.</p>
+                        <a href="https://www.gibbstonvalley.com/" class="btn btn-outline-primary w-100">View Details</a>
                     </div>
-                    <p class="card-text">Located in the Gibbston Valley, 35 minutes from Queenstown. Famous for its wine cave carved into schist rock. Tasting sessions from NZD $20. Restaurant on site. Open daily 10am–5pm.</p>
-                    <a href="https://www.gibbstonvalley.com/" class="btn btn-outline-primary w-100">View Details</a>
                 </div>
             </div>
-        </div>
 
-        <div class="col-12 col-md-6 col-lg-4 mb-5 card-col" data-cat="nature">
-            <div class="card page-card">
-                <img class="card-img-top" src="images/visit_media/lake.jpg" alt="a beach with crystal clear water a snow capped mountain range in the background.">
-                <div class="card-body">
-                    <div class="title-row">
-                        <h3 class="card-title mb-0">Lake Wakatipu</h3>
-                        <div class="d-flex gap-2">
-                            <span class="badge bg-primary">Nature</span>
-                            <span class="badge bg-secondary">Scenic</span>
+            <div class="col-12 col-md-6 col-lg-4 mb-5 card-col" data-cat="nature">
+                <div class="card card-div h-100">
+                    <img class="card-img-top" src="images/visit/lake.jpg" alt="a beach with crystal clear water a snow capped mountain range in the background.">
+                    <div class="card-body">
+                        <div class="title-row">
+                            <h5 class="card-title mb-0">Lake Wakatipu</h5>
+                            <div class="d-flex gap-2">
+                                <span class="badge bg-primary">Nature</span>
+                                <span class="badge bg-secondary">Scenic</span>
+                            </div>
                         </div>
+                        <p class="card-text">The third-largest lake in NZ, stretching 80km. The TSS Earnslaw steamship runs scenic cruises from Queenstown Bay. The Queenstown Trail follows the shoreline for cyclists and walkers. Access is free.</p>
+                        <a href="https://www.newzealand.com/ca/feature/lake-wakatipu/" class="btn btn-outline-primary w-100">View Details</a>
                     </div>
-                    <p class="card-text">The third-largest lake in NZ, stretching 80km. The TSS Earnslaw steamship runs scenic cruises from Queenstown Bay. The Queenstown Trail follows the shoreline for cyclists and walkers. Access is free.</p>
-                    <a href="https://www.newzealand.com/ca/feature/lake-wakatipu/" class="btn btn-outline-primary w-100">View Details</a>
                 </div>
             </div>
-        </div>
-
-    </div>
-</div>
       <!-- Empty state — shown automatically when no cards match the filter -->
       <div id="empty-state">
         <p>No places found in this category yet — check back soon.</p>
@@ -223,6 +203,16 @@
 
     </div><!-- /row -->
     </div>
+
+    <!-- Discover / CTA Section -->
+    <div class="discover-section">
+        <div class="container text-center py-5">
+            <h3 class="discover-title">Hungry after all that exploring?</h3>
+            <p class="discover-text">From Fergburger's legendary queues to fine dining with lake views, discover Queenstown's incredible food scene.</p>
+            <a href="eating.html" class="btn btn-light btn-lg mt-3">Explore Food & Drink</a>
+        </div>
+    </div>
+
   <footer class="text-muted bg_dark">
 
         <!-- Section: Links  -->
@@ -234,7 +224,9 @@
 
                     <div class="col-12 col-xl-3 footer_border pb-5">
                         <div class="logo_social">
-                            <a href="#" class="footer-brand">Discover Queenstown</a>
+                            <a href="#" class="footer-brand-link">
+                <img src="images/logos/footer_logo_final.png" alt="Discover Queenstown" class="footer-logo">
+            </a>
                             <div class="social mt-4">
                                 <a href="#" class="fa fa-instagram"></a>
                                 <a href="#" class="fa fa-facebook"></a>
@@ -248,24 +240,24 @@
                     <!-- Grid column 1-->
                     <div class="col-12 col-xl-3 mb-4 footer_border p-3">
                         <!-- Content -->
-                        <h6 class="text-uppercase fw-bold mb-4"><i class=""></i>More about our Website</h6>
+                        <h4 class="text-uppercase fw-bold mb-4"><i class=""></i>More about our Website</h4>
                         <p>Explore the best of Queenstown with our tourism platform—your guide to unforgettable adventures, stunning landscapes, and local experiences in one of New Zealand's most iconic destinations.</p>
                     </div>
 
                     <!-- Grid column 2 -->
                     <div class="col-12 col-xl-3 mb-4 footer_border p-3">
                     <!-- Links -->
-                        <h6 class="text-uppercase fw-bold mb-4">Useful links</h6>
+                        <h4 class="text-uppercase fw-bold mb-4">Useful links</h4>
                         <p><a href="activities.html" class="link">Activities</a></p>
                         <p><a href="visit.html" class="link">Places to visit</a></p>
-                        <p><a href="flights.html" class="link">Accommodation and Flights</a></p>
-                        <p><a href="guide.html" class="link">Places to eat</a></p>
+                        <p><a href="flights_accomo.html" class="link">Accommodation and Flights</a></p>
+                        <p><a href="eating.html" class="link">Places to eat</a></p>
                     </div>
 
                     <!-- Grid column 3 -->
                     <div class="col-12 col-xl-3 mb-4 footer_border p-3">
                         <!-- Links -->
-                        <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                        <h4 class="text-uppercase fw-bold mb-4">Contact</h4>
                         <p>Discover Queenstown</p>
                         <p>discoverqueenstown@example.com</p>
                         <p>+123 456 7890</p>
@@ -326,6 +318,6 @@
 
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-    <script src="visit.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>

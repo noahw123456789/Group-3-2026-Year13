@@ -1,0 +1,1958 @@
+/* ============================================================
+   DISCOVER QUEENSTOWN - UNIFIED STYLESHEET
+   Consolidated from 5 CSS files into one maintainable stylesheet
+   ============================================================ */
+
+/* ============================================================
+   CSS VARIABLES - Standardized across all pages
+   ============================================================ */
+:root {
+    --font-color: #f8fafc;
+    --background-color: #0f172b;
+    --subtext-color: #94a3b8;
+    --accent-color: #125FA9;
+    --accent-color-hover: #005396;
+    --light-blue: #60a5fa;
+    --text-secondary: #5a6370;
+    --border: rgba(0,0,0,0.1);
+}
+
+/* ============================================================
+   NAVIGATION - Shared across all pages
+   ============================================================ */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+    background-color: var(--background-color);
+    padding: 0;
+}
+
+.navbar-brand {
+    color: var(--font-color);
+    font-size: 20px;
+    padding-left: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-logo {
+    height: 50px;
+    width: auto;
+}
+
+.navbar-nav {
+    width: 100%;
+}
+
+.navbar-nav .nav-link {
+    color: var(--subtext-color);
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 10px;
+    border-bottom: 2px solid transparent;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--font-color);
+    border-bottom: 2px solid var(--light-blue);
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+.navbar-nav .nav-link.active {
+    font-weight: 600;
+    border-bottom: 2px solid var(--light-blue);
+}
+
+.navbar-toggler {
+    border: none;
+    outline: none;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.nav-arrow {
+    color: var(--font-color);
+    padding-right: 15px;
+}
+
+/* Mobile Navigation */
+@media (max-width: 991px) {
+    .navbar {
+        padding: 15px 15px;
+    }
+
+    .navbar-brand {
+        padding-left: 15px;
+    }
+
+    .navbar-nav {
+        width: 100%;
+    }
+
+    .nav-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-item:last-child {
+        border-bottom: none;
+    }
+
+    .nav-link {
+        padding: 12px 15px;
+        flex: 1;
+    }
+}
+
+/* Desktop Navigation */
+@media (min-width: 992px) {
+    .navbar {
+        padding: 20px 0;
+    }
+
+    .navbar-brand {
+        padding-left: 80px;
+    }
+
+    .navbar-logo {
+        height: 65px;
+    }
+
+    .navbar-collapse {
+        flex-grow: 1;
+    }
+
+    .navbar-nav {
+        width: auto;
+        margin-right: 80px;
+    }
+
+    .nav-item {
+        border-bottom: none;
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-link {
+        padding: 8px 15px;
+    }
+
+    .nav-arrow {
+        display: none;
+    }
+}
+
+/* ============================================================
+   HERO BANNERS - All 6 page variants with consistent styling
+   ============================================================ */
+.hero-banner-section {
+    background-color: var(--background-color);
+}
+
+.hero-banner-index,
+.hero-banner-activities,
+.hero-banner-eating,
+.hero-banner-flights,
+.hero-banner-guide,
+.hero-banner-visit {
+    background-size: cover;
+    background-position: center;
+    min-height: 100%;
+    padding: 80px;
+    position: relative;
+    padding: 170px 80px;
+    display: flex;
+    align-items: center;
+}
+
+/* Page-specific hero backgrounds */
+.hero-banner-index {
+    background-image: url('images/index/index-hero-image.jpg');
+}
+
+.hero-banner-activities {
+    background-image: url('images/activities/activities_hero.jpg');
+}
+
+.hero-banner-eating {
+    background-image: url('images/eating/eating-hero-image.png');
+}
+
+.hero-banner-flights {
+    background-image: url('images/flights/flights_hero.jpg') !important;
+}
+
+.hero-banner-guide {
+    background-image: url('images/guide/guide.jpg');
+}
+
+.hero-banner-visit {
+    background-image: url('images/visit/night.jpg');
+}
+
+/* Hero overlay box (shared) */
+.hero-overlay-box {
+    background-color: var(--font-color);
+    opacity: 0.8;
+    max-width: 650px;
+    padding: 40px;
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
+}
+
+/* Hero text elements (shared) */
+.hero-slogan {
+    font-size: 16pt;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.hero-title {
+    font-size: 48pt;
+    font-weight: 800;
+    color: var(--background-color);
+    margin-bottom: 20px;
+}
+
+.hero-paragraph {
+    font-size: 16pt;
+    line-height: 1.6;
+    font-weight: 300;
+    border-left: 3px solid var(--accent-color) !important;
+    color: var(--background-color);
+    padding: 5px 0 5px 20px;
+    margin-bottom: 0;
+}
+
+/* Hero buttons */
+.hero-button {
+    display: block;
+    width: fit-content;
+    margin: 24px 0 0 auto;
+    padding: 15px 25px;
+    font-size: 16pt;
+    font-weight: 400;
+    text-decoration: none;
+    color: var(--accent-color) !important;
+    border: 2px solid var(--accent-color);
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-button:hover {
+    color: var(--accent-color-hover) !important;
+    border: 2px solid var(--accent-color-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.22);
+    opacity: 0.95;
+}
+
+/* Two-button hero (flights page) */
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+}
+
+.hero-buttons .hero-button {
+    display: inline-block;
+    margin: 24px 0 0 0;
+}
+
+/* Hero caption (shared) */
+.hero-caption {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background-color: rgba(15, 23, 43, 0.5);
+    color: rgba(255, 255, 255, 0.9);
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    backdrop-filter: blur(3px);
+    font-weight: 400;
+}
+
+/* Hero responsive breakpoints */
+@media (max-width: 1200px) {
+    .hero-banner-index,
+    .hero-banner-activities,
+    .hero-banner-eating,
+    .hero-banner-flights,
+    .hero-banner-guide,
+    .hero-banner-visit {
+        padding: 130px 60px;
+    }
+
+    .hero-overlay-box {
+        max-width: 560px;
+        padding: 32px;
+    }
+
+    .hero-slogan {
+        font-size: 15pt;
+    }
+
+    .hero-title {
+        font-size: 30pt;
+    }
+
+    .hero-paragraph {
+        font-size: 12pt;
+    }
+
+    .hero-buttons {
+        gap: 12px;
+    }
+
+    .hero-buttons .hero-button {
+        padding: 11px 18px;
+        font-size: 11pt;
+    }
+}
+
+@media (max-width: 991px) {
+    .hero-banner-index,
+    .hero-banner-activities,
+    .hero-banner-eating,
+    .hero-banner-flights,
+    .hero-banner-guide,
+    .hero-banner-visit {
+        padding: 60px 40px;
+        min-height: 85vh;
+    }
+
+    .hero-overlay-box {
+        max-width: 520px;
+        padding: 28px;
+        margin-top: 50px;
+    }
+
+    .hero-slogan {
+        font-size: 13pt;
+    }
+
+    .hero-title {
+        font-size: 30pt;
+    }
+
+    .hero-paragraph {
+        font-size: 11pt;
+    }
+
+    .hero-buttons {
+        flex-wrap: nowrap;
+        gap: 10px;
+    }
+
+    .hero-buttons .hero-button {
+        padding: 10px 14px;
+        font-size: 10pt;
+    }
+}
+
+@media (max-width: 767px) {
+    .hero-overlay-box {
+        max-width: 420px;
+        padding: 22px;
+    }
+
+    .hero-button {
+        margin-top: 24px;
+        padding: 16px;
+        font-size: 12pt;
+    }
+
+    .hero-buttons {
+        gap: 8px;
+        flex-wrap: nowrap;
+        justify-content: flex-end;
+    }
+
+    .hero-buttons .hero-button {
+        padding: 8px 12px;
+        font-size: 9pt;
+        flex: 0 0 auto;
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    .hero-slogan {
+        font-size: 12pt;
+    }
+
+    .hero-title {
+        font-size: 22pt;
+    }
+
+    .hero-paragraph {
+        font-size: 12pt;
+        font-weight: 400;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-banner-index,
+    .hero-banner-activities,
+    .hero-banner-eating,
+    .hero-banner-flights,
+    .hero-banner-guide,
+    .hero-banner-visit {
+        padding: 40px 20px;
+    }
+
+    .hero-overlay-box {
+        padding: 24px;
+        max-height: 550px;
+    }
+
+    .hero-title {
+        font-size: 14.4pt;
+        margin-bottom: 10px;
+    }
+
+    .hero-slogan {
+        font-size: 10pt;
+    }
+
+    .hero-paragraph {
+        font-size: 10pt;
+        max-height: 400px;
+    }
+
+    .hero-button {
+        font-size: 10pt;
+        padding: 10px;
+        margin-left: 0;
+    }
+
+    .hero-caption {
+        bottom: 10px;
+        right: 10px;
+        font-size: 9px;
+        padding: 3px 8px;
+    }
+}
+
+/* ============================================================
+   SECTION HEADERS - Standardized across all pages
+   ============================================================ */
+.header {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.section-intro {
+    text-align: left;
+    font-size: 18px;
+    color: var(--background-color);
+    margin-bottom: 40px;
+}
+
+.section-bars {
+    border-width: 3px;
+    border-color: var(--accent-color);
+    margin: 8px auto 24px auto;
+    border-radius: 10px;
+}
+
+@media (max-width: 767px) {
+    .section-intro {
+        font-size: 16px;
+        margin-bottom: 32px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .header {
+        padding-left: 5px;
+        padding-right: 10px;
+    }
+}
+
+/* ============================================================
+   INDEX PAGE SPECIFIC STYLES
+   ============================================================ */
+
+/* Stats Strip */
+.stats-strip {
+    background-color: var(--background-color);
+    padding: 32px 80px;
+}
+
+.stats-inner {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px 48px;
+    flex: 1;
+    min-width: 140px;
+}
+
+.stat-number {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: var(--light-blue);
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--subtext-color);
+    letter-spacing: 1.5px;
+    margin-top: 6px;
+    text-align: center;
+}
+
+.stat-divider {
+    width: 1px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.15);
+    flex-shrink: 0;
+}
+
+@media (max-width: 767px) {
+    .stats-strip {
+        padding: 24px 20px;
+    }
+
+    .stat-item {
+        padding: 12px 24px;
+        min-width: 120px;
+    }
+
+    .stat-number {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 376px) {
+    .stat-divider {
+        display: none;
+    }
+}
+
+/* About Section (Index) */
+.index-about-section {
+    background-color: #f8fafc;
+    padding: 80px;
+}
+
+.index-about-label {
+    font-size: 11pt;
+    font-weight: 600;
+    color: var(--accent-color);
+    margin-bottom: 10px;
+}
+
+.index-about-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--background-color);
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.index-about-text {
+    font-size: 15px;
+    color: #374151;
+    line-height: 1.8;
+    margin-bottom: 16px;
+}
+
+.index-about-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 28px;
+}
+
+.index-about-link {
+    padding: 8px 22px;
+    border-radius: 25px;
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.index-about-link:hover {
+    background-color: var(--accent-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.index-about-img {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(18, 95, 169, 0.3);
+}
+
+.index-about-img img {
+    height: 380px;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.index-about-img-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 6px 12px;
+    background-color: rgba(15, 23, 43, 0.6);
+    color: white;
+    font-size: 10px;
+}
+
+@media (max-width: 991px) {
+    .index-about-section {
+        padding: 50px 0;
+    }
+
+    .index-about-img {
+        height: 280px;
+    }
+
+    .index-about-title {
+        font-size: 1.6rem;
+    }
+}
+
+/* Explore/Nav Cards (Index) */
+.explore-section {
+    margin-bottom: 80px;
+}
+
+.nav-card {
+    display: block;
+    text-decoration: none;
+    border-radius: 15px;
+    overflow: hidden;
+    height: 320px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border: 3px solid rgba(18, 95, 169, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.nav-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+    border-color: rgba(18, 95, 169, 0.9);
+}
+
+.nav-card-img {
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+}
+
+.nav-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(15, 23, 43, 0.1) 0%,
+        rgba(15, 23, 43, 0.82) 60%,
+        rgba(15, 23, 43, 0.98) 100%
+    );
+}
+
+.nav-card-body {
+    position: relative;
+    padding: 20px;
+}
+
+.nav-card-badges {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 8px;
+}
+
+.nav-card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--font-color);
+    margin-bottom: 6px;
+}
+
+.nav-card-text {
+    font-size: 0.8rem;
+    color: rgba(248, 250, 252, 0.8);
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.nav-card-cta {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--light-blue);
+    transition: color 0.2s ease;
+}
+
+.nav-card:hover .nav-card-cta {
+    color: white;
+}
+
+/* ============================================================
+   ACTIVITIES & EATING PAGE - Page Cards & Carousels
+   ============================================================ */
+
+/* Page Cards (shared) */
+.page-card, .activity-card {
+    border: 2px solid rgba(18, 95, 169, 0.3);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.page-card:hover, .activity-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+    border-color: rgba(18, 95, 169, 0.6);
+}
+
+.page-card .card-body, .activity-card .card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.page-card .card-text, .activity-card .card-text {
+    flex: 1;
+}
+
+.page-card .card-title, .activity-card .card-title {
+    color: var(--accent-color);
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.page-card .title-row, .activity-card .title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.page-card .btn, .activity-card .btn {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: white;
+}
+
+.page-card .btn:hover, .activity-card .btn:hover {
+    background-color: white;
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+/* Page Card Carousel */
+.carousel.page-card-carousel, .carousel.activity-card-carousel {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    overflow: hidden;
+}
+
+.carousel.page-card-carousel .carousel-item img, .carousel.activity-card-carousel .carousel-item img {
+    height: 270px;
+    object-fit: cover;
+    display: block;
+}
+
+.carousel.page-card-carousel .carousel-indicators, .carousel.activity-card-carousel .carousel-indicators {
+    bottom: 10px;
+}
+
+.carousel.page-card-carousel .carousel-indicators button, .carousel.activity-card-carousel .carousel-indicators button {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin: 0 3px;
+}
+
+.carousel.page-card-carousel .carousel-control-prev,
+.carousel.page-card-carousel .carousel-control-next,
+.carousel.activity-card-carousel .carousel-control-prev,
+.carousel.activity-card-carousel .carousel-control-next {
+    width: 32px;
+    height: 32px;
+    background-color: rgba(0, 0, 0, 0.656);
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.carousel.page-card-carousel .carousel-control-prev:hover,
+.carousel.page-card-carousel .carousel-control-next:hover,
+.carousel.activity-card-carousel .carousel-control-prev:hover,
+.carousel.activity-card-carousel .carousel-control-next:hover {
+    opacity: 1;
+}
+
+.carousel.page-card-carousel .carousel-control-prev, .carousel.activity-card-carousel .carousel-control-prev {
+    left: 10px;
+}
+
+.carousel.page-card-carousel .carousel-control-next, .carousel.activity-card-carousel .carousel-control-next {
+    right: 10px;
+}
+
+.carousel.page-card-carousel .carousel-control-prev-icon,
+.carousel.page-card-carousel .carousel-control-next-icon,
+.carousel.activity-card-carousel .carousel-control-prev-icon,
+.carousel.activity-card-carousel .carousel-control-next-icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* Bottom Carousel (Eating) & Example Carousel (Activities) */
+#carouselBottom, #carouselExample {
+    padding: 0;
+    position: relative;
+}
+
+#carouselBottom .cards-wrapper, #carouselExample .cards-wrapper {
+    display: flex;
+    gap: 1.5rem;
+    padding: 10px;
+    width: 100%;
+    overflow: visible;
+}
+
+#carouselBottom .card-div, #carouselExample .card-div {
+    border: 3px solid rgba(18, 95, 169, 0.3);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    overflow: hidden;
+    flex: 0 0 100%;
+    height: 470px;
+}
+
+#carouselBottom .card-div:hover, #carouselExample .card-div:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+    border-color: rgba(18, 95, 169, 0.6);
+}
+
+#carouselBottom .image-wrapper, #carouselExample .image-wrapper {
+    position: relative;
+}
+
+#carouselBottom .card-img-top, #carouselExample .card-img-top {
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 3px solid rgba(18, 95, 169, 0.3);
+    display: block;
+    width: 100%;
+}
+
+#carouselBottom .card-body, #carouselExample .card-body {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    color: var(--font-color);
+}
+
+#carouselBottom .card-title, #carouselExample .card-title {
+    color: var(--accent-color);
+    font-weight: 600;
+    font-size: 16px;
+}
+
+#carouselBottom .title-row, #carouselExample .title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+#carouselBottom .event-date, #carouselExample .event-date {
+    font-size: 0.875rem;
+    color: var(--accent-color);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+#carouselBottom .card-text, #carouselExample .card-text {
+    flex: 1;
+    margin-bottom: 1rem;
+    color: var(--text-secondary);
+}
+
+#carouselBottom .btn, #carouselExample .btn {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: white;
+}
+
+#carouselBottom .btn-outline-primary, #carouselExample .btn-outline-primary {
+    background-color: var(--accent-color) !important;
+    border-color: var(--accent-color) !important;
+    color: white !important;
+}
+
+#carouselBottom .btn-outline-primary:hover, #carouselExample .btn-outline-primary:hover {
+    background-color: white !important;
+    border-color: var(--accent-color) !important;
+    color: var(--accent-color) !important;
+}
+
+#carouselBottom .btn:hover, #carouselExample .btn:hover {
+    background-color: white;
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+#carouselBottom .carousel-control-prev,
+#carouselBottom .carousel-control-next,
+#carouselExample .carousel-control-prev,
+#carouselExample .carousel-control-next {
+    width: 32px;
+    height: 32px;
+    background-color: rgba(18, 95, 169, 0.8);
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 1;
+}
+
+#carouselBottom .carousel-control-prev { left: -3.5vw; }
+#carouselBottom .carousel-control-next { right: -3.5vw; }
+#carouselExample .carousel-control-prev { left: -3.5vw; }
+#carouselExample .carousel-control-next { right: -3.5vw; }
+
+#carouselBottom .carousel-control-prev:hover,
+#carouselBottom .carousel-control-next:hover,
+#carouselExample .carousel-control-prev:hover,
+#carouselExample .carousel-control-next:hover {
+    background-color: var(--accent-color);
+}
+
+#carouselBottom .carousel-control-prev-icon,
+#carouselBottom .carousel-control-next-icon,
+#carouselExample .carousel-control-prev-icon,
+#carouselExample .carousel-control-next-icon {
+    width: 16px;
+    height: 16px;
+}
+
+#carouselBottom .carousel-indicators, #carouselExample .carousel-indicators {
+    bottom: -30px;
+}
+
+#carouselBottom .carousel-indicators button, #carouselExample .carousel-indicators button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 0 5px;
+    background-color: #999;
+}
+
+#carouselBottom .carousel-indicators button.active, #carouselExample .carousel-indicators button.active {
+    background-color: var(--accent-color);
+}
+
+@media (min-width: 768px) {
+    #carouselBottom .card-div, #carouselExample .card-div { flex: 0 0 calc(50% - 0.75rem); }
+}
+
+@media (min-width: 992px) {
+    #carouselBottom .card-div, #carouselExample .card-div { flex: 0 0 calc(33.333% - 1rem); }
+}
+
+@media (min-width: 1200px) {
+    #carouselBottom .card-div, #carouselExample .card-div { flex: 0 0 calc(25% - 1.125rem); }
+    #carouselBottom, #carouselExample { padding-bottom: 40px; }
+    #carouselBottom .carousel-indicators, #carouselExample .carousel-indicators { bottom: -30px; }
+}
+
+@media (max-width: 1199px) {
+    #carouselBottom .carousel-control-prev,
+    #carouselBottom .carousel-control-next,
+    #carouselExample .carousel-control-prev,
+    #carouselExample .carousel-control-next { display: none; }
+    #carouselBottom, #carouselExample { padding-bottom: 30px; }
+    #carouselBottom .carousel-indicators, #carouselExample .carousel-indicators { bottom: -20px; }
+}
+
+/* ============================================================
+   FLIGHTS PAGE SPECIFIC STYLES
+   ============================================================ */
+
+/* Airport and Route Information */
+.colour-accent {
+    color: var(--accent-color)
+}
+
+.subtext {
+    color: var(--subtext-color)
+}
+
+.airport_info {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.second_row {
+    color: var(--accent-color);
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.third_row {
+    margin-bottom: 0px;
+}
+
+.info_icon {
+    background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-color-hover) 100%);
+    color: var(--font-color);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px auto;
+    width: 70px;
+    height: 70px;
+    box-shadow: 0 4px 12px rgba(18, 95, 169, 0.3);
+}
+
+.info_icon i {
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.info_icon i:hover {
+    opacity: 1;
+}
+
+.airport_badge {
+    font-size: 13px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 4px;
+    padding-top: 4px;
+    color: white;
+    border-radius: 10px;
+}
+
+.bg-airnz {
+    background-color: black;
+}
+
+.bg-jetstar {
+    background-color: rgb(255, 81, 0);
+}
+
+.bg-qantas {
+    background-color: red;
+}
+
+.route {
+    color: var(--accent-color);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.route_cards {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.special {
+    border: 2px solid #1260a96b
+}
+
+.route-link {
+    text-decoration: none;
+    font-size: 0.85rem;
+    padding: 6px 12px;
+    transition: all 0.3s ease;
+    border-width: 2px;
+}
+
+.route-link:hover {
+    transform: translateY(-1px);
+}
+
+.route-link-airnz {
+    background-color: black;
+    border-color: black;
+    color: white;
+}
+
+.route-link-airnz:hover {
+    background-color: white;
+    border-color: black;
+    color: black;
+}
+
+.route-link-jetstar {
+    background-color: rgb(255, 81, 0);
+    border-color: rgb(255, 81, 0);
+    color: white;
+}
+
+.route-link-jetstar:hover {
+    background-color: white;
+    border-color: rgb(255, 81, 0);
+    color: rgb(255, 81, 0);
+}
+
+.route-link-qantas {
+    background-color: red;
+    border-color: red;
+    color: white;
+}
+
+.route-link-qantas:hover {
+    background-color: white;
+    border-color: red;
+    color: red;
+}
+
+.airline {
+    margin: 0;
+    font-size: 17px;
+}
+
+.flight_times {
+    font-size: 15px;
+}
+
+/* Accommodation Cards */
+.card-div {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-div:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+}
+
+.card-div img {
+    height: 250px;
+    object-fit: cover;
+}
+
+.card-div .card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.card-div .card-title {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.card-div .card-text {
+    flex: 1;
+}
+
+.card-div .title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.card-div .price-row {
+    margin-bottom: 15px;
+}
+
+.card-div .price {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--accent-color);
+}
+
+.card-div .btn {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: white;
+    text-decoration: none;
+    margin-top: auto;
+}
+
+.card-div .btn:hover {
+    background-color: white;
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+/* Filter Buttons (Flights & Visit) */
+.filter-btn {
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 6px 18px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: white;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.18s ease;
+}
+
+.filter-btn:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+.filter-btn.active {
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+    color: white;
+}
+
+.card-col {
+    transition: opacity 0.22s ease, transform 0.22s ease;
+}
+
+.card-col.hidden {
+    opacity: 0;
+    transform: scale(0.97);
+    pointer-events: none;
+    display: none;
+}
+
+#empty-state {
+    display: none;
+    text-align: center;
+    padding: 3rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    width: 100%;
+}
+
+/* Deals & Packages Section */
+.deal-card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    will-change: auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.deal-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+}
+
+.deal-card .card-img-top {
+    height: 250px;
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.deal-card .card-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.deal-card .card-text {
+    flex: 1;
+}
+
+.deal-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+    background-color: #dc2626;
+    color: white;
+    padding: 8px 12px;
+    font-weight: 600;
+    border-radius: 10px;
+}
+
+.deals-section-title {
+    color: var(--accent-color);
+}
+
+.deal-card .card-title {
+    color: var(--accent-color);
+}
+
+.deal-discount-price {
+    color: #22c55e;
+    font-weight: bold;
+}
+
+.deal-button {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+    text-decoration: none;
+}
+
+.deal-button:hover {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.deal-card-featured {
+    border: 2px solid var(--accent-color);
+}
+
+.deal-card .card-body {
+    padding: 20px;
+}
+
+.deal-card .card-text {
+    margin-bottom: 8px;
+}
+
+.deal-card .deal-date {
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+.deal-card hr {
+    margin: 12px 0;
+}
+
+.deal-card .mb-1 {
+    margin-bottom: 12px;
+}
+
+/* Consistent Section Spacing */
+#flight-section {
+    padding-top: 40px;
+}
+
+#accommodation-section {
+    padding-top: 60px;
+}
+
+#deals-section {
+    padding-top: 0;
+}
+
+/* Deals section wrapper removed - no longer needed */
+
+/* ============================================================
+   VISIT PAGE SPECIFIC STYLES
+   ============================================================ */
+body {
+    background-color: #f7f8f6;
+    color: #1a1a1a;
+}
+
+main {
+    flex: 1;
+}
+
+.intro-section {
+    margin-top: 1rem;
+    padding: 1rem 4rem;
+    max-width: 780px;
+}
+
+.intro-section p {
+    color: #000000;
+    text-align: left;
+}
+
+.intro-divider {
+    width: 90%;
+    border: 2px solid var(--accent-color);
+    margin: 1.5rem auto;
+    opacity: 1;
+}
+
+@media (max-width: 576px) {
+    .page-header {
+        padding: 2rem 0 1.75rem;
+    }
+}
+
+/* ============================================================
+   GUIDE PAGE SPECIFIC STYLES
+   ============================================================ */
+
+/* Section Label */
+.section-label {
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: black;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent-color);
+    display: block;
+}
+
+/* Getting Here Section - Tabs */
+.getting-here-section {
+    background-color: var(--background-color);
+    color: white;
+    padding: 3.5rem 0;
+}
+
+.getting-here-section .section-label {
+    color: rgb(255, 255, 255);
+    border-bottom-color: #0f172b;
+}
+
+.getting-here-section h2 {
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: white;
+}
+
+.getting-here-section .nav-tabs {
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    margin-bottom: 2rem;
+}
+
+.getting-here-section .nav-tabs .nav-link {
+    color: rgba(255,255,255,0.6);
+    border: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0.6rem 1.25rem;
+    border-radius: 0;
+    border-bottom: 2px solid transparent;
+    transition: all 0.15s;
+}
+
+.getting-here-section .nav-tabs .nav-link:hover {
+    color: white;
+    border-bottom-color: rgba(255,255,255,0.4);
+}
+
+.getting-here-section .nav-tabs .nav-link.active {
+    color: white;
+    background: transparent;
+    border-bottom: 2px solid white;
+}
+
+.getting-here-section .tab-map {
+    width: 100%;
+    border-radius: 12px;
+    max-height: 420px;
+    object-fit: contain;
+}
+
+.getting-here-section .tab-text p {
+    color: rgba(255,255,255,0.75);
+    line-height: 1.75;
+    font-size: 0.95rem;
+}
+
+.getting-here-section .tab-text h3 {
+    color: white;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.getting-here-section .more-link {
+    display: inline-block;
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255,255,255,0.4);
+    padding-bottom: 2px;
+    transition: border-color 0.15s;
+}
+
+.getting-here-section .more-link:hover {
+    border-bottom-color: white;
+}
+
+/* Tiaki Section */
+.tiaki-section {
+    background-color: var(--background-color);
+}
+
+.tiaki-heading {
+    font-size: clamp(1.2rem, 3vw, 1.6rem);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+.tiaki-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    font-style: italic;
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+.tiaki-text {
+    font-size: 0.9rem;
+    color: #ffffff;
+    line-height: 1.75;
+    margin-bottom: 1.5rem;
+}
+
+.tiaki-btn {
+    display: inline-block;
+    background-color: #125FA9;
+    color: white;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 12px 28px;
+    border-radius: 999px;
+    transition: background 0.15s;
+}
+
+.tiaki-btn:hover {
+    background-color: white;
+    color: #125FA9;
+}
+
+/* FAQ Accordion */
+.accordion-button {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    background: var(--card-bg);
+}
+
+.accordion-button:not(.collapsed) {
+    color: var(--accent-color);
+    background-color: var(--accent-light);
+    box-shadow: none;
+}
+
+.accordion-button:focus { box-shadow: none; }
+
+.accordion-body {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.75;
+}
+
+.accordion-item {
+    border: 1px solid var(--border);
+    margin-bottom: 0.5rem;
+    border-radius: 10px !important;
+    overflow: hidden;
+}
+
+/* ============================================================
+   SHARED COMPONENTS
+   ============================================================ */
+
+/* Attribution Overlays */
+.attribution-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    padding: 6px 12px;
+    background-color: rgba(15, 23, 43, 0.6);
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 1.4;
+    text-align: left;
+}
+
+.attribution-text {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 10px;
+    line-height: 1.4;
+}
+
+.attribution-text a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.attribution-text a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.image-wrapper {
+    position: relative;
+    overflow: hidden;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.image-wrapper img {
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+/* Badges */
+.badge {
+    font-size: 10px;
+    padding: 5px 10px;
+}
+
+.badge-history {
+    background-color: #441700;
+    color: white;
+}
+
+.badge-local {
+    background-color: #01185a;
+    color: white;
+}
+
+.badge-free {
+    background-color: #519405;
+    color: white;
+}
+
+.badge-adrenaline {
+    background-color: #f54c4c;
+    color: white;
+}
+
+.badge-heights {
+    background-color: #8f5fff;
+    color: white;
+}
+
+.badge-water {
+    background-color: #3b82f6;
+    color: white;
+}
+
+.badge-winter {
+    background-color: #06c4e6;
+    color: white;
+}
+
+.badge-views {
+    background-color: #62738a;
+    color: white;
+}
+
+.badge-nature {
+    background-color: #26cf64;
+    color: white;
+}
+
+.badge-scenic {
+    background-color: #13a4e7;
+    color: white;
+}
+
+.badge-wine {
+    background-color: #d82b2b;
+    color: white;
+}
+
+.badge-food {
+    background-color: #f5a00e;
+    color: white;
+}
+
+.badge-budget {
+    background-color: #22c55e;
+}
+
+.badge-midrange {
+    background-color: #3b82f6;
+}
+
+.badge-luxury {
+    background-color: #8b5cf6;
+}
+
+.badge-central {
+    background-color: #f59e0b;
+}
+
+.badge-lakeside {
+    background-color: #06b6d4;
+}
+
+.badge-mountain {
+    background-color: #64748b;
+}
+
+.badge-hotel {
+    background-color: #ef4444;
+}
+
+.badge-lodge {
+    background-color: #dc2626;
+}
+
+.badge-apartment {
+    background-color: #eab308;
+}
+
+.badge-holiday {
+    background-color: #14b8a6;
+}
+
+/* Discover / CTA Section */
+.discover-section {
+    background-color: var(--accent-color);
+    width: 100%;
+    margin-top: 50px;
+}
+
+.discover-section.no-margin {
+    margin-top: 0;
+}
+
+.discover-title {
+    color: white;
+    font-weight: 700;
+}
+
+.discover-text {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.discover-section .btn {
+    background-color: white;
+    color: var(--background-color);
+    border: none;
+}
+
+.discover-section .btn:hover {
+    background-color: var(--accent-color-hover);
+    color: white;
+}
+
+/* ============================================================
+   FOOTER - Shared across all pages
+   ============================================================ */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+footer .row > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer_border {
+    border-bottom: 2px solid #4c595e;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+
+.footer_border:last-child {
+    border-bottom: none;
+}
+
+@media (min-width: 1200px) {
+    .footer_border {
+        border-bottom: none;
+    }
+
+    .footer_border:last-child {
+        border-right: none;
+    }
+
+    .logo_social {
+        margin-top: 0;
+        padding-top: 10px;
+    }
+}
+
+/* Footer Logo Styles */
+.footer-brand-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    width: 100%;
+}
+
+.footer-logo {
+    height: 130px;
+    width: auto;
+    margin-bottom: 5px;
+}
+
+footer .logo_social {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+
+footer .social {
+    display: flex;
+    margin: 0 auto;
+    width: fit-content;
+    gap: 6px;
+    margin-top: 5px;
+}
+
+/* Footer heading size */
+footer h4 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.bg_dark {
+    background-color: var(--background-color);
+}
+
+.fa-instagram {
+    background: #125688;
+    color: var(--font-color);
+}
+
+.fa-google {
+    background: #dd4b39;
+    color: var(--font-color);
+}
+
+.fa-youtube {
+    background: #bb0000;
+    color: var(--font-color);
+}
+
+.fa-facebook {
+    background: #3B5998;
+    color: var(--font-color);
+}
+
+.fa {
+    padding: 9px;
+    font-size: 16px;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+footer .link {
+    text-decoration: none;
+    color: var(--font-color);
+}
+
+footer .link:hover {
+    text-decoration: underline;
+}
+
+/* ============================================================
+   SCROLL TO TOP BUTTON - Shared across all pages
+   ============================================================ */
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: var(--accent-color);
+    color: white;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s;
+}
+
+#myBtn:hover {
+    background-color: var(--accent-color-hover);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    transform: translateY(-2px);
+}
+
+#myBtn i {
+    pointer-events: none;
+}

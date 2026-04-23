@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="styles.css">
     <title>Travel Guide</title>
 </head>
 <body>
     <nav id="navbar" class="navbar navbar-expand-lg navbar-dark">
-        <a href="#" class="navbar-brand">Discover Queenstown</a>
+        <a href="index.html" class="navbar-brand">
+            <img src="images/logos/navigation_logo_final.png" alt="Discover Queenstown" class="navbar-logo">
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -34,7 +36,7 @@
                     <span class="nav-arrow">></span>
                 </li>
                 <li class="nav-item d-flex align-items-center justify-content-between">
-                    <a href="flights.html" class="nav-link">Flights and Accommodation</a>
+                    <a href="flights_accomo.html" class="nav-link">Flights and Accommodation</a>
                     <span class="nav-arrow">></span>
                 </li>
                 <li class="nav-item d-flex align-items-center justify-content-between">
@@ -45,7 +47,7 @@
         </div>
     </nav>
 
-    <section class="hero-banner-section">
+    <main class="hero-banner-section">
         <div class="hero-banner-guide">
             <div class="hero-overlay-box">
                 <p class="hero-slogan">Adventure starts the moment you land</p>
@@ -54,10 +56,10 @@
                 <a href="#activities" class="hero-button">Explore the Guide</a>
             </div>
             <div class="hero-caption">
-                <span>passports and planes tickets spread out</span>
+                <span>Travel planning essentials, Queenstown, New Zealand</span>
             </div>
         </div>
-    </section>
+    </main>
 
     <section class="bg-white py-5">
         <div class="container">
@@ -155,15 +157,16 @@
     </section>
     <section class="container explore-section">
         <div class="row">
-            <div class="col-12 col-lg-12">
-                <h2 class="section-label mb-4 pt-4">Explore Queenstown</h2>
+            <div class="col-12 col-lg-8">
+                <h2 class="header mb-4 text-start pt-4">Explore Queenstown</h2>
+                <hr class="section-bars mb-4">
             </div>
         </div>
         <div class="row g-4">
 
             <div class="col-12 col-md-6 col-lg-4">
                 <a href="activities.html" class="nav-card">
-                    <div class="nav-card-img" style="background-image: url('images/activities_media/activities_hero.jpg');">
+                    <div class="nav-card-img" style="background-image: url('images/activities/activities_hero.jpg');">
                         <div class="nav-card-overlay"></div>
                         <div class="nav-card-body">
                             <div class="nav-card-badges">
@@ -180,7 +183,7 @@
 
             <div class="col-12 col-md-6 col-lg-4">
                 <a href="eating.html" class="nav-card">
-                    <div class="nav-card-img" style="background-image: url('images/eating_media/eating-hero-image.png');">
+                    <div class="nav-card-img" style="background-image: url('images/eating/eating-hero-image.png');">
                         <div class="nav-card-overlay"></div>
                         <div class="nav-card-body">
                             <div class="nav-card-badges">
@@ -197,7 +200,7 @@
 
             <div class="col-12 col-md-6 col-lg-4">
                 <a href="visit.html" class="nav-card">
-                    <div class="nav-card-img" style="background-image: url('images/visit_media/night.jpg');">
+                    <div class="nav-card-img" style="background-image: url('images/visit/night.jpg');">
                         <div class="nav-card-overlay"></div>
                         <div class="nav-card-body">
                             <div class="nav-card-badges">
@@ -214,7 +217,7 @@
 
             <div class="col-12 col-md-6 col-lg-4">
                 <a href="flights_accomo.html" class="nav-card">
-                    <div class="nav-card-img" style="background-image: url('index_media/accommodation.jpg');">
+                    <div class="nav-card-img" style="background-image: url('images/flights/flights_hero.jpg');">
                         <div class="nav-card-overlay"></div>
                         <div class="nav-card-body">
                             <div class="nav-card-badges">
@@ -229,8 +232,8 @@
             </div>
 
             <div class="col-12 col-md-6 col-lg-4">
-                <a href="travel_guide.html" class="nav-card">
-                    <div class="nav-card-img" style="background-image: url('images/guide_media/guide.jpg');">
+                <a href="index.html" class="nav-card">
+                    <div class="nav-card-img" style="background-image: url('images/index/index-hero-image.jpg');">
                         <div class="nav-card-overlay"></div>
                         <div class="nav-card-body">
                             <div class="nav-card-badges">
@@ -246,7 +249,7 @@
 
             <div class="col-12 col-md-6 col-lg-4">
                 <a href="activities.html#events" class="nav-card"> <!-- Link to the events section on Min-seo's activities page (auto scroll)-->
-                    <div class="nav-card-img" style="background-image: url('/Min-seo/Activities/activities_media/activities_hero2.jpg');">
+                    <div class="nav-card-img" style="background-image: url('images/activities/activities_hero2.jpg');">
                         <div class="nav-card-overlay"></div>
                         <div class="nav-card-body">
                             <div class="nav-card-badges">
@@ -280,8 +283,8 @@
         <!-- Left column — image -->
         <div class="col-12 col-md-7">
             <img
-            src="images/guide_media/taiki.jpg"
-            alt="Lake Wakatipu, The remarkables behind it and ducks on the water"
+            src="images/guide/taiki.jpg"
+            alt="Group of cyclists watching the sunset over Lake Wakatipu"
             class="img-fluid rounded">
             <!-- img-fluid makes the image responsive (never overflows its column)
                 rounded adds the slightly rounded corners you can see in the screenshot
@@ -372,10 +375,20 @@
                 </div>
             </div>
             </div>
-    
+
         </div>
         </div>
     </section>
+
+    <!-- Discover / CTA Section -->
+    <div class="discover-section">
+        <div class="container text-center py-5">
+            <h3 class="discover-title">Ready to explore everything?</h3>
+            <p class="discover-text">Start from the beginning and discover all that Queenstown has to offer.</p>
+            <a href="index.html" class="btn btn-light btn-lg mt-3">Back to Home</a>
+        </div>
+    </div>
+
     <footer class="text-muted bg_dark">
 
         <!-- Section: Links  -->
@@ -387,7 +400,9 @@
 
                     <div class="col-12 col-xl-3 footer_border pb-5">
                         <div class="logo_social">
-                            <a href="#" class="footer-brand">Discover Queenstown</a>
+                            <a href="#" class="footer-brand-link">
+                <img src="images/logos/footer_logo_final.png" alt="Discover Queenstown" class="footer-logo">
+            </a>
                             <div class="social mt-4">
                                 <a href="#" class="fa fa-instagram"></a>
                                 <a href="#" class="fa fa-facebook"></a>
@@ -409,10 +424,10 @@
                     <div class="col-12 col-xl-3 mb-4 footer_border p-3">
                     <!-- Links -->
                             <h4 class="text-uppercase fw-bold mb-4">Useful links</h4>
-                        <p><a href="#!" class="link">Activities</a></p>
-                        <p><a href="#!" class="link">Places to visit</a></p>
-                        <p><a href="#!" class="link">Accommodation and Flights</a></p>
-                        <p><a href="#!" class="link">Places to eat</a></p>
+                        <p><a href="activities.html" class="link">Activities</a></p>
+                        <p><a href="visit.html" class="link">Places to visit</a></p>
+                        <p><a href="flights_accomo.html" class="link">Accommodation and Flights</a></p>
+                        <p><a href="eating.html" class="link">Places to eat</a></p>
                     </div>
 
                     <!-- Grid column 3 -->
@@ -436,6 +451,6 @@
     </button>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="guide.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>

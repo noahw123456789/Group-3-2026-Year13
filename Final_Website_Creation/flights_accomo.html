@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Flights & Accommo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark">
+        <a href="index.html" class="navbar-brand">
+            <img src="images/logos/navigation_logo_final.png" alt="Discover Queenstown" class="navbar-logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav mb-2 mb-lg-0">
+                <li class="nav-item d-flex align-items-center justify-content-between">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <span class="nav-arrow">></span>
+                </li>
+                <li class="nav-item d-flex align-items-center justify-content-between">
+                    <a href="activities.html" class="nav-link">Activities</a>
+                    <span class="nav-arrow">></span>
+                </li>
+                <li class="nav-item d-flex align-items-center justify-content-between">
+                    <a href="visit.html" class="nav-link">Visit</a>
+                    <span class="nav-arrow">></span>
+                </li>
+                <li class="nav-item d-flex align-items-center justify-content-between">
+                    <a href="eating.html" class="nav-link">Eat</a>
+                    <span class="nav-arrow">></span>
+                </li>
+                <li class="nav-item d-flex align-items-center justify-content-between">
+                    <a href="flights_accomo.html" class="nav-link active">Flights and Accommodation</a>
+                    <span class="nav-arrow">></span>
+                </li>
+                <li class="nav-item d-flex align-items-center justify-content-between">
+                    <a href="guide.html" class="nav-link">Travel Guide</a>
+                    <span class="nav-arrow">></span>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="hero-banner-section">
+        <div class="hero-banner-flights">
+            <div class="hero-overlay-box">
+                <p class="hero-slogan">Flights sorted. Bed booked. Queenstown ready.</p>
+                <h1 class="hero-title">Flights & Accommodation</h1>
+                <p class="hero-paragraph">Plan your perfect Queenstown getaway with our comprehensive guide to flights and accommodation options. From luxury lakeside resorts to cozy budget-friendly stays, find everything you need to make your Queenstown adventure unforgettable.</p>
+                <div class="hero-buttons">
+                    <a href="#flight-section" class="hero-button">Explore Flights</a>
+                    <a href="#accommodation-section" class="hero-button">Browse Accommodations</a>
+                </div>
+            </div>
+            <div class="hero-caption">
+                <span>Queenstown Airport, The Remarkables, New Zealand</span>
+            </div>
+        </div>
+    </main>
+
+
+    <div class="container" id="flight-section">
+        <div class="method3 text-start">
+
+            <!-- API Warning -->
+            <div id="api-warning" class="alert alert-warning d-none">
+                <i class="fa fa-exclamation-triangle"></i>
+                <strong>API Key Required:</strong> Please configure your Aviationstack API key.
+            </div>
+
+            <!-- Loading -->
+            <div id="api-loading" class="text-center py-5 mb-4">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <p class="mt-3">Loading live flights...</p>
+            </div>
+
+            <!-- Error -->
+            <div id="api-error" class="alert alert-danger d-none mb-4">
+                <i class="fa fa-exclamation-circle"></i>
+                <span id="error-text">Unable to load flight data</span>
+            </div>
+
+            <!-- Flight Table -->
+            <div id="api-content" class="d-none">
+                <div class="table-responsive mb-4">
+                    <table class="table table-hover table-bordered">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Flight</th>
+                                <th>Airline</th>
+                                <th>From</th>
+                                <th>Arrival Time</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="flights-body">
+                            <!-- Flights loaded by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Refresh Section -->
+                <div class="d-flex justify-content-between align-items-center mb-5">
+                    <p class="subtext mb-0">
+                        <i class="fa fa-refresh"></i> Last updated: <span id="last-updated">--</span>
+                        | Data from Aviationstack API
+                    </p>
+                    <button id="refresh-btn" class="btn btn-primary">
+                        <i class="fa fa-refresh"></i> Refresh
+                    </button>
+                </div>
+            </div>
+
+            <!-- Airport Info Cards -->
+            <div class="row mt-5">
+                <div class="col-12 col-lg-8">
+                    <div class="header mb-4 text-start">Queenstown Airport</div>
+                    <hr class="section-bars mb-4">
+                    <p class="section-intro">Everything you need to know before you land — from airline options to peak travel seasons.</p>
+                </div>
+            </div>
+            <div class="row g-4 mb-5">
+                <div class="col-md-4">
+                    <div class="card text-center h-100 airport_info">
+                        <div class="card-body">
+                            <div class="info_icon">
+                                <i class="fa fa-plane"></i>
+                            </div>
+                            <h5 class="card-title">Airport Code</h5>
+                            <h4 class="second_row">ZQN</h4>
+                            <p class="third_row">Queenstown Airport</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card text-center airport_info h-100">
+                        <div class="card-body">
+                            <div class="info_icon">
+                                <i class="fa fa-building"></i>
+                            </div>
+                            <div class="d-flex justify-content-center gap-2 flex-wrap mb-4 mt-4">
+                                <span class="bg-airnz airport_badge">Air NZ</span>
+                                <span class="bg-jetstar airport_badge">Jetstar</span>
+                                <span class="bg-qantas airport_badge">Qantas</span>
+                            </div>
+                            <p class="third_row">Direct flights from major NZ & Australian cities</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card text-center airport_info h-100">
+                        <div class="card-body">
+                            <div class="info_icon">
+                                <i class="fa fa-line-chart"></i>
+                            </div>
+                            <h5 class="card-title mb-3">Peak Seasons</h5>
+                            <p class="mb-1"><strong>Summer:</strong> Dec - Feb</p>
+                            <p class="mb-0"><strong>Ski Season:</strong> Jun - Aug</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Flight Route Cards -->
+            <div class="row mt-5">
+                <div class="col-12 col-lg-8">
+                    <div class="header mb-4 text-start">Popular Routes to Queenstown</div>
+                    <hr class="section-bars mb-4">
+                    <p class="section-intro">Direct connections from across New Zealand and Australia to get you here faster.</p>
+                </div>
+            </div>
+            <div class="row g-4 mb-5">
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card h-100 route_cards">
+                        <div class="card-body text-center">
+                            <div class="route mb-2">AKL → ZQN</div>
+                            <h6 class="card-title">Auckland</h6>
+                            <p class="subtext flight_times">~2 hours<br>Multiple daily</p>
+                            <hr>
+                            <div class="d-flex gap-2">
+                                <a href="https://www.airnewzealand.co.nz" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm route-link route-link-airnz flex-fill">Air NZ</a>
+                                <a href="https://www.jetstar.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm route-link route-link-jetstar flex-fill">Jetstar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card h-100 route_cards">
+                        <div class="card-body text-center">
+                            <div class="route mb-2">WLG → ZQN</div>
+                            <h6 class="card-title">Wellington</h6>
+                            <p class="subtext flight_times">~1.5 hours<br>Daily</p>
+                            <hr>
+                            <a href="https://www.airnewzealand.co.nz" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm route-link route-link-airnz w-100">Air NZ</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card h-100 route_cards">
+                        <div class="card-body text-center">
+                            <div class="route mb-2">CHC → ZQN</div>
+                            <h6 class="card-title">Christchurch</h6>
+                            <p class="subtext flight_times">~1 hour<br>Multiple daily</p>
+                            <hr>
+                            <div class="d-flex gap-2">
+                                <a href="https://www.airnewzealand.co.nz" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm route-link route-link-airnz flex-fill">Air NZ</a>
+                                <a href="https://www.jetstar.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm route-link route-link-jetstar flex-fill">Jetstar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="special card h-100 route_cards">
+                        <div class="card-body text-center">
+                            <div class="route mb-2">SYD → ZQN</div>
+                            <h6 class="card-title">Sydney</h6>
+                            <p class="subtext flight_times">~3 hours<br>Seasonal</p>
+                            <hr>
+                            <div class="d-flex gap-2">
+                                <a href="https://www.qantas.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm route-link route-link-qantas flex-fill">Qantas</a>
+                                <a href="https://www.airnewzealand.co.nz" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm route-link route-link-airnz flex-fill">Air NZ</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Accommodation Section -->
+        <!-- Card Filter taken from Harrison's Visit Page -->
+        <div class="container mb-5" id="accommodation-section">
+            <div class="row">
+                <div class="col-12 col-lg-8">
+                    <div class="header mb-4 text-start">Featured Accommodations</div>
+                    <hr class="section-bars mb-4">
+                    <p class="section-intro">Queenstown has something for every type of traveller and every budget. Whether you're after a lakefront luxury suite with mountain views, a well-located mid-range hotel steps from the town centre, or a social budget hostel where you'll meet fellow adventurers — we've pulled together the best options across all three tiers. Use the filters below to find the stay that suits you best.</p>
+                </div>
+            </div>
+
+                <div class="d-flex justify-content-left flex-wrap gap-2 mb-4">
+                    <button class="filter-btn active" data-cat="all">All</button>
+                    <button class="filter-btn" data-cat="budget">Budget</button>
+                    <button class="filter-btn" data-cat="midrange">Mid-range</button>
+                    <button class="filter-btn" data-cat="luxury">Luxury</button>
+                </div>
+
+                <div class="row g-4" id="card-grid">
+                    <!-- Luxury Accommodation 1 -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-5 card-col" data-cat="luxury">
+                        <div class="card card-div h-100">
+                            <div class="image-wrapper">
+                                <img src="images/flights/luxury1.jpg" class="card-img-top" alt="Luxury hotel overlooking Lake Wakatipu and alpine mountains">
+                                <div class="attribution-overlay">
+                                    <span class="attribution-text">© <a href="https://commons.wikimedia.org/wiki/File:NZ93_Queenstown_viewfrHotel_6_small.jpg" target="_blank" rel="noopener noreferrer">VasuVR</a> | CC BY 4.0</span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="title-row">
+                                    <h5 class="card-title mb-0">Eichardt's Private Hotel</h5>
+                                    <div class="d-flex gap-2">
+                                        <span class="badge badge-luxury">Luxury</span>
+                                        <span class="badge badge-lakeside">Lakeside</span>
+                                    </div>
+                                </div>
+                                <p class="card-text">A Queenstown icon dating back to 1861, right on the lakefront in the heart of town. Eight suites, The Penthouse, and a waterside bar that's been welcoming guests since the gold rush era.</p>
+                                <div class="price-row">
+                                    <span class="price">From $988/night</span>
+                                </div>
+                                <a href="https://eichardts.com/accommodation" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary w-100">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Luxury Accommodation 2 -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-5 card-col" data-cat="luxury">
+                        <div class="card card-div h-100">
+                            <div class="image-wrapper">
+                                <img src="images/flights/luxury2.jpg" class="card-img-top" alt="Modern luxury suite with balcony and scenic views">
+                                <div class="attribution-overlay">
+                                    <span class="attribution-text">© <a href="https://commons.wikimedia.org/wiki/File:Luxury_hotel_room_in_Hyderabad,_India.jpg" target="_blank" rel="noopener noreferrer">Fredericknoronha</a> | CC BY 4.0</span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="title-row">
+                                    <h5 class="card-title mb-0">The Rees Hotel</h5>
+                                    <div class="d-flex gap-2">
+                                        <span class="badge badge-luxury">Luxury</span>
+                                        <span class="badge badge-central">Central</span>
+                                    </div>
+                                </div>
+                                <p class="card-text">Queenstown's largest lakefront property with 152 rooms, serviced apartments and private villas. Award-winning True South Dining Room, stunning lake and mountain views, and 100% NZ owned.</p>
+                                <div class="price-row">
+                                    <span class="price">From $450/night</span>
+                                </div>
+                                <a href="https://therees.co.nz/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary w-100">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Luxury Accommodation 3 -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-5 card-col" data-cat="luxury">
+                        <div class="card card-div h-100">
+                            <div class="image-wrapper">
+                                <img src="images/flights/luxury3.jpg" class="card-img-top" alt="Exclusive retreat with mountain and lake views">
+                                <div class="attribution-overlay">
+                                    <span class="attribution-text">© <a href="https://commons.wikimedia.org/wiki/File:Hotel_Flor_Guest_Room_Double_Queen.jpg" target="_blank" rel="noopener noreferrer">Evolve&Co</a> | CC BY 4.0</span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="title-row">
+                                    <h5 class="card-title mb-0">Rosewood Matakauri</h5>
+                                    <div class="d-flex gap-2">
+                                        <span class="badge badge-luxury">Luxury</span>
+                                        <span class="badge badge-mountain">Mountain View</span>
+                                    </div>
+                                </div>
+                                <p class="card-text">Set on native gardens with unobstructed views of The Remarkables, 10 minutes from town. Just 16 suites, a full spa, outdoor pool, and a lakeside jetty — consistently rated one of NZ's finest retreats.</p>
+                                <div class="price-row">
+                                    <span class="price">From $3,000/night</span>
+                                </div>
+                                <a href="https://www.rosewoodhotels.com/en/matakauri" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary w-100">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Luxury Accommodation 4 -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-5 card-col" data-cat="luxury">
+                        <div class="card card-div h-100">
+                            <div class="image-wrapper">
+                                <img src="images/flights/luxury4.jpg" class="card-img-top" alt="Elegant boutique hotel room with premium interior">
+                                <div class="attribution-overlay">
+                                    <span class="attribution-text">© <a href="https://commons.wikimedia.org/wiki/File:Hotel_Room.jpg" target="_blank" rel="noopener noreferrer">VasoPlevneshi</a> | CC BY 4.0</span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="title-row">
+                                    <h5 class="card-title mb-0">The Carlin Boutique Hotel</h5>
+                                    <div class="d-flex gap-2">
+                                        <span class="badge badge-luxury">Luxury</span>
+                                        <span class="badge badge-central">Central</span>
+                                    </div>
+                                </div>
+                                <p class="card-text">One of the few hotels in NZ to claim six-star status, perched on Hallenstein Street with elevated lake views. Private butlers, a private chef, and cocktails on arrival.</p>
+                                <div class="price-row">
+                                    <span class="price">From $1,200/night</span>
+                                </div>
+                                <a href="https://www.thecarlinhotel.com/?gad_source=1&gad_campaignid=18241719082&gbraid=0AAAAAolpSj8Mz3Mjbrcz46-nLJvwC5ltp&gclid=CjwKCAjw46HPBhAMEiwASZpLRNPG9-8a1XckT7MXnxeDJ0sn_mEQclhCaHcJaDRF-Md2jyoYypV8GhoCcBEQAvD_BwE" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary w-100">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mid-range Accommodation 1 -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-5 card-col" data-cat="midrange">
+                        <div class="card card-div h-100">
+                            <div class="image-wrapper">
+                                <img src="images/flights/mid1.jpg" class="card-img-top" alt="Comfortable hotel room with lakeside balcony">
+                                <div class="attribution-overlay">
+                                    <span class="attribution-text">© <a href="https://commons.wikimedia.org/wiki/File:Hotel_Novotel_in_Moscow1.jpg" target="_blank" rel="noopener noreferrer">mos.ru</a> | CC BY 4.0</span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="title-row">
+                                    <h5 class="card-title mb-0">Novotel Queenstown Lakeside</h5>
+                                    <div class="d-flex gap-2">
+                                        <span class="badge badge-midrange">Mid-range</span>
+                                        <span class="badge badge-lakeside">Lakeside</span>
+                                    </div>
+                                </div>
+                                <p class="card-text">273 rooms right on the shores of Lake Wakatipu, a 1-minute walk from the town centre. Private balconies, Elements Restaurant with local cuisine, spa pool, and ski storage.</p>
+                                <div class="price-row">
+                                    <span class="price">From $262/night</span>
+                                </div>
+                                <a href="https://all.accor.com/hotel/5308/index.en.shtml" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary w-100">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mid-range Accommodation 2 -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-5 card-col" data-cat="midrange">
+                        <div class="card card-div h-100">
+                            <div class="image-wrapper">
+                                <img src="images/flights/mid2.jpg" class="card-img-top" alt="Stylish boutique room near central Queenstown">
+                                <div class="attribution-overlay">
+                                    <span class="attribution-text">© <a href="https://commons.wikimedia.org/wiki/File:20230520_Hotel_room_in_Saint_Petersburg_06.jpg" target="_blank" rel="noopener noreferrer">Sergey A. Demidov</a> | CC BY 4.0</span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="title-row">
+                                    <h5 class="card-title mb-0">Queenstown Park Boutique Hotel</h5>
+                                    <div class="d-flex gap-2">
+                                        <span class="badge badge-midrange">Mid-range</span>
+                                        <span class="badge badge-central">Central</span>
+                                    </div>
+                                </div>
+                                <p class="card-text">Surrounded by parkland two minutes from the gondola and five from the town centre. Pre-dinner drinks and canapés included, plus a restaurant serving gourmet breakfasts and picnic packs.</p>
+                                <div class="price-row">
+                                    <span class="price">From $280/night</span>
+                                </div>
+                                <a href="https://www.queenstownparkhotel.co.nz/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary w-100">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mid-range Accommodation 3 -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-5 card-col" data-cat="midrange">
+                        <div class="card card-div h-100">
+                            <div class="image-wrapper">
+                                <img src="images/flights/mid3.jpg" class="card-img-top" alt="Eco lodge interior with natural alpine setting">
+                                <div class="attribution-overlay">
+                                    <span class="attribution-text">© <a href="https://commons.wikimedia.org/wiki/File:Canyon_Lodge_superior_room_(48947809117).jpg" target="_blank" rel="noopener noreferrer">Yellowstone National Park</a> | CC BY 4.0</span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="title-row">
+                                    <h5 class="card-title mb-0">Sherwood Queenstown</h5>
+                                    <div class="d-flex gap-2">
+                                        <span class="badge badge-midrange">Mid-range</span>
+                                        <span class="badge badge-mountain">Mountain View</span>
+                                    </div>
+                                </div>
+                                <p class="card-text">Set on three acres of alpine hillside overlooking Lake Wakatipu and the Remarkables — slightly removed from town but still a short drive in. Relaxed, eco-conscious, and genuinely unique.</p>
+                                <div class="price-row">
+                                    <span class="price">From $220/night</span>
+                                </div>
+                                <a href="https://www.sherwoodqueenstown.nz/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary w-100">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Budget Accommodation 1 -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-5 card-col" data-cat="budget">
+                        <div class="card card-div h-100">
+                            <div class="image-wrapper">
+                                <img src="images/flights/budget1.jpg" class="card-img-top" alt="Hostel dorm with bunk beds and shared space">
+                                <div class="attribution-overlay">
+                                    <span class="attribution-text">© <a href="https://commons.wikimedia.org/wiki/File:New_Hostel_Budapest.jpg" target="_blank" rel="noopener noreferrer">Fuhluf</a> | CC BY 4.0</span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="title-row">
+                                    <h5 class="card-title mb-0">Absoloot Hostel QT</h5>
+                                    <div class="d-flex gap-2">
+                                        <span class="badge badge-budget">Budget</span>
+                                        <span class="badge badge-lakeside">Lakeside</span>
+                                    </div>
+                                </div>
+                                <p class="card-text">Right on the lakefront in central Queenstown with arguably the best views in the budget category. Clean, recently refurbished, with private rooms, dorms with privacy curtains, and a social kitchen.</p>
+                                <div class="price-row">
+                                    <span class="price">From $50/night</span>
+                                </div>
+                                <a href="https://absoloot.co.nz/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary w-100">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Budget Accommodation 2 -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-5 card-col" data-cat="budget">
+                        <div class="card card-div h-100">
+                            <div class="image-wrapper">
+                                <img src="images/flights/budget2.jpg" class="card-img-top" alt="Modern backpacker hostel with social areas">
+                                <div class="attribution-overlay">
+                                    <span class="attribution-text">© <a href="https://commons.wikimedia.org/wiki/File:Adventure_Queenstown_Hostel.jpg" target="_blank" rel="noopener noreferrer">Sgroey</a> | CC BY 4.0</span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="title-row">
+                                    <h5 class="card-title mb-0">Adventure Queenstown Hostel</h5>
+                                    <div class="d-flex gap-2">
+                                        <span class="badge badge-budget">Budget</span>
+                                        <span class="badge badge-central">Central</span>
+                                    </div>
+                                </div>
+                                <p class="card-text">Rated 9.6/10 on Hostelworld — the highest-rated hostel in Queenstown. Friendly crew, organised social events, bike hire, and individual reading lamps and curtains for every bunk.</p>
+                                <div class="price-row">
+                                    <span class="price">From $44/night</span>
+                                </div>
+                                <a href="https://adventurehostels.co.nz/#/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary w-100">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Empty state — shown automatically when no cards match the filter -->
+                    <div id="empty-state">
+                        <p>No accommodations found in this category yet — check back soon.</p>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    <!-- Special Deals Section -->
+    <div class="container py-5" id="deals-section">
+            <div class="row">
+                <div class="col-12 col-lg-8">
+                    <div class="header mb-4 text-start">Special Deals & Packages</div>
+                    <hr class="section-bars mb-4">
+                    <p class="section-intro">Planning ahead pays off in Queenstown. From ski season bundles to summer escapes, these curated packages combine flights, accommodation, and activities to save you time and money.</p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <!-- Deal 1 -->
+                <div class="col-12 col-md-6 col-lg-4 mb-4 order-2 order-md-2">
+                    <div class="card deal-card h-100">
+                        <span class="badge deal-badge">20% OFF</span>
+                        <div class="image-wrapper">
+                            <img src="images/flights/summer_deal.jpg" class="card-img-top" alt="Sunny Queenstown lake and mountain landscape">
+                            <div class="attribution-overlay">
+                                <span class="attribution-text">© <a href="https://commons.wikimedia.org/wiki/File:00_1348_Lake_Wakatipu_-_New_Zealand.jpg" target="_blank" rel="noopener noreferrer">W. Bulach</a> | CC BY 4.0</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Summer Escape Package</h5>
+                            <p class="card-text">Flight + 3 nights at a central 4-star hotel with lake views, complimentary breakfast included. Perfect timing to hit the trails, gondola, and wine country in Queenstown's warmest months.</p>
+                            <hr>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <div><s class="text-muted">$1200</s> <span class="deal-discount-price">$960</span> /person</div>
+                                <small class="text-muted">Valid: Dec 2026 - Feb 2027</small>
+                            </div>
+                            <a href="https://www.expedia.com/Queenstown.d180018.Destination-Travel-Guides" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary w-100 deal-button">View Deal</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Deal 2 - Featured -->
+                <div class="col-12 col-md-12 col-lg-4 mb-4 order-1 order-md-1">
+                    <div class="card deal-card h-100 deal-card-featured">
+                        <span class="badge deal-badge">BEST VALUE</span>
+                        <div class="image-wrapper">
+                            <img src="images/flights/winter_deal.jpg" class="card-img-top" alt="Snowy ski resort in alpine mountains">
+                            <div class="attribution-overlay">
+                                <span class="attribution-text">© <a href="https://commons.wikimedia.org/wiki/File:La_Toussuire_Ski_Resort_Wide.jpg" target="_blank" rel="noopener noreferrer">Benh LIEU SONG</a> | CC BY 4.0</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Winter Ski Package</h5>
+                            <p class="card-text">7 nights in 4-star Queenstown accommodation, a 5-day ski pass valid at both Coronet Peak and The Remarkables, plus daily return coach transfers to the mountains. Everything sorted before you land.</p>
+                            <hr>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <div><s class="text-muted">$1399</s> <span class="deal-discount-price">$699</span> /person</div>
+                                <small class="text-muted">Valid: Jun - Sep 2026</small>
+                            </div>
+                            <a href="https://www.newzealandskipackages.com/category/queenstown-ski-deals/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary w-100 deal-button">View Deal</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Deal 3 -->
+                <div class="col-12 col-md-6 col-lg-4 mb-4 order-3 order-md-3">
+                    <div class="card deal-card h-100">
+                        <span class="badge deal-badge">15% OFF</span>
+                        <div class="image-wrapper">
+                            <img src="images/flights/adventure_deal.jpg" class="card-img-top" alt="Nice cruise ship docked at port at Lake Waikatipu">
+                            <div class="attribution-overlay">
+                                <span class="attribution-text">© <a href="https://commons.wikimedia.org/wiki/File:Cruise_ship_Deutschland_alongside_the_Queenstown_Experience_at_Cobh_-_geograph.org.uk_-_7597818.jpg" target="_blank" rel="noopener noreferrer"></a> | CC BY 4.0</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Adventure Bundle</h5>
+                            <p class="card-text">3-day Cardrona ski pass combined with Shotover Jet, a Walter Peak BBQ Lunch cruise on the TSS Earnslaw, and an evening at Onsen Hot Pools. Queenstown's biggest thrills in one package.</p>
+                            <hr>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <div><s class="text-muted">$850</s> <span class="deal-discount-price">$722</span> /person</div>
+                                <small class="text-muted">Valid: Year-round</small>
+                            </div>
+                            <a href="https://www.everythingqueenstown.com/category/ski-and-activity-packages/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary w-100 deal-button">View Deal</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="discover-section">
+        <div class="container text-center py-5">
+            <h3 class="discover-title">All booked? Prepare for your trip!</h3>
+            <p class="discover-text">Get travel tips, local insights, and everything you need to know before you arrive in Queenstown.</p>
+            <a href="guide.html" class="btn btn-light btn-lg mt-3">Read Travel Guide</a>
+        </div>
+    </div>
+
+    <footer class="text-muted bg_dark">
+
+        <!-- Section: Links  -->
+        <section>
+            <div class="container text-white pt-5">
+                <!-- Grid row -->
+                <div class="row">
+                    <!-- Logo and Social Media:  -->
+
+                    <div class="col-12 col-xl-3 footer_border pb-5">
+                        <div class="logo_social">
+                            <a href="#" class="footer-brand-link">
+                <img src="images/logos/footer_logo_final.png" alt="Discover Queenstown" class="footer-logo">
+            </a>
+                            <div class="social mt-4">
+                                <a href="#" class="fa fa-instagram"></a>
+                                <a href="#" class="fa fa-facebook"></a>
+                                <a href="#" class="fa fa-youtube"></a>
+                                <a href="#" class="fa fa-google"></a>
+                            </div>
+                        </div>
+
+                    </div>
+                
+                    <!-- Grid column 1-->
+                    <div class="col-12 col-xl-3 mb-4 footer_border p-3">
+                        <!-- Content -->
+                            <h4 class="text-uppercase fw-bold mb-4"><i class=""></i>More about our Website</h4>
+                        <p>Explore the best of Queenstown with our tourism platform—your guide to unforgettable adventures, stunning landscapes, and local experiences in one of New Zealand's most iconic destinations.</p>
+                    </div>
+
+                    <!-- Grid column 2 -->
+                    <div class="col-12 col-xl-3 mb-4 footer_border p-3">
+                    <!-- Links -->
+                            <h4 class="text-uppercase fw-bold mb-4">Useful links</h4>
+                        <p><a href="activities.html" class="link">Activities</a></p>
+                        <p><a href="visit.html" class="link">Places to visit</a></p>
+                        <p><a href="flights_accomo.html" class="link">Accommodation and Flights</a></p>
+                        <p><a href="eating.html" class="link">Places to eat</a></p>
+                    </div>
+
+                    <!-- Grid column 3 -->
+                    <div class="col-12 col-xl-3 mb-4 footer_border p-3">
+                        <!-- Links -->
+                            <h4 class="text-uppercase fw-bold mb-4">Contact</h4>
+                        <p>Discover Queenstown</p>
+                        <p>discoverqueenstown@example.com</p>
+                        <p>+123 456 7890</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Copyright -->
+        <div class="text-center p-4 text-white " style="background-color: #125fa9">© 2026 Copyright: Discover Queenstown</div>
+    </footer>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">
+        <i class="fa fa-arrow-up"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html> 

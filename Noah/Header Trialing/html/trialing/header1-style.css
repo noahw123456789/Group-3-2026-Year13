@@ -1,0 +1,27 @@
+:root {
+    --main-color: #f8fafc;
+    --sub-color: #e2e8f0;
+    --header-color: #0f172b;
+}
+
+.navbar {
+    background-color: var(--header-color) !important;
+}
+
+.navbar-brand {
+    color: var(--main-color) !important;
+    padding: 10px;
+} 
+
+.nav-link.active {
+    font-weight: bold;
+}
+
+.nav-link {
+    color: var(--main-color) !important;
+    margin: 0 15px;
+}
+
+.nav-link:hover {
+    color: var(--sub-color) !important;
+}
