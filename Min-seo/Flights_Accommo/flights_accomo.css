@@ -279,7 +279,7 @@ footer .link:hover {
 }
 
 .hero-banner {
-    background-image: url('flights_accommo_media/hero.jpg');
+    background-image: url('./Final_Website_Creation/images/index_media/travel-hero.png');
     background-size: cover;
     background-position: center;
     padding: 170px 80px;
@@ -521,10 +521,6 @@ footer .link:hover {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.airport_info:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
 
 .second_row {
     color: var(--accent-color);
@@ -597,10 +593,6 @@ footer .link:hover {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.route_cards:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
 
 .special {
     border: 2px solid #1260a96b
@@ -714,16 +706,17 @@ footer .link:hover {
 }
 
 .card-div .btn {
+    background-color: var(--accent-color);
     border-color: var(--accent-color);
-    color: var(--accent-color);
+    color: white;
     text-decoration: none;
     margin-top: auto;
 }
 
 .card-div .btn:hover {
-    background-color: var(--accent-color-hover);
-    border-color: var(--accent-color-hover);
-    color: white;
+    background-color: white;
+    border-color: var(--accent-color);
+    color: var(--accent-color);
 }
 
 .badge {
@@ -819,7 +812,7 @@ footer .link:hover {
 }
 
 /* Deals & Packages Section */
-
+/* Deals cards */
 .deal-card {
     border: none;
     border-radius: 15px;
@@ -828,6 +821,8 @@ footer .link:hover {
     display: flex;
     flex-direction: column;
     height: 100%;
+    position: relative;
+    overflow: hidden;
 }
 
 .deal-card .card-img-top {
@@ -843,4 +838,91 @@ footer .link:hover {
 
 .deal-card .card-text {
     flex: 1;
+}
+
+.deal-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+    background-color: #dc2626;
+    color: white;
+    padding: 8px 12px;
+    font-weight: 600;
+    border-radius: 4px;
+}
+
+.deals-section-title {
+    color: var(--accent-color);
+}
+
+.deal-card .card-title {
+    color: var(--accent-color);
+}
+
+.deal-discount-price {
+    color: #22c55e;
+
+    font-weight: bold;
+}
+
+.deal-button {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+    text-decoration: none;
+}
+
+.deal-button:hover {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.deal-card-featured {
+    border: 2px solid var(--accent-color);
+}
+
+
+.deal-featured-badge {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 8px 12px;
+    font-weight: 600;
+    border-radius: 4px;
+}
+
+.deal-card .card-body {
+    padding: 20px;
+}
+
+
+.deal-card .card-text {
+    margin-bottom: 8px;
+}
+
+.deal-card .deal-date {
+    margin-bottom: 12px;
+
+    font-size: 14px;
+}
+
+.deal-card hr {
+    margin: 12px 0;
+}
+
+.deal-card .mb-1 {
+    margin-bottom: 12px;
+}
+
+
+#flight-section {
+    padding-top: 40px;
+
+}
+
+#accommodation-section {
+    padding-top: 60px;
+}
+
+#deals-section {
+    padding-top: 25px;
 }
