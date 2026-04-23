@@ -911,6 +911,8 @@ footer .link:hover {
     margin-bottom: 12px;
 }
 
+
+
 #flight-section {
     padding-top: 40px;
 }
@@ -920,5 +922,10 @@ footer .link:hover {
 }
 
 #deals-section {
-    padding-top: 40px;
+    padding-top: 0;
+}
+
+#deals-section-wrapper {
+    background-color: #f8f9fa;
+    width: 100%;
 }
