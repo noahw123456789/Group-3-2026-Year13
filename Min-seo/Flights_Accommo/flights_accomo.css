@@ -894,14 +894,12 @@ footer .link:hover {
     padding: 20px;
 }
 
-
 .deal-card .card-text {
     margin-bottom: 8px;
 }
 
 .deal-card .deal-date {
     margin-bottom: 12px;
-
     font-size: 14px;
 }
 
@@ -913,10 +911,8 @@ footer .link:hover {
     margin-bottom: 12px;
 }
 
-
 #flight-section {
     padding-top: 40px;
-
 }
 
 #accommodation-section {
@@ -924,5 +920,5 @@ footer .link:hover {
 }
 
 #deals-section {
-    padding-top: 25px;
+    padding-top: 40px;
 }
