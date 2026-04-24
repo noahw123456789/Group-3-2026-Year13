@@ -1,38 +1,24 @@
-/* ============================================================
-   DISCOVER QUEENSTOWN - UNIFIED JAVASCRIPT
-   Consolidated from 4 JS files into one maintainable script
-   ============================================================ */
+/* Shared Functionality */
 
-// ============================================================
-// SHARED FUNCTIONALITY - Runs on all pages
-// ============================================================
-
-// Navbar hide/show on scroll
-// Source: https://www.w3schools.com/howto/howto_js_navbar_hide_scroll.asp
 var prevScrollpos = window.pageYOffset;
 
 window.onscroll = function() {
     var currentScrollPos = window.pageYOffset;
 
-    // Navbar hide/show functionality
     var navbar = document.querySelector('.navbar');
     if (navbar) {
         if (prevScrollpos > currentScrollPos) {
-            // Scrolling UP - show navbar
             navbar.style.transform = "translateY(0)";
         } else {
-            // Scrolling DOWN - hide navbar
             navbar.style.transform = "translateY(-100%)";
         }
     }
 
     prevScrollpos = currentScrollPos;
 
-    // Scroll to top button functionality
     scrollFunction();
 };
 
-// Scroll to top button
 let mybutton = document.getElementById("myBtn");
 
 function scrollFunction() {
@@ -45,15 +31,12 @@ function scrollFunction() {
     }
 }
 
-// When the user clicks on the button, scroll to the top of the document
 function topFunction() {
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
 }
 
-// ============================================================
-// PAGE-SPECIFIC: Index, Activities, Eating - Card Carousel
-// ============================================================
+/* Index, Activities, Eating - Card Carousel */
 if (document.querySelector('#carouselExample') || document.querySelector('#carouselBottom')) {
     const carouselId = document.querySelector('#carouselExample') ? '#carouselExample' : '#carouselBottom';
     const wrapper = document.querySelector(carouselId + ' .carousel-inner');
@@ -110,7 +93,6 @@ if (document.querySelector('#carouselExample') || document.querySelector('#carou
         window.addEventListener('resize', updateSlides);
     }
 
-    // Enable Bootstrap carousels without auto-slide
     document.querySelectorAll('.carousel').forEach(function(carousel) {
         if (typeof bootstrap !== 'undefined') {
             new bootstrap.Carousel(carousel, {
@@ -120,18 +102,15 @@ if (document.querySelector('#carouselExample') || document.querySelector('#carou
     });
 }
 
-// ============================================================
-// PAGE-SPECIFIC: Flights Page - API and Filters
-// ============================================================
+/* Flights Page - API and Filters */
+// Flight API integration - Generated with assistance from ChatGPT (OpenAI)
 if (document.querySelector('#flight-section')) {
-    // Aviationstack API Configuration
-    const API_KEY = '34f281d79e77f64b899e6d43183a8046';
+    const API_KEY = 'f7848f8287921e91198af346861bfc6c';
     const AIRPORT_CODE = 'ZQN';
     const filterBtns = document.querySelectorAll('.filter-btn');
     const cardCols = document.querySelectorAll('.card-col');
     const emptyState = document.getElementById('empty-state');
 
-    // API Key check
     function checkApiKey() {
         if (!API_KEY || API_KEY === 'your_api_key_here') {
             const apiWarning = document.getElementById('api-warning');
@@ -143,7 +122,6 @@ if (document.querySelector('#flight-section')) {
         return true;
     }
 
-    // Update last updated time
     function updateLastUpdated() {
         const lastUpdatedEl = document.getElementById('last-updated');
         if (lastUpdatedEl) {
@@ -156,7 +134,6 @@ if (document.querySelector('#flight-section')) {
         }
     }
 
-    // Refresh button integration
     const refreshBtn = document.getElementById('refresh-btn');
     if (refreshBtn) {
         refreshBtn.addEventListener('click', function() {
@@ -171,16 +148,13 @@ if (document.querySelector('#flight-section')) {
         });
     }
 
-    // Fetch live flights on page load
     if (checkApiKey()) {
         fetchLiveFlights();
     }
 
-    // Filter buttons functionality
     if (filterBtns.length > 0) {
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                // Remove active from all buttons, add to clicked one
                 filterBtns.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
 
@@ -190,12 +164,10 @@ if (document.querySelector('#flight-section')) {
                 if (cardCols.length > 0) {
                     cardCols.forEach(col => {
                         const matches = selectedCat === 'all' || col.dataset.cat === selectedCat;
-                        // Toggle the .hidden class — CSS handles the fade transition
                         col.classList.toggle('hidden', !matches);
                         if (matches) visibleCount++;
                     });
 
-                    // Show empty state message if nothing matches
                     if (emptyState) {
                         emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
                     }
@@ -204,7 +176,6 @@ if (document.querySelector('#flight-section')) {
         });
     }
 
-    // Flight API functions
     async function fetchLiveFlights() {
         const url = `https://api.aviationstack.com/v1/flights?arr_iata=${AIRPORT_CODE}&access_key=${API_KEY}&limit=10`;
 
@@ -235,24 +206,20 @@ if (document.querySelector('#flight-section')) {
         const apiContent = document.getElementById('api-content');
         const tbody = document.getElementById('flights-body');
 
-        // Hide loading, show content
         if (apiLoading) apiLoading.classList.add('d-none');
         if (apiContent) apiContent.classList.remove('d-none');
 
         if (!tbody) return;
 
-        // Check if we have flights
         if (!flights || flights.length === 0) {
             tbody.innerHTML = '<tr><td colspan="5" class="text-center text-muted">No flights currently available</td></tr>';
             return;
         }
 
-        // Build table rows
         let html = '';
         for (let i = 0; i < flights.length; i++) {
             const flight = flights[i];
 
-            // Get flight details
             const airline = flight.airline?.name || 'Unknown';
             const flightNum = getFlightNumber(flight);
             const from = flight.departure?.iata || 'N/A';
@@ -315,9 +282,7 @@ if (document.querySelector('#flight-section')) {
     }
 }
 
-// ============================================================
-// PAGE-SPECIFIC: Visit Page - Filters
-// ============================================================
+/* Visit Page - Filters */
 if (document.querySelector('.filter-btn') && !document.querySelector('#flight-section')) {
     const filterBtns = document.querySelectorAll('.filter-btn');
     const cardCols = document.querySelectorAll('.card-col');
@@ -326,7 +291,6 @@ if (document.querySelector('.filter-btn') && !document.querySelector('#flight-se
     if (filterBtns.length > 0 && cardCols.length > 0) {
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                // Remove active from all buttons, add to clicked one
                 filterBtns.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
 
@@ -335,12 +299,10 @@ if (document.querySelector('.filter-btn') && !document.querySelector('#flight-se
 
                 cardCols.forEach(col => {
                     const matches = selectedCat === 'all' || col.dataset.cat === selectedCat;
-                    // Toggle the .hidden class — CSS handles the fade transition
                     col.classList.toggle('hidden', !matches);
                     if (matches) visibleCount++;
                 });
 
-                // Show empty state message if nothing matches
                 if (emptyState) {
                     emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
                 }
